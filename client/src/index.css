@@ -1,0 +1,13 @@
+@import "tailwindcss";
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+@layer base {
+  .active {
+    @apply text-indigo-600;
+  }
+  .input {
+    @apply bg-gray-50 p-2 w-full rounded-md border-none outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 focus:ring-offset-1 transition-all duration-200;
+  }
+}
