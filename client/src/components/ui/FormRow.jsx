@@ -6,7 +6,10 @@ const FormRow = ({ children, label, htmlFor = label }) => {
       role="row"
       className="mb-4 flex  w-full flex-col items-start justify-center"
     >
-      <label className="text-gray-600 mb-2" htmlFor={htmlFor}>
+      <label
+        className="text-gray-600 block text-sm/6 font-medium  dark:text-gray-300 mb-2"
+        htmlFor={htmlFor}
+      >
         {label}
       </label>
       {children}

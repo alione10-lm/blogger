@@ -16,7 +16,7 @@ export default function BlogCard({ isCurrentUser }) {
 
   return (
     <>
-      <div className="overflow-hidden text-slate-500 border-b border-gray-200 p-4 ">
+      <div className="overflow-hidden text-slate-500 dark:border-gray-800 border-b border-gray-200 p-2 ">
         <div className="w-full flex items-center justify-between">
           <header className="flex gap-4">
             <a
@@ -33,10 +33,12 @@ export default function BlogCard({ isCurrentUser }) {
               />
             </a>
             <div>
-              <h3 className="text-xl font-medium text-slate-700">
+              <h3 className="text-lg md:text-xl font-medium  dark:text-slate-200 text-slate-600">
                 Looking back at time
               </h3>
-              <p className="text-sm text-slate-400"> By Mary Jay, jun 3 2023</p>
+              <p className="text-sm  text-indigo-500/100">
+                By Mary Jay, jun 3 2023
+              </p>
             </div>
           </header>
           {isCurrentUser && (
@@ -46,7 +48,7 @@ export default function BlogCard({ isCurrentUser }) {
             </div>
           )}
         </div>
-        <div className="p-6">
+        <div className="py-6 dark:text-gray-300 text-sm md:text-[1rem]">
           <p>
             Spend days here, exploring a way of life by bicycle. Discover
             cobbled streets sandwiched between beautiful rickety townhouses and
@@ -57,7 +59,7 @@ export default function BlogCard({ isCurrentUser }) {
           <img
             src="/picture.jpg"
             alt="card image"
-            className="aspect-video w-full"
+            className="aspect-video w-full rounded-lg"
           />
         </figure>
         <div className="w-full flex gap-4 p-2 justify-end ">

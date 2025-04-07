@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import DarkModeToggle from "./DarkModeToggle";
 
 const NAVLINKS = [
   {
@@ -25,7 +26,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="z-20   w-full border-b border-slate-200 bg-white/90 shadow-lg shadow-slate-700/2 after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:backdrop-blur-sm lg:after:hidden">
+      <header className="z-20 transition-colors duration-200   dark:bg-dark-bg-1 w-full border-b border--200 bg-white/90 dark:border-gray-800 shadow-lg shadow-slate-700/2 after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:backdrop-blur-sm lg:after:hidden ">
         <div className="relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem]">
           <nav
             aria-label="main navigation"
@@ -35,7 +36,7 @@ export default function Navbar() {
             <NavLink
               to="home"
               id="WindUI"
-              className="flex items-center gap-2 whitespace-nowrap py-3 text-lg focus:outline-none lg:flex-1"
+              className="flex items-center gap-2 dark:text-slate-300 whitespace-nowrap py-3 text-lg focus:outline-none lg:flex-1"
             >
               <svg
                 width="300"
@@ -61,13 +62,13 @@ export default function Navbar() {
               Blog flow
             </NavLink>
             <button
-              className={`relative order-10 block cursor-pointer h-10 w-10 self-center lg:hidden
-              ${
-                isToggleOpen
-                  ? "visible opacity-100 [&_span:nth-child(1)]:w-6 [&_span:nth-child(1)]:translate-y-0 [&_span:nth-child(1)]:rotate-45 [&_span:nth-child(2)]:-rotate-45 [&_span:nth-child(3)]:w-0 "
-                  : ""
-              }
-            `}
+              className={`relative order-10 block cursor-pointer h-10 w-10 self-center lg:hidden [&_span]:bg-indigo-500 
+                ${
+                  isToggleOpen
+                    ? "visible opacity-100 [&_span:nth-child(1)]:w-6 [&_span:nth-child(1)]:translate-y-0 [&_span:nth-child(1)]:rotate-45 [&_span:nth-child(2)]:-rotate-45 [&_span:nth-child(3)]:w-0 "
+                    : ""
+                }
+                  `}
               onClick={() => setIsToggleOpen(!isToggleOpen)}
               aria-expanded={isToggleOpen ? "true" : "false"}
               aria-label="Toggle navigation"
@@ -89,7 +90,7 @@ export default function Navbar() {
             </button>
             <ul
               role="menubar"
-              className={`absolute left-0 top-0 z-[-1] h-screen w-full justify-center overflow-hidden  overflow-y-auto overscroll-contain bg-white/90  px-8 pb-12 pt-24 font-medium transition-[opacity,visibility] duration-300 lg:visible lg:relative lg:top-0  lg:z-0 lg:flex lg:h-full lg:w-auto lg:items-stretch lg:overflow-visible lg:bg-white/0 lg:px-0 lg:py-0  lg:pt-0 lg:opacity-100 ${
+              className={`absolute left-0 top-0 z-[-1] h-screen w-full justify-center overflow-hidden  overflow-y-auto overscroll-contain bg-white/90 dark:bg-dark-bg-2 md:dark:bg-transparent px-8 pb-12 pt-24 font-medium transition-[opacity,visibility ] duration- lg:visible lg:relative lg:top-0  lg:z-0 lg:flex lg:h-full lg:w-auto lg:items-stretch lg:overflow-visible lg:bg-white/0 dark:text-slate-300 lg:px-0 lg:py-0  lg:pt-0 lg:opacity-100 ${
                 isToggleOpen
                   ? "visible opacity-100 backdrop-blur-sm"
                   : "invisible opacity-0"
@@ -102,25 +103,11 @@ export default function Navbar() {
                   </StyledNavLink>
                 </li>
               ))}
+              <li className="flex mt-10 md:mt-0 items-center gap-20 md:border-none border border-gray-200 w-fit p-2 rounded-lg dark:border-slate-800">
+                <span className="text-lg md:hidden  ">toggle appearance</span>
+                <DarkModeToggle />
+              </li>
             </ul>
-            {/* <div className="ml-auto flex items-center px-6 lg:ml-0 lg:p-0">
-              <a
-                href="#"
-                className="relative inline-flex h-10 w-10 items-center justify-center rounded-full text-white"
-              >
-                <img
-                  src="https://i.pravatar.cc/40?img=35"
-                  alt="user name"
-                  title="user name"
-                  width="40"
-                  height="40"
-                  className="max-w-full rounded-full"
-                />
-                <span className="absolute bottom-0 right-0 inline-flex items-center justify-center gap-1 rounded-full border-2 border-white bg-pink-500 p-1 text-sm text-white">
-                  <span className="sr-only"> 7 new emails </span>
-                </span>
-              </a>
-            </div> */}
           </nav>
         </div>
       </header>
@@ -133,7 +120,7 @@ const StyledNavLink = ({ children, to, onClick }) => {
     <NavLink
       onClick={onClick}
       to={to}
-      className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-indigo-500 focus:text-indigo-600 focus:outline-none focus-visible:outline-none lg:px-8"
+      className="flex items-center md:text-[1rem] text-xl gap-2 py-4 transition-colors duration-300 hover:text-indigo-500 focus:text-indigo-600 focus:outline-none focus-visible:outline-none lg:px-8"
     >
       {children}
     </NavLink>
