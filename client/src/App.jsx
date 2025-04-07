@@ -16,7 +16,7 @@ import AppLayout from "./components/AppLayout";
 import ThemeContextPrvider from "./contexts/ThemeContext";
 import Login from "./components/Login";
 import Registration from "./components/Registration";
-import AuthLayout from "./components/ui/AuthLayout";
+import AuthLayout from "./components/AuthLayout";
 
 function App() {
   return (
