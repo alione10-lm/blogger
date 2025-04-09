@@ -1,8 +1,22 @@
-import { NavLink } from "react-router-dom";
+import { data, NavLink, useNavigate } from "react-router-dom";
 import Button from "./ui/Button";
 import FormRow from "./ui/FormRow";
+import { useForm } from "react-hook-form";
 
 export default function Login() {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+
+  console.log(errors);
+
+  const navigate = useNavigate();
+  const submitHandler = (data) => {
+    console.log(data);
+    navigate("/app");
+  };
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col  justify-center px-6 py-12 lg:px-8">
@@ -13,30 +27,59 @@ export default function Login() {
         </div>
 
         <div className="mt-10 sm:mx-auto  sm:w-full  sm:max-w-sm">
-          <form action="#" method="POST" className="space-y-6">
-            <FormRow label="Email adress" htmlFor="email">
+          <form
+            onSubmit={handleSubmit(submitHandler)}
+            method="POST"
+            className="space-y-6"
+          >
+            <FormRow
+              label="Email adress"
+              htmlFor="email"
+              error={errors?.email?.message}
+            >
               <input
                 id="email"
                 name="email"
                 type="email"
+                defaultValue="test@test.com"
                 required
                 autoComplete="email"
                 className="input"
+                {...register("email", {
+                  required: "email is required",
+                  papattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: "Invalid email format",
+                  },
+                })}
               />
             </FormRow>
 
-            <FormRow label="password">
+            <FormRow label="password" error={errors?.password?.message}>
               <input
                 id="password"
                 name="password"
                 type="password"
+                defaultValue="Test1234@"
                 required
                 autoComplete="current-password"
                 className="input"
+                {...register("password", {
+                  required: "password is required",
+                  minLength: {
+                    value: 8,
+                    message: "password must be at least 8 characters",
+                  },
+                  pattern: {
+                    value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/,
+                    message:
+                      " include uppercase, lowercase, number, and special character",
+                  },
+                })}
               />
             </FormRow>
 
-            <Button>Sign in</Button>
+            <Button type="submit">Sign in</Button>
           </form>
 
           <p className="mt-10 dark:text-gray-300 text-center text-sm/6 text-gray-500">

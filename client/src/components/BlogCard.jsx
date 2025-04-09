@@ -1,6 +1,8 @@
-import { Heart, MessageCircle, Pen, Share2, Trash } from "lucide-react";
+import { Copy, Heart, MessageCircle, Pen, Share2, Trash } from "lucide-react";
 import React, { useState } from "react";
 import Comments from "./Comments";
+import Modal from "./ui/Modal";
+import Button from "./ui/Button";
 
 export default function BlogCard({ isCurrentUser }) {
   const [like, setLike] = useState(false);
@@ -84,10 +86,30 @@ export default function BlogCard({ isCurrentUser }) {
             />
             <span className="text-[0.6rem] text-green-500"> 100 comments</span>
           </button>
-          <button className="flex flex-col items-center">
-            <Share2 size={20} stroke="#6366f1" className=" cursor-pointer" />
-            <span className="text-[0.6rem] text-indigo-500"> 100 shares</span>
-          </button>
+          <Modal>
+            <Modal.Open>
+              <button className="flex flex-col items-center">
+                <Share2
+                  size={20}
+                  stroke="#6366f1"
+                  className=" cursor-pointer"
+                />
+                <span className="text-[0.6rem] text-indigo-500">
+                  {" "}
+                  100 shares
+                </span>
+              </button>
+            </Modal.Open>
+            <Modal.Window>
+              <div className="flex bg-gray-50 gap-4 dark:bg-gray-100/6 p-4 mt-10 rounded-lg items-center justify-center">
+                <p className="text-indigo-500 text-sm ">
+                  {`${window.location.href}/blogId`}
+                </p>
+
+                <Copy className="bg-indigo-100 text-indigo-500 p-2 size-8 rounded-lg cursor-pointer" />
+              </div>
+            </Modal.Window>
+          </Modal>
         </div>
         {isOpenComments ? <Comments /> : ""}
       </div>

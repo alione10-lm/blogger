@@ -1,14 +1,7 @@
-import {
-  EditorProvider,
-  FloatingMenu,
-  BubbleMenu,
-  useCurrentEditor,
-} from "@tiptap/react";
+import { EditorProvider, useCurrentEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import {
   Bold,
-  CaseLower,
-  CaseUpper,
   Italic,
   List,
   ListOrdered,
@@ -43,23 +36,7 @@ const MenuBar = () => {
   }
 
   return (
-    <div className="editor-menu border border-gray-200 dark:border-gray-700 mb-2 grid grid-cols-10 md:grid-cols-13 items-center gap-1  p-2  rounded-lg ">
-      {/* <button
-          type="button"
-          onClick={() => editor.chain().focus().toggleMark().run()}
-          disabled={!editor.can().chain().focus().toggleBold().run()}
-          className={editor.isActive("bold") ? "is-active" : ""}
-        >
-          <CaseLower />
-        </button>
-        <button
-          type="button"
-          onClick={() => editor.chain().focus().toggleBold().run()}
-          disabled={!editor.can().chain().focus().toggleBold().run()}
-          className={editor.isActive("bold") ? "is-active" : ""}
-        >
-          <CaseUpper />
-        </button> */}
+    <div className="editor-menu border dark:text-gray-300 text-gray-700 border-gray-200 dark:border-gray-700 mb-2 grid grid-cols-10 md:grid-cols-13 items-center gap-1  p-2  rounded-lg ">
       <button
         type="button"
         onClick={() => editor.chain().focus().toggleBold().run()}
@@ -160,34 +137,27 @@ const MenuBar = () => {
     </div>
   );
 };
-const EditorJSONPreview = () => {
-  const { editor } = useCurrentEditor();
-  console.log(editor.getHTML());
 
-  console.log(editor);
-  return (
-    <>
-      <pre>{JSON.stringify(editor.getJSON(), null, 2)}</pre>;
-    </>
-  );
+export const Result = ({ setDescription }) => {
+  const { editor } = useCurrentEditor();
+  const html = editor.getHTML();
+  setDescription(html);
+
+  return null;
 };
 
-const Tiptap = () => {
-  const content = "<p>Hello World!</p>";
-
+const Tiptap = ({ children }) => {
   return (
     <EditorProvider
       slotBefore={<MenuBar />}
-      // slotAfter={<EditorJSONPreview />}
       extensions={extensions}
-      content={content}
+      content=""
       editorContainerProps={{
         className:
-          " w-full editor-text overflow-y-auto bg-gray-50 dark:bg-slate-100/4  rounded-lg p-2  mb-10  min-h-[10rem] max-h-[10rem]",
+          "  w-full editor-text overflow-y-auto bg-gray-50 dark:bg-slate-100/4 dark:text-gray-300 text-gray-700  rounded-lg p-2  mb-10  min-h-[10rem] max-h-[10rem]",
       }}
     >
-      {/* <FloatingMenu editor={null}>This is the floating menu</FloatingMenu> */}
-      {/* <BubbleMenu editor={null}>This is the bubble menu</BubbleMenu> */}
+      {children}
     </EditorProvider>
   );
 };

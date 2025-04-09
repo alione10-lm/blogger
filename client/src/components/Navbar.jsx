@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import DarkModeToggle from "./DarkModeToggle";
+import Button from "./ui/Button";
+import { LogOut, Search } from "lucide-react";
 
 const NAVLINKS = [
   {
@@ -11,10 +13,10 @@ const NAVLINKS = [
     to: "admin",
     label: "admin panel",
   },
-  {
-    to: "blog/new",
-    label: "new blog",
-  },
+  // {
+  //   to: "blog/new",
+  //   label: "new blog",
+  // },
   {
     to: "profile",
     label: "profile",
@@ -26,7 +28,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="z-20 transition-colors duration-200   dark:bg-dark-bg-1 w-full border-b border--200 bg-white/90 dark:border-gray-800 shadow-lg shadow-slate-700/2 after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:backdrop-blur-sm lg:after:hidden ">
+      <header className="z-20 transition-colors duration-200   dark:bg-dark-bg-1 w-full border border-gray-200 bg-white/90 dark:border-gray-800 shadow-lg shadow-slate-700/2 after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:backdrop-blur-sm lg:after:hidden ">
         <div className="relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem]">
           <nav
             aria-label="main navigation"
@@ -61,6 +63,7 @@ export default function Navbar() {
               </svg>
               Blog flow
             </NavLink>
+
             <button
               className={`relative order-10 block cursor-pointer h-10 w-10 self-center lg:hidden [&_span]:bg-indigo-500 
                 ${
@@ -96,6 +99,19 @@ export default function Navbar() {
                   : "invisible opacity-0"
               }`}
             >
+              <form className="flex items-center justify-center   ">
+                <div className="relative  max-w-md">
+                  <input
+                    type="serach"
+                    aria-label="search"
+                    placeholder="Search..."
+                    className="w-full pl-10 pr-4 py-2 input"
+                  />
+                  <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                    <Search size={20} stroke="oklch(58.5% 0.233 277.117)" />
+                  </div>
+                </div>
+              </form>
               {NAVLINKS.map(({ label, to }, ndx) => (
                 <li key={ndx} className="flex items-center">
                   <StyledNavLink to={to} onClick={() => setIsToggleOpen(false)}>
@@ -103,9 +119,16 @@ export default function Navbar() {
                   </StyledNavLink>
                 </li>
               ))}
-              <li className="flex mt-10 md:mt-0 items-center gap-20 md:border-none border border-gray-200 w-fit p-2 rounded-lg dark:border-slate-800">
+
+              <li className="flex mt-20 md:mt-0 items-center gap-20 md:border-none border border-gray-200 w-fit p-2 rounded-lg dark:border-slate-800">
                 <span className="text-lg md:hidden  ">toggle appearance</span>
                 <DarkModeToggle />
+              </li>
+              <li className="mt-5 block md:hidden">
+                <Button variant="ghost" size="large">
+                  <LogOut size={15} />
+                  logout
+                </Button>
               </li>
             </ul>
           </nav>

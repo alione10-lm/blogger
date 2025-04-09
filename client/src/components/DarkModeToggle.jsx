@@ -6,8 +6,10 @@ export default function DarkModeToggle() {
 
   return (
     <button
+      // aria-label={`turn ${theme === "dark" ? "on" : "off"} the light`}
+      title={`turn ${theme === "dark" ? "on" : "off"} the light`}
       onClick={ToggleTheme}
-      className="cursor-pointer border dark:border-gray-800 border-gray-200   flex items-center justify-center  rounded-lg p-1"
+      className="cursor-pointer  border dark:border-gray-800 border-gray-200   flex items-center justify-center  rounded-lg p-1"
     >
       {theme === "dark" ? (
         <Sun size={20} className="object-contain" />

@@ -1,15 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import FormRow from "./ui/FormRow";
 import Button from "./ui/Button";
-import Tiptap from "./Tiptap";
-import { EditorJSONPreview } from "./EditorPreview";
+import Tiptap, { Result } from "./Tiptap";
+import { useForm } from "react-hook-form";
 
 const BlogForm = () => {
+  const [description, setDescription] = useState("");
+
+  const [descriptionError, setDescriptionError] = useState("");
+
+  const {
+    handleSubmit,
+    formState: { errors },
+    reset,
+    register,
+  } = useForm();
+
+  const submitHandler = (data) => {
+    if (!description) {
+      setDescriptionError("description is required");
+      return;
+    }
+    const newData = {
+      data,
+      description: description,
+    };
+    console.log(newData);
+    reset();
+  };
+
   return (
-    <div className="w-full h-[100vh] flex  justify-center">
-      <form className="">
-        <FormRow label="title">
-          <input type="text" id="title" className="input" />
+    <div className="w-full  flex  justify-center">
+      <form className="" onSubmit={handleSubmit(submitHandler)}>
+        <FormRow label="title" error={errors?.title?.message}>
+          <input
+            type="text"
+            id="title"
+            className="input"
+            {...register("title", {
+              required: "title is required",
+            })}
+          />
         </FormRow>
 
         <FormRow label="image/video" htmlFor="image-video">
@@ -19,6 +50,7 @@ const BlogForm = () => {
               name="file-upload"
               type="file"
               className="peer order-2 w-full [&::file-selector-button]:hidden"
+              {...register("file")}
             />
             <label
               htmlFor="file-upload"
@@ -28,11 +60,12 @@ const BlogForm = () => {
             </label>
           </div>
         </FormRow>
-        <FormRow label="description">
-          <Tiptap />
+        <FormRow label="description" error={descriptionError}>
+          <Tiptap register={register} setDescription={setDescription}>
+            <Result setDescription={setDescription} />
+          </Tiptap>
         </FormRow>
-        <p></p>
-        {/* <EditorJSONPreview /> */}
+
         <Button type="submit">Publich</Button>
       </form>
     </div>

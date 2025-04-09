@@ -2,11 +2,12 @@ import React from "react";
 import FormRow from "./ui/FormRow";
 import { Send } from "lucide-react";
 import Button from "./ui/Button";
+import Feed from "./Feed";
 
 const Comments = () => {
   return (
     <div>
-      <ul>
+      {/* <ul>
         {Array.from({ length: 4 }).map((_, ndx) => (
           <li
             className="text-sm flex items-center mb-2 justify-between"
@@ -31,7 +32,8 @@ const Comments = () => {
         <span className="dark:text-slate-300  text-slate-600">
           load more comments ...
         </span>
-      </ul>
+      </ul> */}
+      <Feed />
       <form className="flex items-center p-4 justify-center gap-1  ">
         <input type="text" className="input" placeholder="add new comment" />
         <div>

@@ -8,18 +8,16 @@ const ThemeContextPrvider = ({ children }) => {
   );
 
   useEffect(() => {
-    // Remove both classes first
     document.documentElement.classList.remove("dark");
-    // Add the current theme class
+
     document.documentElement.classList.add(theme);
-    // Save it in localStorage
+
     localStorage.setItem("theme", theme);
   }, [theme]);
 
   const ToggleTheme = () => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
-  console.log(theme);
 
   const ContextValues = {
     theme,
