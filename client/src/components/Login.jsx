@@ -10,8 +10,6 @@ export default function Login() {
     handleSubmit,
   } = useForm();
 
-  console.log(errors);
-
   const navigate = useNavigate();
   const submitHandler = (data) => {
     console.log(data);

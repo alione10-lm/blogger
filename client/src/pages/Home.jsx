@@ -8,7 +8,7 @@ import Modal from "../components/ui/Modal";
 const Home = () => {
   return (
     <>
-      <div className="w-full grid md:h-full md:grid-cols-4  gap-10">
+      <div className="w-full grid md:h-full md:grid-cols-4  gap-10 ">
         <div className="md:flex flex-col items-center   hidden  rounded-md h-fit  ">
           <img
             src="https://i.pravatar.cc/80?img=22"
@@ -43,7 +43,7 @@ const Home = () => {
             </ListItem>
           </ul>
         </div>
-        <div className="w-full md:overflow-y-scroll   md:h-full  col-span-2 ">
+        <div className="w-full md:overflow-y-scroll styled-scrollbar px-2 md:h-full  col-span-2 ">
           <div className="flex start">
             <Modal>
               <Modal.Open opens="new-blog">

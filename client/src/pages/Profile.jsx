@@ -5,6 +5,7 @@ import { Bookmark, Pen } from "lucide-react";
 import BlogCard from "../components/BlogCard";
 import { NavLink, Outlet } from "react-router-dom";
 import Select from "../components/ui/Select";
+import ProfileTabs from "../components/ui/ProfileTabs";
 
 const Profile = () => {
   const [isEditSession, setIsEditSession] = useState(false);
@@ -67,6 +68,7 @@ const Profile = () => {
           </Button>
         </form>
       )}
+
       {/* <Select
         options={[
           { text: "my posts", value: "my posts" },
@@ -75,6 +77,7 @@ const Profile = () => {
         ]}
       /> */}
       <div className="w-full md:w-2/3">
+        {/* <ProfileTabs /> */}
         {Array.from({ length: 10 }).map((_, ndx) => (
           <BlogCard isCurrentUser key={ndx} />
         ))}

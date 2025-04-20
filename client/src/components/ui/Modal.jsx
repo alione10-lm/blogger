@@ -8,7 +8,7 @@ import {
   useState,
 } from "react";
 import { createPortal } from "react-dom";
-import useOutsideClick from "../hooks/useOutsideClick";
+import useOutsideClick from "../../hooks/useOutsideClick";
 const ModalContext = createContext();
 
 function Modal({ children }) {
@@ -56,7 +56,7 @@ function Window({ children, name }) {
         >
           <X />
         </button>
-        {children}
+        {cloneElement(children, { closeModal: close })}
       </div>
     </div>,
     document.querySelector("body")

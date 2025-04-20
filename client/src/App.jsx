@@ -23,7 +23,7 @@ function App() {
     <ThemeContextPrvider>
       <BrowserRouter>
         <Routes>
-          <Route index element={<Navigate to="auth" replace />} />
+          <Route index element={<Navigate to="auth/login" replace />} />
           <Route path="auth" element={<AuthLayout />}>
             <Route index element={<Navigate to="login" replace />} />
             <Route path="login" element={<Login />} />
@@ -36,7 +36,6 @@ function App() {
               <Route path="saved" element={<p>saved</p>} />
             </Route>
             <Route path="admin" element={<AdminPanel />} />
-            <Route path="blog/new" element={<BlogForm />} />
             <Route path="blog/:id" element={<BlogDetails />} />
           </Route>
         </Routes>
