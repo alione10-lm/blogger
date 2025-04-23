@@ -1,14 +1,15 @@
-import { BadRequestError, NotFoundError } from "../Errors/errors.js";
+import { NotFoundError } from "../middlewares/errorsHandler.js";
 import Blog from "../models/Blog.js";
 import statusCodes, { StatusCodes } from "http-status-codes";
+import { logger } from "../utils/logger.js";
 
 const getAllBlogs = async (req, res) => {
-  const blogs = await Blog.find().populate("likes");
-
+  const blogs = await Blog.find();
   res.status(statusCodes.OK).json({ blogs });
 };
 
 const createBlog = async (req, res) => {
+  req.body.createdBy = req.user.userId;
   const newBlog = await Blog.create(req.body);
 
   res.status(statusCodes.CREATED).json({ newBlog });
@@ -73,7 +74,8 @@ const getSingleBlog = async (req, res) => {
 // };
 
 const likeBlog = async (req, res) => {
-  const { userId, blogId } = req.body;
+  const { blogId } = req.body;
+  const { userId } = req.user;
 
   const hasLiked = await Blog.findOne({
     likes: {
@@ -83,8 +85,6 @@ const likeBlog = async (req, res) => {
       },
     },
   });
-
-  console.log(hasLiked);
 
   let blog;
 
@@ -106,7 +106,6 @@ const likeBlog = async (req, res) => {
       },
       { new: true }
     );
-    console.log("just liked !");
   }
 
   res.status(200).json({ blog });

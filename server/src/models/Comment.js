@@ -17,8 +17,15 @@ const commentSchema = new mongoose.Schema(
 
     replies: [
       {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Comment",
+        text: String,
+        createdBy: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "User",
+        },
+        replyTo: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Comment",
+        },
       },
     ],
   },

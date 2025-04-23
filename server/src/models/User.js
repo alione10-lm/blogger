@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema(
     firstName: String,
     lastName: String,
     position: String,
-    email: String,
+    email: { type: String, unique: true },
     birthDate: { type: Date },
     password: String,
     avatar: String,
@@ -21,5 +21,11 @@ const userSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+userSchema.methods.toJSON = function () {
+  let obj = this.toObject();
+  delete obj.password;
+  return obj;
+};
 
 export default mongoose.model("User", userSchema);

@@ -1,0 +1,29 @@
+[2025-04-22 17:05:14] [INFO]:get all blogs
+[2025-04-22 17:05:15] [INFO]:HTTP GET /favicon.ico
+[2025-04-22 17:07:34] [INFO]:HTTP GET /api/blog
+[2025-04-22 17:12:22] [ERROR]:not authenticated
+[2025-04-22 17:13:33] [ERROR]:not authenticated
+[2025-04-22 17:13:38] [INFO]:HTTP GET /api/blog
+[2025-04-22 17:13:38] [ERROR]:chi wahed wahed taydor f url
+[2025-04-22 17:15:49] [INFO]:HTTP GET /api/blog
+[2025-04-22 17:15:49] [ERROR]:url not found
+[2025-04-22 17:19:20] [INFO]:HTTP GET /api/blog
+[2025-04-22 17:19:20] [ERROR]:url not found
+[2025-04-22 17:27:36] [ERROR]:not authenticated
+[2025-04-22 17:32:17] [INFO]:
+[2025-04-22 17:32:22] [ERROR]:not authenticated
+[2025-04-22 17:35:19] [INFO]:{
+  _id: new ObjectId('68079e5e6d381d6dbc40019b'),
+  firstName: 'test 1',
+  lastName: 'test',
+  position: '',
+  email: 'test@test.com',
+  password: '$2b$10$ARNk1OPYuYhdbxsWGDXseea1nMZOStrdf8Ew4ymY1VkFap2ib4a1q',
+  avatar: 'https://www.lummi.ai/photo/young-man-in-urban-setting-tvciy',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-22T13:49:18.463Z,
+  updatedAt: 2025-04-22T15:05:03.920Z,
+  __v: 0
+} logged in 
+[2025-04-22 17:38:03] [ERROR]:not authenticated

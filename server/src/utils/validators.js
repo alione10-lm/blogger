@@ -1,7 +1,7 @@
 import { body, param, validationResult } from "express-validator";
 
 import mongoose from "mongoose";
-import { BadRequestError } from "../Errors/errors.js";
+import { BadRequestError } from "../middlewares/errorsHandler.js";
 import { StatusCodes } from "http-status-codes";
 import User from "../models/User.js";
 
@@ -57,4 +57,8 @@ export const validateRegisterInputs = validationMessages([
     .withMessage("password is required")
     .isLength({ min: 8 })
     .withMessage("password must be at least 8 characters"),
+]);
+
+export const validateCommentInput = validationMessages([
+  body("text").notEmpty().withMessage("comment must be at least 1 charactere"),
 ]);

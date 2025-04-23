@@ -1,16 +1,24 @@
 import Comment from "../models/Comment.js";
 import { StatusCodes } from "http-status-codes";
+import Blog from "../models/Blog.js";
 
 const createComment = async (req, res) => {
-  console.log(req.body);
+  req.body.createdBy = req.user.userId;
   const newComment = await Comment.create(req.body);
 
-  res.status(StatusCodes.CREATED).json({ newComment });
+  const blog = await Blog.findOneAndUpdate(
+    { _id: req.body.blogId },
+    {
+      $push: { comments: newComment._id },
+    },
+    {
+      new: true,
+    }
+  );
+  res.status(StatusCodes.CREATED).json({ blog });
 };
 
 const deleteComment = async (req, res) => {
-  console.log("hello");
-  console.log(req.body.id);
   const { id } = req.body;
   const deletedComment = await Comment.findOneAndDelete(id);
   res.status(StatusCodes.OK).json({ deletedComment });
@@ -26,4 +34,50 @@ const updateComment = async (req, res) => {
   res.status(StatusCodes.OK).json({ updatedComment });
 };
 
-export { createComment, deleteComment, updateComment };
+const createReply = async (req, res) => {
+  // const comment = await Comment.findOne(req.body.id);
+  req.body.createdBy = req.user.userId;
+
+  const { replyTo, text, createdBy } = req.body;
+
+  const comment = await Comment.findOneAndUpdate(
+    { _id: replyTo },
+    { $push: { replies: { text, replyTo, createdBy } } },
+    {
+      new: true,
+    }
+  );
+
+  if (!comment) {
+    console.log("no comment");
+  }
+
+  res.status(StatusCodes.CREATED).json({ comment });
+};
+
+const deleteReply = async (req, res) => {
+  const { replyId } = req.body;
+
+  const reply = await Comment.findOneAndUpdate(
+    {
+      replies: {
+        $elemMatch: {
+          _id: replyId,
+        },
+      },
+    },
+    {
+      $pull: { replies: { _id: replyId } },
+    },
+    { new: true }
+  );
+
+  res.status(StatusCodes.OK).json({ reply });
+};
+export {
+  createComment,
+  deleteComment,
+  updateComment,
+  createReply,
+  deleteReply,
+};

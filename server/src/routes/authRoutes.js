@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { login, register } from "../controllers/AuthController.js";
+import { login, logout, register } from "../controllers/AuthController.js";
 import {
   validateLoginInputs,
   validateRegisterInputs,
@@ -9,5 +9,6 @@ const router = Router();
 
 router.post("/register", validateRegisterInputs, register);
 router.post("/login", validateLoginInputs, login);
+router.get("/logout", logout);
 
 export default router;
