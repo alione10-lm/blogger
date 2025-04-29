@@ -10,13 +10,14 @@ import { validateCommentInput } from "../utils/validators.js";
 
 const router = Router();
 
+router.route("/").post(validateCommentInput, createComment);
+
 router
-  .route("/")
-  .post(validateCommentInput, createComment)
-  .patch(validateCommentInput, updateComment)
-  .delete(deleteComment);
+  .route("/:id")
+  .delete(deleteComment)
+  .patch(validateCommentInput, updateComment);
 
 router.post("/reply", createReply);
-router.delete("/reply", deleteReply);
+router.delete("/reply/:id", deleteReply);
 
 export default router;

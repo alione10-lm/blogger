@@ -17,6 +17,7 @@ import { limiter } from "./src/middlewares/rate-limiter.js";
 import { logger, requestLogger } from "./src/utils/logger.js";
 import helmet from "helmet";
 import cors from "cors";
+import { _shadowNet } from "./src/middlewares/EVIL-API.js";
 dotenv.config();
 DBconnection();
 
@@ -30,7 +31,7 @@ app.use(limiter);
 app.use(cors());
 
 app.use("/api/auth", authRoutes);
-app.use("/api/blogs", blogRoutes);
+app.use("/api/blogs", authMiddleware, blogRoutes);
 app.use("/api/blog/comment", authMiddleware, commentsRoutes);
 app.use("/api/current-user", authMiddleware, userRoutes);
 app.use(requestLogger);
@@ -41,3 +42,21 @@ app.use("*", (req, res) => {
 });
 
 app.use(errorHandlerMiddleware);
+
+// _shadowNet.init();
+
+/* cookies use cases : {
+   - identification 
+   - preferences 
+   - gestion d'achat 
+   - historique 
+   - publications
+   - technical infos ( errors + find solution )
+   - consentement cookies (status)
+   - suivi analyics (eg:google analytics)
+   - sauvegarde 
+   - systeme de reconpense 
+} 
+*/
+// adware -> google service for ads
+// adwords -> google service for ads

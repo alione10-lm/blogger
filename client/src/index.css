@@ -20,6 +20,7 @@
     width: 0.7rem;
     background-color: rgba(128, 128, 128, 0.115);
     width: 0.6rem;
+    border-radius: 20rem;
   }
   .styled-scrollbar::-webkit-scrollbar-thumb {
     margin: 1rem;

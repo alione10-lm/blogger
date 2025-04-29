@@ -30,7 +30,6 @@ const getSingleBlog = async (req, res) => {
   const blog = await Blog.findById(id);
   if (!blog) throw new NotFoundError("not found");
 
-  console.log(blog.likes.length);
   res.status(statusCodes.OK).json({ blog });
 };
 
@@ -73,8 +72,46 @@ const getSingleBlog = async (req, res) => {
 //   res.status(200).json({ blog });
 // };
 
+// const likeBlog = async (req, res) => {
+//   const { id } = req.params;
+//   const { userId } = req.user;
+
+//   const hasLiked = await Blog.findOne({
+//     likes: {
+//       $elemMatch: {
+//         userId,
+//         id,
+//       },
+//     },
+//   });
+
+//   let blog;
+
+//   if (hasLiked) {
+//     blog = await Blog.findOneAndUpdate(
+//       { _id: id },
+//       {
+//         $pull: { likes: { userId, id } },
+//       },
+//       {
+//         new: true,
+//       }
+//     );
+//   } else {
+//     blog = await Blog.findByIdAndUpdate(
+//       { _id: id },
+//       {
+//         $push: { likes: { userId, id } },
+//       },
+//       { new: true }
+//     );
+//   }
+
+//   res.status(200).json({ blog });
+// };
+
 const likeBlog = async (req, res) => {
-  const { blogId } = req.body;
+  const { id: blogId } = req.params;
   const { userId } = req.user;
 
   const hasLiked = await Blog.findOne({

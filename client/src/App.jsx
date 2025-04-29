@@ -17,29 +17,40 @@ import ThemeContextPrvider from "./contexts/ThemeContext";
 import Login from "./components/Login";
 import Registration from "./components/Registration";
 import AuthLayout from "./components/AuthLayout";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 0,
+    },
+  },
+});
 
 function App() {
   return (
     <ThemeContextPrvider>
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<Navigate to="auth/login" replace />} />
-          <Route path="auth" element={<AuthLayout />}>
-            <Route index element={<Navigate to="login" replace />} />
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Registration />} />
-          </Route>
-          <Route path="app" element={<AppLayout />}>
-            <Route index element={<Navigate to={"home"} replace />} />
-            <Route path="home" element={<Home />} />
-            <Route path="profile" element={<Profile />}>
-              <Route path="saved" element={<p>saved</p>} />
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<Navigate to="auth/login" replace />} />
+            <Route path="auth" element={<AuthLayout />}>
+              <Route index element={<Navigate to="login" replace />} />
+              <Route path="login" element={<Login />} />
+              <Route path="register" element={<Registration />} />
             </Route>
-            <Route path="admin" element={<AdminPanel />} />
-            <Route path="blog/:id" element={<BlogDetails />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+            <Route path="app" element={<AppLayout />}>
+              <Route index element={<Navigate to={"home"} replace />} />
+              <Route path="home" element={<Home />} />
+              <Route path="profile" element={<Profile />}>
+                <Route path="saved" element={<p>saved</p>} />
+              </Route>
+              <Route path="admin" element={<AdminPanel />} />
+              <Route path="blog/:id" element={<BlogDetails />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </QueryClientProvider>
     </ThemeContextPrvider>
   );
 }

@@ -19,13 +19,28 @@ const createComment = async (req, res) => {
 };
 
 const deleteComment = async (req, res) => {
-  const { id } = req.body;
-  const deletedComment = await Comment.findOneAndDelete(id);
-  res.status(StatusCodes.OK).json({ deletedComment });
+  const { id } = req.params;
+  const deletedComment = await Comment.findOneAndDelete({ _id: id });
+
+  const blog = await Blog.findOneAndUpdate(
+    {
+      comments: id,
+    },
+    {
+      $pull: {
+        comments: id,
+      },
+    },
+    {
+      new: true,
+    }
+  );
+
+  res.status(StatusCodes.OK).json({ deletedComment, blog });
 };
 
 const updateComment = async (req, res) => {
-  const { id } = req.body;
+  const { id } = req.params;
 
   const updatedComment = await Comment.findOneAndUpdate({ _id: id }, req.body, {
     new: true,
@@ -56,7 +71,7 @@ const createReply = async (req, res) => {
 };
 
 const deleteReply = async (req, res) => {
-  const { replyId } = req.body;
+  const { id } = req.params;
 
   const reply = await Comment.findOneAndUpdate(
     {

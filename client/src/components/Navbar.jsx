@@ -13,10 +13,7 @@ const NAVLINKS = [
     to: "admin",
     label: "admin panel",
   },
-  // {
-  //   to: "blog/new",
-  //   label: "new blog",
-  // },
+
   {
     to: "profile",
     label: "profile",
