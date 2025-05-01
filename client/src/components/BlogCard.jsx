@@ -6,6 +6,7 @@ import {
   MessageCircle,
   Pen,
   Share2,
+  SquareArrowOutUpRight,
   Trash,
 } from "lucide-react";
 import React, { useState } from "react";
@@ -13,7 +14,21 @@ import Comments from "./Comments";
 import Modal from "./ui/Modal";
 import Button from "./ui/Button";
 
-export default function BlogCard({ isCurrentUser }) {
+import { Link } from "react-router-dom";
+
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+
+dayjs.extend(relativeTime);
+
+export default function BlogCard({
+  isCurrentUser,
+  title,
+  description,
+  createdBy,
+  createdAt,
+  id,
+}) {
   const [like, setLike] = useState(false);
   const [isOpenComments, setIsOpenComments] = useState(false);
 
@@ -31,14 +46,14 @@ export default function BlogCard({ isCurrentUser }) {
     navigator.clipboard
       .writeText(link)
       .then(() => {
-        // alert("Copied to clipboard!");
         setCopyStatus("copied");
       })
       .catch(() => {
-        // console.error("Failed to copy: ", err);
         setCopyStatus("not-copied");
       });
   };
+
+  const timeFromNow = dayjs(createdAt).fromNow();
 
   return (
     <div className="overflow-hidden text-slate-500 dark:border-gray-800 border-b border-gray-200 p-2 ">
@@ -59,10 +74,12 @@ export default function BlogCard({ isCurrentUser }) {
           </a>
           <div>
             <h3 className="text-lg md:text-xl font-medium  dark:text-slate-200 text-slate-600">
-              Looking back at time
+              {/* Looking back at time */}
+
+              {title}
             </h3>
             <p className="text-sm  text-indigo-500/100">
-              By Mary Jay, jun 3 2023
+              by {createdBy?.firstName} {createdBy?.lastName} , {timeFromNow}
             </p>
           </div>
         </header>
@@ -81,11 +98,7 @@ export default function BlogCard({ isCurrentUser }) {
         )}
       </div>
       <div className="py-6 dark:text-gray-300 text-sm md:text-[1rem]">
-        <p>
-          Spend days here, exploring a way of life by bicycle. Discover cobbled
-          streets sandwiched between beautiful rickety townhouses and the lazy
-          flow of the canal.
-        </p>
+        <p>{description}</p>
       </div>
       <img
         src="/picture.jpg"
@@ -125,18 +138,18 @@ export default function BlogCard({ isCurrentUser }) {
                   stroke="#6366f1"
                   className=" cursor-pointer"
                 />
-                <span className="text-[0.6rem] text-indigo-500">
-                  100 shares
-                </span>
+                <span className="text-[0.6rem] text-indigo-500">shares</span>
               </button>
             </div>
           </Modal.Open>
           <Modal.Window>
             <div className="flex bg-gray-50 gap-4 dark:bg-gray-100/6 p-4 mt-10 rounded-lg items-center justify-center">
               <p className="text-indigo-500 text-sm ">
-                {`${window.location.href}/blogId`}
+                {`${window.location.href}/${id}`}
               </p>
-              <button onClick={() => handleCopy(window.location.href)}>
+              <button
+                onClick={() => handleCopy(`${window.location.href}/${id}`)}
+              >
                 {copyStatus === "copied" && (
                   <Check className="bg-indigo-100 text-indigo-500 p-2 size-8 rounded-lg cursor-pointer" />
                 )}
@@ -155,6 +168,14 @@ export default function BlogCard({ isCurrentUser }) {
             </div>
           </Modal.Window>
         </Modal>
+        <Link className="flex flex-col items-center" to={`../blog/${id}`}>
+          <SquareArrowOutUpRight
+            size={20}
+            stroke="#6366f1"
+            className=" cursor-pointer"
+          />
+          <span className="text-[0.6rem] text-indigo-500">overview</span>
+        </Link>
       </div>
       {isOpenComments ? <Comments /> : ""}
     </div>

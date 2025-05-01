@@ -18,7 +18,13 @@ import Login from "./components/Login";
 import Registration from "./components/Registration";
 import AuthLayout from "./components/AuthLayout";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "react-hot-toast";
+import { useThemeContext } from "./contexts/ThemeContext";
+import clsx from "clsx";
+import useViewportWidth from "./hooks/useViewportWidth";
+import AuthProvider from "./contexts/authContext";
 
+import ProtectedRoutes from "./components/ProtectedRoutes";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -28,10 +34,37 @@ const queryClient = new QueryClient({
 });
 
 function App() {
+  const { theme } = useThemeContext();
+
+  const width = useViewportWidth();
   return (
-    <ThemeContextPrvider>
-      <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <Toaster
+        position={clsx(width <= 300 ? "top-right" : "bottom-right")}
+        reverseOrder={false}
+        gutter={8}
+        containerClassName=""
+        containerStyle={{}}
+        toastOptions={{
+          className: "",
+          duration: 5000,
+          removeDelay: 1000,
+          style: {
+            background: clsx(theme === "dark" ? "#36363627" : "white"),
+            color: clsx(theme === "dark" ? "#ccc" : "#363636"),
+          },
+
+          success: {
+            duration: 3000,
+            iconTheme: {
+              primary: "green",
+              secondary: "black",
+            },
+          },
+        }}
+      />
+      <BrowserRouter>
+        <AuthProvider>
           <Routes>
             <Route index element={<Navigate to="auth/login" replace />} />
             <Route path="auth" element={<AuthLayout />}>
@@ -46,12 +79,12 @@ function App() {
                 <Route path="saved" element={<p>saved</p>} />
               </Route>
               <Route path="admin" element={<AdminPanel />} />
-              <Route path="blog/:id" element={<BlogDetails />} />
+              <Route path="blog/:blogId" element={<BlogDetails />} />
             </Route>
           </Routes>
-        </BrowserRouter>
-      </QueryClientProvider>
-    </ThemeContextPrvider>
+        </AuthProvider>
+      </BrowserRouter>
+    </QueryClientProvider>
   );
 }
 

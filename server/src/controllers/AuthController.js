@@ -33,7 +33,7 @@ export const login = async (req, res) => {
   });
   logger.info(`${user} logged in `);
 
-  res.status(StatusCodes.OK).json({ message: "logged in" });
+  res.status(StatusCodes.OK).json({ message: "logged in", token, user });
 };
 
 export const logout = (req, res) => {

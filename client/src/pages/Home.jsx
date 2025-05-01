@@ -8,6 +8,7 @@ import Skeleton from "../components/ui/Skeleton";
 
 import { useQuery } from "@tanstack/react-query";
 import { getAllBlogs } from "../utils/api";
+import { useOutletContext } from "react-router-dom";
 
 import Spinner from "../components/ui/FullSpinner";
 
@@ -21,10 +22,10 @@ const Home = () => {
     queryFn: getAllBlogs,
   });
 
-  if (isLoading) return <Spinner />;
+  const { user } = useOutletContext();
 
-  console.log(blogs);
-  console.log(error);
+  if (error) return <div>{error.message}</div>;
+
   return (
     <div className="w-full grid md:h-full md:grid-cols-4  gap-10 ">
       <div className="md:flex flex-col items-center   hidden  rounded-md h-fit  ">
@@ -38,9 +39,9 @@ const Home = () => {
         />
         <div className="text-center">
           <h1 className="text-slate-600 dark:text-gray-300  font-medium text-xl">
-            john doe
+            {user?.user?.firstName} {user?.user?.lastName}
           </h1>
-          <span className="text-indigo-500  text-sm">web developer</span>
+          <span className="text-indigo-500  text-sm">{user?.user?.email}</span>
         </div>
         <ul className="mt-10 text-sm dark:bg-dark-bg-1 p-2 rounded-lg">
           <ListItem>
@@ -72,10 +73,18 @@ const Home = () => {
             </Modal.Window>
           </Modal>
         </div>
-        <Skeleton />
-        {Array.from({ length: 10 }).map((_, ndx) => (
-          <BlogCard key={ndx} />
-        ))}
+        {isLoading
+          ? Array.from({ length: 5 }).map((_, ndx) => <Skeleton key={ndx} />)
+          : blogs.map((blog) => (
+              <BlogCard
+                key={blog._id}
+                id={blog._id}
+                createdBy={blog.createdBy}
+                createdAt={blog.createdAt}
+                description={blog.description}
+                title={blog.title}
+              />
+            ))}
       </div>
       <form
         action=""

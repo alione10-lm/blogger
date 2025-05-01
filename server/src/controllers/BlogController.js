@@ -4,7 +4,7 @@ import statusCodes, { StatusCodes } from "http-status-codes";
 import { logger } from "../utils/logger.js";
 
 const getAllBlogs = async (req, res) => {
-  const blogs = await Blog.find();
+  const blogs = await Blog.find().populate("createdBy");
   res.status(statusCodes.OK).json({ blogs });
 };
 

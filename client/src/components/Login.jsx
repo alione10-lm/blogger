@@ -1,7 +1,10 @@
-import { data, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Button from "./ui/Button";
 import FormRow from "./ui/FormRow";
 import { useForm } from "react-hook-form";
+
+import FullSpinner from "./ui/FullSpinner";
+import { useAuth } from "../contexts/authContext";
 
 export default function Login() {
   const {
@@ -10,10 +13,10 @@ export default function Login() {
     handleSubmit,
   } = useForm();
 
-  const navigate = useNavigate();
+  const { isLoginIn, LoginFn } = useAuth();
+
   const submitHandler = (data) => {
-    console.log(data);
-    navigate("/app");
+    LoginFn(data);
   };
   return (
     <>
@@ -39,7 +42,7 @@ export default function Login() {
                 id="email"
                 name="email"
                 type="email"
-                defaultValue="test@test.com"
+                defaultValue="john@doe2.com"
                 required
                 autoComplete="email"
                 className="input"
@@ -58,7 +61,7 @@ export default function Login() {
                 id="password"
                 name="password"
                 type="password"
-                defaultValue="Test1234@"
+                defaultValue="JohnDoe10@"
                 required
                 autoComplete="current-password"
                 className="input"
@@ -77,7 +80,10 @@ export default function Login() {
               />
             </FormRow>
 
-            <Button type="submit">Sign in</Button>
+            <Button type="submit">
+              {isLoginIn && <FullSpinner size={"small"} />}
+              login
+            </Button>
           </form>
 
           <p className="mt-10 dark:text-gray-300 text-center text-sm/6 text-gray-500">

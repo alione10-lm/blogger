@@ -1,11 +1,13 @@
 import { StatusCodes } from "http-status-codes";
 import User from "../models/User.js";
 import Comment from "../models/Comment.js";
+import Blog from "../models/Blog.js";
 
 export const getCurrentUser = async (req, res) => {
-  const user = await User.findById(req.user.userId);
+  const userBlogs = await Blog.find({ createdBy: req.user.userId });
+  let user = await User.findById(req.user.userId);
 
-  res.status(StatusCodes.OK).json({ user });
+  res.status(StatusCodes.OK).json({ user, userBlogs });
 };
 
 export const updateUser = async (req, res) => {

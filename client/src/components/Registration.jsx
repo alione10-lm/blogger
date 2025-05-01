@@ -1,7 +1,11 @@
-import { data, NavLink } from "react-router-dom";
+import { data, NavLink, useNavigate } from "react-router-dom";
 import Button from "./ui/Button";
 import FormRow from "./ui/FormRow";
 import { useForm } from "react-hook-form";
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "react-hot-toast";
+import { register as registrationFn } from "../utils/api";
+import FullSpinner from "./ui/FullSpinner";
 
 export default function Registration() {
   const {
@@ -11,8 +15,21 @@ export default function Registration() {
     getValues,
   } = useForm();
 
+  const navigate = useNavigate();
+
+  const { mutate: registerFn, isPending } = useMutation({
+    mutationFn: registrationFn,
+    onSuccess: () => {
+      toast.success("Your account has been created successfully");
+      navigate("/auth/login");
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
+
   const submitHandler = (data) => {
-    console.log(data);
+    registerFn(data);
   };
   return (
     <>
@@ -59,6 +76,33 @@ export default function Registration() {
                 />
               </FormRow>
             </div>
+            <FormRow label={"select gender"} error={errors?.gender?.message}>
+              <div className="flex items-center space-x-6">
+                <label className="inline-flex items-center space-x-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    value="male"
+                    {...register("gender", { required: "Gender is required" })}
+                    className="border border-red-300 text-indigo-700 h-5 w-5"
+                  />
+                  <span className="text-gray-700  dark:text-gray-300">
+                    Male
+                  </span>
+                </label>
+                <label className="inline-flex items-center space-x-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    value="female"
+                    {...register("gender", { required: "Gender is required" })}
+                    className=" text-indigo-700 h-5 w-5"
+                  />
+                  <span className="text-gray-700 dark:text-gray-300">
+                    Female
+                  </span>
+                </label>
+              </div>
+            </FormRow>
+
             <FormRow label="Birth date" error={errors?.birthDate?.message}>
               <input
                 id="Birth date"
@@ -143,7 +187,9 @@ export default function Registration() {
               />
             </FormRow>
 
-            <Button type="submit">register</Button>
+            <Button type="submit">
+              regsiter {isPending && <FullSpinner />}
+            </Button>
           </form>
 
           <p className="mt-10 text-center dark:text-gray-300 text-sm/6 text-gray-500">

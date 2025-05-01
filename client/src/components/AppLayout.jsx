@@ -1,13 +1,24 @@
 import React from "react";
 import Navbar from "./Navbar";
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
+import { useAuth } from "../contexts/authContext";
+import { useQuery } from "@tanstack/react-query";
+import { getCurrentUser } from "../utils/api";
 
 const AppLayout = () => {
+  const { token } = useAuth();
+
+  const { data: currentUser, isLoading: isGettingCurrentUser } = useQuery({
+    queryKey: ["get-current-user"],
+    queryFn: getCurrentUser,
+  });
+  if (!token) return <Navigate to={"/auth"} />;
+
   return (
     <div className="flex flex-col dark:bg-dark-bg-2 h-[100dvh] w-full ">
       <Navbar />
       <main className="w-full transition-colors styled-scrollbar duration-300 dark:bg-dark-bg-2 dark:text-slate-300  h-full overflow-y-auto  p-2  md:px-10">
-        <Outlet />
+        <Outlet context={{ user: currentUser, isGettingCurrentUser }} />
       </main>
     </div>
   );

@@ -4,24 +4,22 @@ export const getAllBlogs = async () => {
   try {
     const res = await axios.get("/api/blogs");
 
-    console.log(res.data);
-    return res;
-    // return await res.json();
+    return res.data.blogs;
   } catch (err) {
     throw new Error(err?.response?.data?.message || "failed to fetch");
   }
 };
 export const getSingleBlog = async (blogId) => {
   try {
-    const res = await axios.get(`api/blogs/${blogId}`);
-    return await res.json();
+    const res = await axios.get(`/api/blogs/${blogId}`);
+    return res.data.blog;
   } catch (err) {
     throw new Error(err?.response?.data?.message);
   }
 };
 export const createBlog = async (blogData) => {
   try {
-    const res = await axios.post("api/blogs", blogData);
+    const res = await axios.post("/api/blogs", blogData);
     return await res.json();
   } catch (err) {
     throw new Error(err?.response?.data?.message);
@@ -30,7 +28,7 @@ export const createBlog = async (blogData) => {
 
 export const deleteBlog = async (blogId) => {
   try {
-    const res = await axios.delete(`api/blogs/${blogId}`);
+    const res = await axios.delete(`/api/blogs/${blogId}`);
     return await res.json();
   } catch (err) {
     throw new Error(err?.response?.data?.message);
@@ -38,7 +36,7 @@ export const deleteBlog = async (blogId) => {
 };
 export const updateBlog = async (blogId) => {
   try {
-    const res = await axios.patch(`api/blogs/${blogId}`);
+    const res = await axios.patch(`/api/blogs/${blogId}`);
     return await res.json();
   } catch (err) {
     throw new Error(err?.response?.data?.message);
@@ -47,7 +45,7 @@ export const updateBlog = async (blogId) => {
 
 export const LikeBlog = async (blogId) => {
   try {
-    const res = await axios.post(`api/blogs/like/${blogId}`);
+    const res = await axios.post(`/api/blogs/like/${blogId}`);
     return await res.json();
   } catch (err) {
     throw new Error(err?.response?.data?.message);
@@ -56,15 +54,15 @@ export const LikeBlog = async (blogId) => {
 
 export const getCurrentUser = async () => {
   try {
-    const res = await axios.get("api/current-user");
-    return await res.json();
+    const res = await axios.get("/api/current-user");
+    return res.data;
   } catch (err) {
     throw new Error(err?.response?.data?.message);
   }
 };
 export const updateUser = async () => {
   try {
-    const res = await axios.patch("api/current-user");
+    const res = await axios.patch("/api/current-user");
     return await res.json();
   } catch (err) {
     throw new Error(err?.response?.data?.message);
@@ -72,7 +70,7 @@ export const updateUser = async () => {
 };
 export const deleteUser = async () => {
   try {
-    const res = await axios.delete("api/current-user");
+    const res = await axios.delete("/api/current-user");
     return await res.json();
   } catch (err) {
     throw new Error(err?.response?.data?.message);
@@ -81,7 +79,7 @@ export const deleteUser = async () => {
 
 export const createComment = async () => {
   try {
-    const res = await axios.post("api/blog/comment");
+    const res = await axios.post("/api/blog/comment");
     return await res.json();
   } catch (err) {
     throw new Error(err?.response?.data?.message);
@@ -90,7 +88,7 @@ export const createComment = async () => {
 
 export const deleteComment = async () => {
   try {
-    const res = await axios.delete("api/blog/comment");
+    const res = await axios.delete("/api/blog/comment");
     return await res.json();
   } catch (err) {
     throw new Error(err?.response?.data?.message);
@@ -99,7 +97,7 @@ export const deleteComment = async () => {
 
 export const updateComment = async () => {
   try {
-    const res = await axios.patch("api/blog/comment");
+    const res = await axios.patch("/api/blog/comment");
     return await res.json();
   } catch (err) {
     throw new Error(err?.response?.data?.message);
@@ -108,7 +106,7 @@ export const updateComment = async () => {
 
 export const createReply = async () => {
   try {
-    const res = await axios.post("api/blog/comment/reply");
+    const res = await axios.post("/api/blog/comment/reply");
     return await res.json();
   } catch (err) {
     throw new Error(err?.response?.data?.message);
@@ -124,19 +122,19 @@ export const deleteReply = async () => {
   }
 };
 
-export const login = async () => {
+export const login = async (loginInfo) => {
   try {
-    const res = await axios.post("api/auth/login");
-    return await res.json();
+    const res = await axios.post("/api/auth/login", loginInfo);
+    return res.data;
   } catch (err) {
     throw new Error(err?.response?.data?.message);
   }
 };
 
-export const register = async () => {
+export const register = async (registerInfo) => {
   try {
-    const res = await axios.post("api/auth/register");
-    return await res.json();
+    const res = await axios.post("/api/auth/register", registerInfo);
+    return res.data;
   } catch (err) {
     throw new Error(err?.response?.data?.message);
   }

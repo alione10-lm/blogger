@@ -310,3 +310,769 @@
 [2025-04-29 15:38:59] [ERROR]:not authenticated
 [2025-04-29 15:39:03] [ERROR]:not authenticated
 [2025-04-29 15:42:33] [ERROR]:not authenticated
+[2025-04-30 14:13:14] [ERROR]:invalid credentials
+[2025-04-30 14:14:23] [ERROR]:invalid credentials
+[2025-04-30 14:32:21] [ERROR]:invalid credentials
+[2025-04-30 14:32:33] [ERROR]:invalid credentials
+[2025-04-30 14:32:50] [ERROR]:invalid credentials
+[2025-04-30 14:33:50] [ERROR]:invalid credentials
+[2025-04-30 14:44:05] [ERROR]:invalid credentials
+[2025-04-30 14:44:58] [ERROR]:invalid credentials
+[2025-04-30 14:45:18] [ERROR]:invalid credentials
+[2025-04-30 14:45:29] [ERROR]:invalid credentials
+[2025-04-30 14:45:39] [ERROR]:invalid credentials
+[2025-04-30 14:45:54] [ERROR]:invalid credentials
+[2025-04-30 14:46:22] [ERROR]:invalid credentials
+[2025-04-30 14:46:29] [ERROR]:invalid credentials
+[2025-04-30 14:46:42] [ERROR]:invalid credentials
+[2025-04-30 14:46:59] [ERROR]:invalid credentials
+[2025-04-30 14:47:06] [ERROR]:invalid credentials
+[2025-04-30 14:47:30] [ERROR]:invalid credentials
+[2025-04-30 14:52:50] [ERROR]:invalid credentials
+[2025-04-30 14:54:26] [ERROR]:invalid credentials
+[2025-04-30 15:03:00] [ERROR]:gender is required,email already in use
+[2025-04-30 15:03:13] [ERROR]:gender is required,email already in use
+[2025-04-30 15:03:59] [ERROR]:gender is required,email already in use
+[2025-04-30 15:04:07] [ERROR]:gender is required,email already in use
+[2025-04-30 15:05:03] [ERROR]:gender is required,email already in use
+[2025-04-30 15:05:16] [ERROR]:gender is required,email already in use
+[2025-04-30 15:05:21] [ERROR]:gender is required,email already in use
+[2025-04-30 15:05:36] [ERROR]:gender is required,email already in use
+[2025-04-30 15:12:29] [ERROR]:email already in use
+[2025-04-30 15:13:24] [INFO]:{
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} registred 
+[2025-04-30 15:14:00] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-04-30 15:14:18] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-04-30 15:14:34] [ERROR]:invalid credentials
+[2025-04-30 15:15:02] [ERROR]:invalid credentials
+[2025-04-30 15:15:22] [ERROR]:invalid credentials
+[2025-04-30 15:15:40] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-04-30 15:16:33] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-04-30 15:16:41] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-04-30 15:17:25] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-04-30 15:23:12] [ERROR]:invalid credentials
+[2025-04-30 15:23:14] [ERROR]:invalid credentials
+[2025-04-30 15:24:27] [ERROR]:invalid credentials
+[2025-04-30 15:25:05] [ERROR]:invalid credentials
+[2025-04-30 15:25:06] [ERROR]:invalid credentials
+[2025-04-30 15:25:19] [ERROR]:invalid credentials
+[2025-04-30 15:25:23] [ERROR]:invalid credentials
+[2025-04-30 15:25:57] [ERROR]:invalid credentials
+[2025-04-30 15:25:58] [ERROR]:invalid credentials
+[2025-04-30 15:26:03] [ERROR]:invalid credentials
+[2025-04-30 15:26:04] [ERROR]:invalid credentials
+[2025-04-30 15:26:05] [ERROR]:invalid credentials
+[2025-04-30 15:26:09] [ERROR]:invalid credentials
+[2025-04-30 15:26:10] [ERROR]:invalid credentials
+[2025-04-30 15:26:11] [ERROR]:invalid credentials
+[2025-04-30 15:26:12] [ERROR]:invalid credentials
+[2025-04-30 15:26:26] [ERROR]:invalid credentials
+[2025-04-30 15:26:27] [ERROR]:invalid credentials
+[2025-04-30 15:26:56] [ERROR]:invalid credentials
+[2025-04-30 15:27:05] [ERROR]:invalid credentials
+[2025-04-30 15:27:06] [ERROR]:invalid credentials
+[2025-04-30 15:27:07] [ERROR]:invalid credentials
+[2025-04-30 15:27:08] [ERROR]:invalid credentials
+[2025-04-30 15:27:12] [ERROR]:invalid credentials
+[2025-04-30 15:27:13] [ERROR]:invalid credentials
+[2025-04-30 15:36:57] [ERROR]:invalid credentials
+[2025-04-30 15:37:10] [ERROR]:invalid credentials
+[2025-04-30 15:37:15] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-04-30 15:37:58] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-04-30 15:39:07] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-04-30 15:40:14] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-04-30 17:36:55] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-04-30 17:36:57] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-04-30 17:36:58] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-04-30 17:39:14] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-04-30 17:40:44] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-04-30 17:41:27] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-04-30 17:41:35] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-04-30 17:42:16] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 09:10:24] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 09:10:32] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 09:11:53] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 09:20:54] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 09:23:24] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 09:25:58] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 09:28:15] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 09:32:01] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 09:35:07] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 09:35:59] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 09:37:07] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 11:21:53] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 11:25:48] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 11:26:41] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 11:28:17] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 11:30:58] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 11:31:42] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 11:32:44] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 11:40:12] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 11:43:23] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 11:53:24] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 11:53:27] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 11:53:29] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 11:55:11] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 11:55:40] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 11:57:56] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 12:08:25] [ERROR]:Assignment to constant variable.
+[2025-05-01 12:08:27] [ERROR]:Assignment to constant variable.
+[2025-05-01 12:08:29] [ERROR]:Assignment to constant variable.
+[2025-05-01 12:23:54] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 12:25:38] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 12:25:57] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 12:40:35] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 14:13:43] [ERROR]:not authenticated
+[2025-05-01 14:13:43] [ERROR]:not authenticated
+[2025-05-01 14:13:44] [ERROR]:not authenticated
+[2025-05-01 14:13:44] [ERROR]:not authenticated
+[2025-05-01 14:13:46] [ERROR]:not authenticated
+[2025-05-01 14:13:46] [ERROR]:not authenticated
+[2025-05-01 14:13:50] [ERROR]:not authenticated
+[2025-05-01 14:13:50] [ERROR]:not authenticated
+[2025-05-01 14:14:01] [ERROR]:not authenticated
+[2025-05-01 14:14:01] [ERROR]:not authenticated
+[2025-05-01 14:14:02] [ERROR]:not authenticated
+[2025-05-01 14:14:02] [ERROR]:not authenticated
+[2025-05-01 14:14:04] [ERROR]:not authenticated
+[2025-05-01 14:14:06] [ERROR]:not authenticated
+[2025-05-01 14:14:07] [ERROR]:not authenticated
+[2025-05-01 14:14:08] [ERROR]:not authenticated
+[2025-05-01 14:14:09] [ERROR]:not authenticated
+[2025-05-01 14:14:13] [ERROR]:not authenticated
+[2025-05-01 14:14:16] [ERROR]:not authenticated
+[2025-05-01 14:14:17] [ERROR]:not authenticated
+[2025-05-01 14:14:26] [ERROR]:not authenticated
+[2025-05-01 14:14:26] [ERROR]:not authenticated
+[2025-05-01 14:14:28] [ERROR]:not authenticated
+[2025-05-01 14:14:28] [ERROR]:not authenticated
+[2025-05-01 14:14:30] [ERROR]:not authenticated
+[2025-05-01 14:14:30] [ERROR]:not authenticated
+[2025-05-01 14:14:34] [ERROR]:not authenticated
+[2025-05-01 14:14:34] [ERROR]:not authenticated
+[2025-05-01 14:15:12] [ERROR]:not authenticated
+[2025-05-01 14:15:17] [ERROR]:not authenticated
+[2025-05-01 14:15:22] [ERROR]:not authenticated
+[2025-05-01 14:19:02] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 14:19:39] [INFO]:{
+  _id: new ObjectId('681230039504cffb85540fc2'),
+  email: 'john@doe2.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$TjPwJAAhYL1VO8E/KdyTfODSD.7NX7u4RK9JwGA4HJhpVZ90JPZ32',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-04-30T14:13:24.004Z,
+  updatedAt: 2025-04-30T14:13:24.004Z,
+  __v: 0
+} logged in 
+[2025-05-01 14:29:11] [ERROR]:Cast to ObjectId failed for value "[object Object]" (type string) at path "_id" for model "Blog"
+[2025-05-01 14:29:13] [ERROR]:Cast to ObjectId failed for value "[object Object]" (type string) at path "_id" for model "Blog"
+[2025-05-01 14:29:14] [ERROR]:Cast to ObjectId failed for value "[object Object]" (type string) at path "_id" for model "Blog"
+[2025-05-01 14:29:15] [ERROR]:Cast to ObjectId failed for value "[object Object]" (type string) at path "_id" for model "Blog"
+[2025-05-01 14:29:17] [ERROR]:Cast to ObjectId failed for value "[object Object]" (type string) at path "_id" for model "Blog"
+[2025-05-01 14:29:34] [ERROR]:Cast to ObjectId failed for value "[object Object]" (type string) at path "_id" for model "Blog"
+[2025-05-01 14:29:37] [ERROR]:Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+[2025-05-01 14:29:38] [ERROR]:Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+[2025-05-01 14:29:40] [ERROR]:Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+[2025-05-01 14:29:44] [ERROR]:Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
