@@ -8,10 +8,11 @@ import {
   updateBlog,
 } from "../controllers/BlogController.js";
 import { validateBlogInputs } from "../utils/validators.js";
+import upload from "../middlewares/multerMiddleware.js";
 
 const router = Router();
 
-router.route("/").get(getAllBlogs).post(validateBlogInputs, createBlog);
+router.route("/").get(getAllBlogs).post(upload.single("media"), createBlog);
 router
   .route("/:id")
   .get(getSingleBlog)

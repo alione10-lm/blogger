@@ -18,9 +18,13 @@ export const getSingleBlog = async (blogId) => {
   }
 };
 export const createBlog = async (blogData) => {
+  console.log(blogData);
   try {
-    const res = await axios.post("/api/blogs", blogData);
-    return await res.json();
+    const res = await axios.post("/api/blogs", blogData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+
+    return res.data;
   } catch (err) {
     throw new Error(err?.response?.data?.message);
   }
@@ -29,7 +33,7 @@ export const createBlog = async (blogData) => {
 export const deleteBlog = async (blogId) => {
   try {
     const res = await axios.delete(`/api/blogs/${blogId}`);
-    return await res.json();
+    return res.data;
   } catch (err) {
     throw new Error(err?.response?.data?.message);
   }
@@ -45,8 +49,8 @@ export const updateBlog = async (blogId) => {
 
 export const LikeBlog = async (blogId) => {
   try {
-    const res = await axios.post(`/api/blogs/like/${blogId}`);
-    return await res.json();
+    const res = await axios.post(`/api/blogs/${blogId}/like`);
+    return res.data;
   } catch (err) {
     throw new Error(err?.response?.data?.message);
   }
@@ -54,16 +58,19 @@ export const LikeBlog = async (blogId) => {
 
 export const getCurrentUser = async () => {
   try {
-    const res = await axios.get("/api/current-user");
+    const res = await axios.get("/api/users/current-user");
     return res.data;
   } catch (err) {
     throw new Error(err?.response?.data?.message);
   }
 };
-export const updateUser = async () => {
+export const updateUser = async (userInfo) => {
+  console.log(userInfo);
   try {
-    const res = await axios.patch("/api/current-user");
-    return await res.json();
+    const res = await axios.patch("/api/users/current-user", userInfo, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+    return res.data;
   } catch (err) {
     throw new Error(err?.response?.data?.message);
   }
@@ -77,10 +84,11 @@ export const deleteUser = async () => {
   }
 };
 
-export const createComment = async () => {
+export const createComment = async (commentInfo) => {
+  console.log(commentInfo);
   try {
-    const res = await axios.post("/api/blog/comment");
-    return await res.json();
+    const res = await axios.post("/api/blog/comment", commentInfo);
+    return await res.data;
   } catch (err) {
     throw new Error(err?.response?.data?.message);
   }
@@ -142,8 +150,8 @@ export const register = async (registerInfo) => {
 
 export const logout = async () => {
   try {
-    const res = await axios.get("api/auth/logout");
-    return await res.json();
+    const res = await axios.get("/api/auth/logout");
+    return res.data;
   } catch (err) {
     throw new Error(err?.response?.data?.message);
   }

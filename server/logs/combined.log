@@ -1076,3 +1076,1065 @@
 [2025-05-01 14:29:38] [ERROR]:Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
 [2025-05-01 14:29:40] [ERROR]:Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
 [2025-05-01 14:29:44] [ERROR]:Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+[2025-05-01 17:55:53] [ERROR]:invalid credentials
+[2025-05-01 17:55:55] [ERROR]:invalid credentials
+[2025-05-01 17:56:59] [ERROR]:email already in use
+[2025-05-01 17:57:16] [INFO]:{
+  email: 'oussama@ali1.com',
+  firstName: 'oussama',
+  lastName: 'aliouane',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$sHwwUwpsB0gqSIgWm4gEJ.w41q5uv8w26AvbgkAAJgZ7jbAli.ZcW',
+  gender: 'male',
+  role: 'user',
+  _id: new ObjectId('6813a7eb2dbf13b8ed9f1954'),
+  createdAt: 2025-05-01T16:57:15.986Z,
+  updatedAt: 2025-05-01T16:57:15.986Z,
+  __v: 0
+} registred 
+[2025-05-01 17:57:29] [INFO]:{
+  _id: new ObjectId('6813a7eb2dbf13b8ed9f1954'),
+  email: 'oussama@ali1.com',
+  firstName: 'oussama',
+  lastName: 'aliouane',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$sHwwUwpsB0gqSIgWm4gEJ.w41q5uv8w26AvbgkAAJgZ7jbAli.ZcW',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T16:57:15.986Z,
+  updatedAt: 2025-05-01T16:57:15.986Z,
+  __v: 0
+} logged in 
+[2025-05-01 20:03:06] [ERROR]:invalid credentials
+[2025-05-01 20:03:08] [ERROR]:invalid credentials
+[2025-05-01 20:03:43] [ERROR]:invalid credentials
+[2025-05-01 20:03:56] [ERROR]:invalid credentials
+[2025-05-01 20:04:22] [ERROR]:invalid credentials
+[2025-05-01 20:04:38] [ERROR]:invalid credentials
+[2025-05-01 20:04:40] [ERROR]:invalid credentials
+[2025-05-01 20:04:51] [ERROR]:invalid credentials
+[2025-05-01 20:07:46] [INFO]:{
+  email: 'oussama@gmail.com',
+  firstName: 'oussama',
+  lastName: 'ali1',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$grfno4GoWEmQPjf27KsOFeeUUxRLL5ICAUR5HYjjehwNOoaiCf6mu',
+  gender: 'female',
+  role: 'user',
+  _id: new ObjectId('6813c682f0cb5c8ba0fcbf6d'),
+  createdAt: 2025-05-01T19:07:46.789Z,
+  updatedAt: 2025-05-01T19:07:46.789Z,
+  __v: 0
+} registred 
+[2025-05-01 20:14:46] [INFO]:{
+  email: 'test@test.com',
+  firstName: 'oussama',
+  lastName: 'oussama',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$tascEAR3iZK.6.iIgtZQqeq5T/90xk4nTbHbtWvaXfhh0Y9a3ZfPu',
+  gender: 'male',
+  role: 'user',
+  _id: new ObjectId('6813c826f0cb5c8ba0fcbf70'),
+  createdAt: 2025-05-01T19:14:46.193Z,
+  updatedAt: 2025-05-01T19:14:46.193Z,
+  __v: 0
+} registred 
+[2025-05-01 20:19:33] [INFO]:{
+  email: 'alione@gmail.com',
+  firstName: 'oussama',
+  lastName: 'ali1',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$3KkMcilWWfLub.YgU3aGse9t1Oi0uWXNWPL4P1sRgFJDq/8pO0ICa',
+  gender: 'male',
+  role: 'user',
+  _id: new ObjectId('6813c945f0cb5c8ba0fcbf73'),
+  createdAt: 2025-05-01T19:19:33.869Z,
+  updatedAt: 2025-05-01T19:19:33.869Z,
+  __v: 0
+} registred 
+[2025-05-01 20:20:50] [ERROR]:invalid credentials
+[2025-05-01 20:21:00] [INFO]:{
+  _id: new ObjectId('6813c945f0cb5c8ba0fcbf73'),
+  email: 'alione@gmail.com',
+  firstName: 'oussama',
+  lastName: 'ali1',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$3KkMcilWWfLub.YgU3aGse9t1Oi0uWXNWPL4P1sRgFJDq/8pO0ICa',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:19:33.869Z,
+  updatedAt: 2025-05-01T19:19:33.869Z,
+  __v: 0
+} logged in 
+[2025-05-01 20:23:58] [ERROR]:title is required
+[2025-05-01 20:24:07] [ERROR]:title is required
+[2025-05-01 20:30:27] [ERROR]:Blog validation failed: media: Cast to string failed for value "{}" (type Object) at path "media"
+[2025-05-01 20:34:44] [ERROR]:Blog validation failed: media: Cast to string failed for value "{}" (type Object) at path "media"
+[2025-05-01 20:39:20] [ERROR]:Cannot read properties of undefined (reading 'filename')
+[2025-05-01 20:40:50] [ERROR]:invalid credentials
+[2025-05-01 20:41:02] [ERROR]:invalid credentials
+[2025-05-01 20:41:14] [ERROR]:invalid credentials
+[2025-05-01 20:43:32] [INFO]:{
+  email: 'john@doe.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-01T19:43:32.082Z,
+  __v: 0
+} registred 
+[2025-05-01 20:43:42] [ERROR]:invalid email format
+[2025-05-01 20:43:53] [ERROR]:invalid email format
+[2025-05-01 20:43:58] [ERROR]:invalid email format
+[2025-05-01 20:44:02] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-01T19:43:32.082Z,
+  __v: 0
+} logged in 
+[2025-05-01 20:47:56] [ERROR]:title is required,description is required
+[2025-05-01 20:49:27] [ERROR]:title is required,description is required
+[2025-05-01 20:53:11] [ERROR]:title is required,description is required
+[2025-05-01 20:56:49] [INFO]:HTTP POST /api/products [object Object]
+[2025-05-01 20:56:49] [ERROR]:url not found
+[2025-05-01 20:57:54] [ERROR]:title is required,description is required
+[2025-05-02 07:01:13] [ERROR]:invalid credentials
+[2025-05-02 07:02:06] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-01T19:43:32.082Z,
+  __v: 0
+} logged in 
+[2025-05-02 07:04:04] [ERROR]:title is required,description is required
+[2025-05-02 07:04:45] [ERROR]:title is required,description is required
+[2025-05-02 07:04:47] [ERROR]:title is required,description is required
+[2025-05-02 07:06:21] [ERROR]:title is required,description is required
+[2025-05-02 07:11:33] [ERROR]:title is required,description is required
+[2025-05-02 07:12:17] [ERROR]:title is required,description is required
+[2025-05-02 07:14:40] [ERROR]:title is required,description is required
+[2025-05-02 13:44:47] [ERROR]:Operation `users.findOne()` buffering timed out after 10000ms
+[2025-05-02 13:45:02] [ERROR]:Operation `users.findOne()` buffering timed out after 10000ms
+[2025-05-02 13:49:36] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-01T19:43:32.082Z,
+  __v: 0
+} logged in 
+[2025-05-02 14:04:33] [ERROR]:not authenticated
+[2025-05-02 14:04:33] [ERROR]:not authenticated
+[2025-05-02 14:04:34] [ERROR]:not authenticated
+[2025-05-02 14:04:34] [ERROR]:not authenticated
+[2025-05-02 14:04:36] [ERROR]:not authenticated
+[2025-05-02 14:04:36] [ERROR]:not authenticated
+[2025-05-02 14:04:40] [ERROR]:not authenticated
+[2025-05-02 14:04:40] [ERROR]:not authenticated
+[2025-05-02 14:04:42] [ERROR]:not authenticated
+[2025-05-02 14:04:42] [ERROR]:not authenticated
+[2025-05-02 14:04:43] [ERROR]:not authenticated
+[2025-05-02 14:04:43] [ERROR]:not authenticated
+[2025-05-02 14:04:45] [ERROR]:not authenticated
+[2025-05-02 14:04:45] [ERROR]:not authenticated
+[2025-05-02 14:19:12] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-01T19:43:32.082Z,
+  __v: 0
+} logged in 
+[2025-05-02 14:19:29] [ERROR]:not authenticated
+[2025-05-02 14:19:54] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-01T19:43:32.082Z,
+  __v: 0
+} logged in 
+[2025-05-02 14:20:07] [ERROR]:not authenticated
+[2025-05-02 14:22:28] [ERROR]:not authenticated
+[2025-05-02 14:28:54] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-01T19:43:32.082Z,
+  __v: 0
+} logged in 
+[2025-05-02 14:33:51] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-01T19:43:32.082Z,
+  __v: 0
+} logged in 
+[2025-05-02 14:34:10] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-01T19:43:32.082Z,
+  __v: 0
+} logged in 
+[2025-05-02 20:09:21] [ERROR]:invalid credentials
+[2025-05-02 20:10:36] [INFO]:{
+  email: 'oussama@oussama.com',
+  firstName: 'oussama',
+  lastName: 'alione',
+  password: '$2b$10$yOI2u1//erWcoNOeVheKseBCmip3Dap5KNluJrMZtvBHT2nczk51i',
+  blogs: [],
+  gender: 'male',
+  role: 'user',
+  _id: new ObjectId('681518abfe3706a24c014eb6'),
+  createdAt: 2025-05-02T19:10:35.901Z,
+  updatedAt: 2025-05-02T19:10:35.901Z,
+  __v: 0
+} registred 
+[2025-05-02 20:11:50] [INFO]:{
+  _id: new ObjectId('681518abfe3706a24c014eb6'),
+  email: 'oussama@oussama.com',
+  firstName: 'oussama',
+  lastName: 'alione',
+  password: '$2b$10$yOI2u1//erWcoNOeVheKseBCmip3Dap5KNluJrMZtvBHT2nczk51i',
+  blogs: [],
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-02T19:10:35.901Z,
+  updatedAt: 2025-05-02T19:10:35.901Z,
+  __v: 0
+} logged in 
+[2025-05-02 20:23:07] [INFO]:{
+  blogs: [],
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-01T19:43:32.082Z,
+  __v: 0
+} logged in 
+[2025-05-02 20:43:16] [ERROR]:invalid credentials
+[2025-05-02 20:43:24] [ERROR]:invalid credentials
+[2025-05-02 20:43:31] [ERROR]:invalid credentials
+[2025-05-02 20:44:03] [INFO]:{
+  _id: new ObjectId('681518abfe3706a24c014eb6'),
+  email: 'oussama@oussama.com',
+  firstName: 'oussama',
+  lastName: 'alione',
+  password: '$2b$10$yOI2u1//erWcoNOeVheKseBCmip3Dap5KNluJrMZtvBHT2nczk51i',
+  blogs: [ new ObjectId('6815190ffe3706a24c014eb9') ],
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-02T19:10:35.901Z,
+  updatedAt: 2025-05-02T19:12:15.715Z,
+  __v: 0
+} logged in 
+[2025-05-02 20:50:26] [INFO]:{
+  blogs: [],
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-01T19:43:32.082Z,
+  __v: 0
+} logged in 
+[2025-05-03 09:39:40] [INFO]:{
+  blogs: [],
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-01T19:43:32.082Z,
+  __v: 0
+} logged in 
+[2025-05-03 09:46:57] [INFO]:{
+  _id: new ObjectId('681518abfe3706a24c014eb6'),
+  email: 'oussama@oussama.com',
+  firstName: 'oussama',
+  lastName: 'alione',
+  password: '$2b$10$yOI2u1//erWcoNOeVheKseBCmip3Dap5KNluJrMZtvBHT2nczk51i',
+  blogs: [ new ObjectId('6815190ffe3706a24c014eb9') ],
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-02T19:10:35.901Z,
+  updatedAt: 2025-05-02T19:12:15.715Z,
+  __v: 0
+} logged in 
+[2025-05-03 10:23:46] [INFO]:HTTP GET /api/blog/comment/reply [object Object]
+[2025-05-03 10:23:46] [ERROR]:url not found
+[2025-05-03 10:25:22] [INFO]:HTTP GET /api/blog/comment/reply [object Object]
+[2025-05-03 10:25:22] [ERROR]:url not found
+[2025-05-03 10:25:23] [INFO]:HTTP GET /api/blog/comment/reply [object Object]
+[2025-05-03 10:25:23] [ERROR]:url not found
+[2025-05-03 10:45:27] [ERROR]:invalid credentials
+[2025-05-03 10:47:42] [ERROR]:invalid email format
+[2025-05-03 10:48:00] [ERROR]:invalid email format
+[2025-05-03 10:48:26] [ERROR]:Expected ',' or '}' after property value in JSON at position 65 (line 4 column 3)
+[2025-05-03 10:48:36] [ERROR]:invalid email format
+[2025-05-03 10:49:25] [INFO]:{
+  email: 'leomessi@gmai.com',
+  firstName: 'leo',
+  lastName: 'messi',
+  password: '$2b$10$dliA5iE.U4rDXxFxFE0Qf.VjCVnAzWd99SurdVTp/gDgz.39LkH.e',
+  blogs: [],
+  gender: 'male',
+  role: 'user',
+  _id: new ObjectId('6815e6a5b9bba015e77ffc4f'),
+  createdAt: 2025-05-03T09:49:25.839Z,
+  updatedAt: 2025-05-03T09:49:25.839Z,
+  __v: 0
+} registred 
+[2025-05-03 10:49:51] [ERROR]:invalid credentials
+[2025-05-03 10:50:38] [ERROR]:invalid credentials
+[2025-05-03 10:51:53] [ERROR]:invalid credentials
+[2025-05-03 10:52:58] [INFO]:{
+  email: 'messi@gmai.com',
+  firstName: 'leo',
+  lastName: 'messi',
+  password: '$2b$10$3uWlW7Ox33XJjRiTiwSvu.lcSCDBVafZA43vfa.YI5EYVpeIF900.',
+  blogs: [],
+  gender: 'male',
+  role: 'user',
+  _id: new ObjectId('6815e77ab9bba015e77ffc55'),
+  createdAt: 2025-05-03T09:52:58.409Z,
+  updatedAt: 2025-05-03T09:52:58.409Z,
+  __v: 0
+} registred 
+[2025-05-03 10:53:29] [ERROR]:invalid credentials
+[2025-05-03 10:18:31] [INFO]:{
+  blogs: [],
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-01T19:43:32.082Z,
+  __v: 0
+} logged in 
+[2025-05-03 10:23:01] [ERROR]:invalid credentials
+[2025-05-03 10:26:03] [INFO]:{
+  email: 'loe@messi.com',
+  firstName: 'leo',
+  lastName: 'messi',
+  position: '',
+  password: '$2b$10$ItNsq82jgfLUXEe7oqdsOe0LdBEZOXTYi9TKtUOAbIfhZQvbYaP7e',
+  avatar: 'https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000',
+  blogs: [],
+  gender: 'male',
+  role: 'user',
+  _id: new ObjectId('6815e12b8e303dfc006aea0c'),
+  createdAt: 2025-05-03T09:26:03.199Z,
+  updatedAt: 2025-05-03T09:26:03.199Z,
+  __v: 0
+} registred 
+[2025-05-03 10:27:15] [ERROR]:invalid credentials
+[2025-05-03 10:29:01] [INFO]:{
+  email: 'leomessi@gmail.com',
+  firstName: 'leo',
+  lastName: 'messi',
+  position: '',
+  password: '$2b$10$Knx9EbmQu.T/6QxMcclkxOn63.thJOPKhk9h9s6.cjsPvetUO0Xka',
+  avatar: 'https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000',
+  blogs: [],
+  gender: 'male',
+  role: 'user',
+  _id: new ObjectId('6815e1dc97a003aa7f419b72'),
+  createdAt: 2025-05-03T09:29:01.014Z,
+  updatedAt: 2025-05-03T09:29:01.014Z,
+  __v: 0
+} registred 
+[2025-05-03 10:30:34] [INFO]:{
+  email: 'leo@gmail.com',
+  firstName: 'leo',
+  lastName: 'messi',
+  position: '',
+  password: '$2b$10$S5xpHTu65KlpyDdPdvSS0OetGOnrHbOB/yppMxwds29.BPll2/yYW',
+  avatar: 'https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000',
+  blogs: [],
+  gender: 'male',
+  role: 'user',
+  _id: new ObjectId('6815e23a36efea08b40d7325'),
+  createdAt: 2025-05-03T09:30:34.125Z,
+  updatedAt: 2025-05-03T09:30:34.125Z,
+  __v: 0
+} registred 
+[2025-05-03 10:30:54] [ERROR]:invalid credentials
+[2025-05-03 10:30:55] [ERROR]:invalid credentials
+[2025-05-03 10:31:19] [INFO]:{
+  _id: new ObjectId('6815e23a36efea08b40d7325'),
+  email: 'leo@gmail.com',
+  firstName: 'leo',
+  lastName: 'messi',
+  position: '',
+  password: '$2b$10$S5xpHTu65KlpyDdPdvSS0OetGOnrHbOB/yppMxwds29.BPll2/yYW',
+  avatar: 'https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000',
+  blogs: [],
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-03T09:30:34.125Z,
+  updatedAt: 2025-05-03T09:30:34.125Z,
+  __v: 0
+} logged in 
+[2025-05-03 10:32:42] [ERROR]:Comment validation failed: blogId: Cast to ObjectId failed for value "6810c5044edd61802201e0876814cd6e2f0c6ef9d6b7c147" (type string) at path "blogId" because of "BSONError"
+[2025-05-03 13:31:15] [INFO]:{
+  blogs: [],
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-01T19:43:32.082Z,
+  __v: 0
+} logged in 
+[2025-05-03 14:31:31] [INFO]:{
+  blogs: [],
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-01T19:43:32.082Z,
+  __v: 0
+} logged in 
+[2025-05-03 14:43:05] [INFO]:{
+  blogs: [],
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-01T19:43:32.082Z,
+  __v: 0
+} logged in 
+[2025-05-03 14:44:08] [INFO]:HTTP PATCH /api/current-user [object Object]
+[2025-05-03 14:44:08] [ERROR]:url not found
+[2025-05-03 15:04:14] [ERROR]:Cast to string failed for value "{}" (type Object) at path "avatar"
+[2025-05-03 15:04:41] [ERROR]:Cast to string failed for value "{}" (type Object) at path "avatar"
+[2025-05-03 15:05:00] [ERROR]:Cast to string failed for value "{}" (type Object) at path "avatar"
+[2025-05-03 15:12:22] [ERROR]:Cast to string failed for value "{ '0': {} }" (type Object) at path "avatar"
+[2025-05-03 15:12:24] [ERROR]:Cast to string failed for value "{ '0': {} }" (type Object) at path "avatar"
+[2025-05-03 15:12:25] [ERROR]:Cast to string failed for value "{ '0': {} }" (type Object) at path "avatar"
+[2025-05-03 15:12:26] [ERROR]:Cast to string failed for value "{ '0': {} }" (type Object) at path "avatar"
+[2025-05-03 15:12:27] [ERROR]:Cast to string failed for value "{ '0': {} }" (type Object) at path "avatar"
+[2025-05-03 15:13:41] [ERROR]:Cast to string failed for value "{}" (type Object) at path "avatar"
+[2025-05-03 15:14:02] [ERROR]:Cast to string failed for value "{}" (type Object) at path "avatar"
+[2025-05-03 15:14:57] [ERROR]:Cast to string failed for value "{}" (type Object) at path "avatar"
+[2025-05-03 15:17:43] [ERROR]:Cast to string failed for value "{}" (type Object) at path "avatar"
+[2025-05-03 15:19:24] [ERROR]:Cast to string failed for value "{ '0': {} }" (type Object) at path "avatar"
+[2025-05-03 15:33:54] [ERROR]:Cast to string failed for value "{ '0': {} }" (type Object) at path "avatar"
+[2025-05-03 15:37:01] [ERROR]:Unexpected field
+[2025-05-03 15:37:17] [ERROR]:Unexpected field
+[2025-05-03 15:38:15] [ERROR]:Unexpected field
+[2025-05-03 15:40:46] [ERROR]:Unexpected field
+[2025-05-03 15:44:57] [ERROR]:Unexpected field
+[2025-05-03 15:46:13] [ERROR]:Unexpected field
+[2025-05-03 15:47:34] [ERROR]:Unexpected field
+[2025-05-03 15:47:58] [ERROR]:Unexpected field
+[2025-05-03 15:49:45] [ERROR]:Unexpected field
+[2025-05-03 15:50:19] [ERROR]:Unexpected field
+[2025-05-03 15:52:49] [ERROR]:Unexpected field
+[2025-05-03 15:57:30] [INFO]:HTTP GET /public/uploads/avatar1.png [object Object]
+[2025-05-03 15:57:30] [ERROR]:url not found
+[2025-05-03 15:57:31] [INFO]:HTTP GET /favicon.ico [object Object]
+[2025-05-03 15:57:31] [ERROR]:url not found
+[2025-05-03 16:14:29] [INFO]:HTTP GET /uploads/undefined [object Object]
+[2025-05-03 16:14:29] [ERROR]:url not found
+[2025-05-03 16:21:06] [INFO]:HTTP GET /uploads/undefined [object Object]
+[2025-05-03 16:21:06] [ERROR]:url not found
+[2025-05-03 16:21:31] [INFO]:HTTP GET /uploads/undefined [object Object]
+[2025-05-03 16:21:31] [ERROR]:url not found
+[2025-05-03 16:24:20] [INFO]:HTTP GET /uploads/undefined [object Object]
+[2025-05-03 16:24:20] [ERROR]:url not found
+[2025-05-03 16:24:36] [ERROR]:Unexpected field
+[2025-05-03 16:24:42] [INFO]:HTTP GET /uploads/undefined [object Object]
+[2025-05-03 16:24:42] [ERROR]:url not found
+[2025-05-03 16:25:13] [INFO]:HTTP GET /uploads/undefined [object Object]
+[2025-05-03 16:25:13] [ERROR]:url not found
+[2025-05-03 22:09:24] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-03T22:02:50.443Z,
+  __v: 0,
+  bio: 'web developer',
+  avatar: 'undefined',
+  blogs: [
+    new ObjectId('6816914cffee30ef596e3579'),
+    new ObjectId('6816928affee30ef596e35aa')
+  ]
+} logged in 
+[2025-05-04 14:36:37] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-03T21:12:42.850Z,
+  __v: 0,
+  bio: 'web developer',
+  avatar: 'undefined',
+  blogs: [
+    new ObjectId('6816914cffee30ef596e3579'),
+    new ObjectId('6816928affee30ef596e35aa'),
+    new ObjectId('681686ca08292b460fcdc3f8')
+  ]
+} logged in 
+[2025-05-04 14:45:11] [ERROR]:read ECONNRESET
+[2025-05-04 15:40:18] [ERROR]:comment must be at least 1 charactere
+[2025-05-04 15:40:31] [ERROR]:comment must be at least 1 charactere
+[2025-05-04 15:43:34] [ERROR]:comment must be at least 1 charactere
+[2025-05-04 15:46:04] [ERROR]:comment must be at least 1 charactere
+[2025-05-04 15:47:04] [ERROR]:comment must be at least 1 charactere
+[2025-05-04 15:47:16] [ERROR]:comment must be at least 1 charactere
+[2025-05-04 15:47:50] [ERROR]:comment must be at least 1 charactere
+[2025-05-04 15:48:19] [ERROR]:comment must be at least 1 charactere
+[2025-05-04 15:52:59] [ERROR]:comment must be at least 1 charactere
+[2025-05-04 15:53:11] [ERROR]:comment must be at least 1 charactere
+[2025-05-04 15:55:16] [ERROR]:comment must be at least 1 charactere
+[2025-05-04 15:56:20] [ERROR]:comment must be at least 1 charactere
+[2025-05-04 15:57:26] [ERROR]:comment must be at least 1 charactere
+[2025-05-04 15:58:25] [ERROR]:comment must be at least 1 charactere
+[2025-05-04 16:10:37] [INFO]:{
+  email: 'khalid.boukhari.parkour@gmail.com',
+  firstName: 'Khalid',
+  lastName: 'boukhari',
+  birthDate: 2000-02-27T00:00:00.000Z,
+  password: '$2b$10$0.N8RCy.0iqKL47e32N75esCJHubKx4AiDAfuBZsAVSQ659nwk2Y2',
+  blogs: [],
+  gender: 'male',
+  role: 'user',
+  _id: new ObjectId('6817836cf2bfe9eb5601fd90'),
+  createdAt: 2025-05-04T15:10:36.916Z,
+  updatedAt: 2025-05-04T15:10:36.916Z,
+  __v: 0
+} registred 
+[2025-05-04 16:10:46] [INFO]:{
+  _id: new ObjectId('6817836cf2bfe9eb5601fd90'),
+  email: 'khalid.boukhari.parkour@gmail.com',
+  firstName: 'Khalid',
+  lastName: 'boukhari',
+  birthDate: 2000-02-27T00:00:00.000Z,
+  password: '$2b$10$0.N8RCy.0iqKL47e32N75esCJHubKx4AiDAfuBZsAVSQ659nwk2Y2',
+  blogs: [],
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-04T15:10:36.916Z,
+  updatedAt: 2025-05-04T15:10:36.916Z,
+  __v: 0
+} logged in 
+[2025-05-04 16:12:26] [INFO]:HTTP GET /uploads/undefined [object Object]
+[2025-05-04 16:12:26] [ERROR]:url not found
+[2025-05-04 16:14:25] [INFO]:{
+  _id: new ObjectId('6817836cf2bfe9eb5601fd90'),
+  email: 'khalid.boukhari.parkour@gmail.com',
+  firstName: 'Khalid',
+  lastName: 'boukhari',
+  birthDate: 2000-02-27T00:00:00.000Z,
+  password: '$2b$10$0.N8RCy.0iqKL47e32N75esCJHubKx4AiDAfuBZsAVSQ659nwk2Y2',
+  blogs: [ new ObjectId('681783c5f2bfe9eb5601fda5') ],
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-04T15:10:36.916Z,
+  updatedAt: 2025-05-04T15:12:05.913Z,
+  __v: 0
+} logged in 
+[2025-05-04 16:20:06] [INFO]:HTTP GET /uploads/undefined [object Object]
+[2025-05-04 16:20:06] [ERROR]:url not found
+[2025-05-04 16:21:37] [INFO]:HTTP GET /uploads/undefined [object Object]
+[2025-05-04 16:21:37] [ERROR]:url not found
+[2025-05-05 08:59:05] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'john',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-03T21:12:42.850Z,
+  __v: 0,
+  bio: 'web developer',
+  avatar: 'undefined',
+  blogs: [
+    new ObjectId('6816914cffee30ef596e3579'),
+    new ObjectId('6816928affee30ef596e35aa'),
+    new ObjectId('681686ca08292b460fcdc3f8')
+  ]
+} logged in 
+[2025-05-05 08:59:38] [INFO]:HTTP GET /uploads/undefined [object Object]
+[2025-05-05 08:59:38] [ERROR]:url not found
+[2025-05-05 08:59:40] [INFO]:HTTP GET /uploads/undefined [object Object]
+[2025-05-05 08:59:40] [ERROR]:url not found
+[2025-05-05 08:59:52] [INFO]:HTTP GET /uploads/undefined [object Object]
+[2025-05-05 08:59:52] [ERROR]:url not found
+[2025-05-05 09:02:19] [INFO]:HTTP GET /favicon.ico [object Object]
+[2025-05-05 09:02:19] [ERROR]:url not found
+[2025-05-05 09:03:08] [INFO]:HTTP GET /uploads/undefined [object Object]
+[2025-05-05 09:03:08] [ERROR]:url not found
+[2025-05-05 09:05:06] [INFO]:HTTP GET /uploads/undefined [object Object]
+[2025-05-05 09:05:06] [ERROR]:url not found
+[2025-05-05 09:14:27] [ERROR]:title is required,description is required
+[2025-05-05 09:15:14] [ERROR]:title is required,description is required
+[2025-05-05 09:16:07] [ERROR]:title is required,description is required
+[2025-05-05 09:17:31] [ERROR]:title is required,description is required
+[2025-05-05 09:18:26] [ERROR]:title is required,description is required
+[2025-05-05 09:23:41] [ERROR]:title is required,description is required
+[2025-05-05 09:24:35] [ERROR]:title is required,description is required
+[2025-05-05 09:24:44] [ERROR]:title is required,description is required
+[2025-05-05 09:25:59] [ERROR]:title is required,description is required
+[2025-05-05 09:33:15] [INFO]:HTTP GET /uploas/avatar2.png [object Object]
+[2025-05-05 09:33:15] [ERROR]:url not found
+[2025-05-05 09:34:39] [INFO]:HTTP GET /uploads/undefined [object Object]
+[2025-05-05 09:34:39] [ERROR]:url not found
+[2025-05-05 09:45:43] [INFO]:HTTP GET /uploads/undefined [object Object]
+[2025-05-05 09:45:43] [ERROR]:url not found
+[2025-05-05 10:16:17] [ERROR]:title is required,description is required
+[2025-05-05 10:16:44] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'max',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-05T09:15:20.924Z,
+  __v: 0,
+  bio: 'developer',
+  avatar: 'avatar1.png',
+  blogs: [
+    new ObjectId('6816914cffee30ef596e3579'),
+    new ObjectId('6816928affee30ef596e35aa')
+  ]
+} logged in 
+[2025-05-05 11:04:12] [INFO]:HTTP GET /uploads/undefined [object Object]
+[2025-05-05 11:04:12] [ERROR]:url not found
+[2025-05-05 11:04:19] [INFO]:HTTP GET /uploads/undefined [object Object]
+[2025-05-05 11:04:19] [ERROR]:url not found
+[2025-05-05 11:12:29] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'max',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-05T09:44:45.627Z,
+  __v: 0,
+  bio: 'developer',
+  avatar: 'avatar1.png',
+  blogs: [ new ObjectId('6816914cffee30ef596e3579') ]
+} logged in 
+[2025-05-05 11:21:04] [ERROR]:not authenticated
+[2025-05-05 11:21:04] [ERROR]:not authenticated
+[2025-05-05 11:21:05] [ERROR]:not authenticated
+[2025-05-05 11:21:05] [ERROR]:not authenticated
+[2025-05-05 11:21:07] [ERROR]:not authenticated
+[2025-05-05 11:23:25] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'max',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-05T10:13:54.356Z,
+  __v: 0,
+  bio: 'developer',
+  avatar: 'IMG-20250406-WA0020.jpg',
+  blogs: [ new ObjectId('6816914cffee30ef596e3579') ]
+} logged in 
+[2025-05-05 11:23:54] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'max',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-05T10:13:54.356Z,
+  __v: 0,
+  bio: 'developer',
+  avatar: 'IMG-20250406-WA0020.jpg',
+  blogs: [ new ObjectId('6816914cffee30ef596e3579') ]
+} logged in 
+[2025-05-05 11:24:44] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'max',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-05T10:13:54.356Z,
+  __v: 0,
+  bio: 'developer',
+  avatar: 'IMG-20250406-WA0020.jpg',
+  blogs: [ new ObjectId('6816914cffee30ef596e3579') ]
+} logged in 
+[2025-05-05 11:27:11] [INFO]:{
+  email: 'aliouaneoussama89@gmail.com',
+  firstName: 'Oussama',
+  lastName: 'Ali1',
+  birthDate: 2003-10-16T00:00:00.000Z,
+  password: '$2b$10$b5OWw50o9V9OJsFImd5BweDOuPJj.fB64ehuL6w4flbRsEKZaWNWO',
+  blogs: [],
+  gender: 'male',
+  role: 'user',
+  _id: new ObjectId('6818927fd9237114908dff2e'),
+  createdAt: 2025-05-05T10:27:11.747Z,
+  updatedAt: 2025-05-05T10:27:11.747Z,
+  __v: 0
+} registred 
+[2025-05-05 11:27:21] [INFO]:{
+  _id: new ObjectId('6818927fd9237114908dff2e'),
+  email: 'aliouaneoussama89@gmail.com',
+  firstName: 'Oussama',
+  lastName: 'Ali1',
+  birthDate: 2003-10-16T00:00:00.000Z,
+  password: '$2b$10$b5OWw50o9V9OJsFImd5BweDOuPJj.fB64ehuL6w4flbRsEKZaWNWO',
+  blogs: [],
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-05T10:27:11.747Z,
+  updatedAt: 2025-05-05T10:27:11.747Z,
+  __v: 0
+} logged in 
+[2025-05-05 17:50:41] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'max',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-05T10:13:54.356Z,
+  __v: 0,
+  bio: 'developer',
+  avatar: 'IMG-20250406-WA0020.jpg',
+  blogs: [ new ObjectId('6816914cffee30ef596e3579') ]
+} logged in 
+[2025-05-06 10:18:37] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'max',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-05T10:13:54.356Z,
+  __v: 0,
+  bio: 'developer',
+  avatar: 'IMG-20250406-WA0020.jpg',
+  blogs: [ new ObjectId('6816914cffee30ef596e3579') ]
+} logged in 
+[2025-05-06 10:27:00] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'max',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-05T10:13:54.356Z,
+  __v: 0,
+  bio: 'developer',
+  avatar: 'IMG-20250406-WA0020.jpg',
+  blogs: [ new ObjectId('6816914cffee30ef596e3579') ]
+} logged in 
+[2025-05-06 14:48:16] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'max',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-05T10:13:54.356Z,
+  __v: 0,
+  bio: 'developer',
+  avatar: 'IMG-20250406-WA0020.jpg',
+  blogs: [ new ObjectId('6816914cffee30ef596e3579') ]
+} logged in 
+[2025-05-06 15:11:27] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'max',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-05T10:13:54.356Z,
+  __v: 0,
+  bio: 'developer',
+  avatar: 'IMG-20250406-WA0020.jpg',
+  blogs: [ new ObjectId('6816914cffee30ef596e3579') ]
+} logged in 
+[2025-05-06 15:16:55] [ERROR]:title is required,description is required
+[2025-05-06 15:19:05] [ERROR]:title is required,description is required
+[2025-05-06 15:19:10] [ERROR]:title is required,description is required
+[2025-05-06 15:19:11] [ERROR]:title is required,description is required
+[2025-05-06 15:19:13] [ERROR]:title is required,description is required
+[2025-05-06 15:19:30] [ERROR]:title is required,description is required
+[2025-05-06 15:21:31] [ERROR]:title is required,description is required
+[2025-05-06 15:23:37] [INFO]:{
+  _id: new ObjectId('6818927fd9237114908dff2e'),
+  email: 'aliouaneoussama89@gmail.com',
+  firstName: 'Oussama',
+  lastName: 'Ali1',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$b5OWw50o9V9OJsFImd5BweDOuPJj.fB64ehuL6w4flbRsEKZaWNWO',
+  blogs: [],
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-05T10:27:11.747Z,
+  updatedAt: 2025-05-05T10:28:50.705Z,
+  __v: 0,
+  avatar: 'IMG-20250402-WA0008.jpg',
+  bio: 'Full stack developer '
+} logged in 
+[2025-05-06 15:28:16] [ERROR]:title is required,description is required
+[2025-05-06 15:30:32] [ERROR]:Blog validation failed: media: Cast to string failed for value "{}" (type Object) at path "media"
+[2025-05-06 15:31:49] [ERROR]:Blog validation failed: media: Cast to string failed for value "{ '0': {} }" (type Object) at path "media"
+[2025-05-06 15:33:20] [ERROR]:Blog validation failed: media: Cast to string failed for value "{}" (type Object) at path "media"
+[2025-05-06 15:42:17] [ERROR]:not authenticated
+[2025-05-06 15:42:45] [ERROR]:not authenticated
+[2025-05-06 15:43:06] [INFO]:{
+  _id: new ObjectId('6818927fd9237114908dff2e'),
+  email: 'aliouaneoussama89@gmail.com',
+  firstName: 'Oussama',
+  lastName: 'Ali1',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$b5OWw50o9V9OJsFImd5BweDOuPJj.fB64ehuL6w4flbRsEKZaWNWO',
+  blogs: [ new ObjectId('681a1b8fbb1fede523e103b4') ],
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-05T10:27:11.747Z,
+  updatedAt: 2025-05-06T14:24:15.879Z,
+  __v: 0,
+  avatar: 'IMG-20250402-WA0008.jpg',
+  bio: 'Full stack developer '
+} logged in 
+[2025-05-06 15:43:20] [ERROR]:not authenticated
+[2025-05-06 15:43:52] [ERROR]:title is required,description is required
+[2025-05-06 15:44:21] [ERROR]:title is required,description is required
+[2025-05-06 15:50:55] [INFO]:HTTP GET /uploads/ [object Object]
+[2025-05-06 15:50:55] [ERROR]:url not found
+[2025-05-06 15:50:55] [INFO]:HTTP GET /favicon.ico [object Object]
+[2025-05-06 15:50:55] [ERROR]:url not found
+[2025-05-06 16:21:02] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'john@doe.com',
+  firstName: 'max',
+  lastName: 'doe',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-06T14:22:27.263Z,
+  __v: 0,
+  bio: 'developer',
+  avatar: 'IMG-20250406-WA0020.jpg',
+  blogs: [
+    new ObjectId('6816914cffee30ef596e3579'),
+    new ObjectId('681a1b23bb1fede523e10389')
+  ]
+} logged in 
+[2025-05-06 16:24:03] [INFO]:{
+  email: 'oumaima@oumaima.com',
+  firstName: 'Oumaima',
+  lastName: 'Alione',
+  birthDate: 2005-03-10T00:00:00.000Z,
+  password: '$2b$10$cUjzgTVW7owSjz.AS6y3ae9lGoRYw9V.aM4jp8XHOFZ6Or8xjdW2u',
+  blogs: [],
+  gender: 'female',
+  role: 'user',
+  _id: new ObjectId('681a29936512bee27c6d69a5'),
+  createdAt: 2025-05-06T15:24:03.609Z,
+  updatedAt: 2025-05-06T15:24:03.609Z,
+  __v: 0
+} registred 
+[2025-05-06 16:24:25] [INFO]:{
+  _id: new ObjectId('681a29936512bee27c6d69a5'),
+  email: 'oumaima@oumaima.com',
+  firstName: 'Oumaima',
+  lastName: 'Alione',
+  birthDate: 2005-03-10T00:00:00.000Z,
+  password: '$2b$10$cUjzgTVW7owSjz.AS6y3ae9lGoRYw9V.aM4jp8XHOFZ6Or8xjdW2u',
+  blogs: [],
+  gender: 'female',
+  role: 'user',
+  createdAt: 2025-05-06T15:24:03.609Z,
+  updatedAt: 2025-05-06T15:24:03.609Z,
+  __v: 0
+} logged in 
+[2025-05-06 16:34:28] [ERROR]:Comment validation failed: blogId: Path `blogId` is required.
+[2025-05-06 16:34:32] [ERROR]:Comment validation failed: blogId: Path `blogId` is required.
+[2025-05-06 16:35:00] [ERROR]:Comment validation failed: blogId: Path `blogId` is required.
+[2025-05-06 16:51:08] [INFO]:HTTP POST /api/blogs/like/6814cd6e2f0c6ef9d6b7c147 [object Object]
+[2025-05-06 16:51:08] [ERROR]:url not found
+[2025-05-06 16:52:09] [INFO]:{
+  _id: new ObjectId('6815e23a36efea08b40d7325'),
+  email: 'leo@gmail.com',
+  firstName: 'leo',
+  lastName: 'messi',
+  position: '',
+  password: '$2b$10$S5xpHTu65KlpyDdPdvSS0OetGOnrHbOB/yppMxwds29.BPll2/yYW',
+  avatar: 'https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000',
+  blogs: [],
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-03T09:30:34.125Z,
+  updatedAt: 2025-05-03T09:30:34.125Z,
+  __v: 0
+} logged in 
+[2025-05-06 16:52:43] [INFO]:HTTP POST /api/blogs/like/6814cd6e2f0c6ef9d6b7c147 [object Object]
+[2025-05-06 16:52:43] [ERROR]:url not found
+[2025-05-06 16:55:11] [INFO]:HTTP GET /uploads/https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000 [object Object]
+[2025-05-06 16:55:11] [ERROR]:url not found
+[2025-05-06 16:56:15] [INFO]:HTTP GET /uploads/https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000 [object Object]
+[2025-05-06 16:56:15] [ERROR]:url not found
+[2025-05-06 16:56:22] [INFO]:HTTP GET /uploads/https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000 [object Object]
+[2025-05-06 16:56:22] [ERROR]:url not found
+[2025-05-06 16:59:49] [INFO]:HTTP GET /uploads/https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000 [object Object]
+[2025-05-06 16:59:49] [ERROR]:url not found
+[2025-05-06 16:59:52] [INFO]:HTTP GET /uploads/https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000 [object Object]
+[2025-05-06 16:59:52] [ERROR]:url not found
+[2025-05-06 17:04:21] [INFO]:HTTP GET /uploads/https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000 [object Object]
+[2025-05-06 17:04:21] [ERROR]:url not found
+[2025-05-06 17:15:18] [INFO]:HTTP GET /uploads/https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000 [object Object]
+[2025-05-06 17:15:18] [ERROR]:url not found
+[2025-05-06 17:20:22] [INFO]:HTTP GET /uploads/https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000 [object Object]
+[2025-05-06 17:20:22] [ERROR]:url not found
+[2025-05-06 17:45:04] [INFO]:HTTP GET /uploads/https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000 [object Object]
+[2025-05-06 17:45:04] [ERROR]:url not found
+[2025-05-06 17:45:12] [INFO]:HTTP GET /uploads/https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000 [object Object]
+[2025-05-06 17:45:12] [ERROR]:url not found
+[2025-05-06 17:46:59] [INFO]:HTTP GET /uploads/https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000 [object Object]
+[2025-05-06 17:46:59] [ERROR]:url not found
+[2025-05-06 17:47:05] [INFO]:HTTP GET /uploads/https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000 [object Object]
+[2025-05-06 17:47:05] [ERROR]:url not found
+[2025-05-06 17:47:44] [INFO]:HTTP GET /uploads/https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000 [object Object]
+[2025-05-06 17:47:44] [ERROR]:url not found
+[2025-05-06 18:00:40] [ERROR]:invalid credentials
+[2025-05-06 18:00:52] [ERROR]:invalid credentials
+[2025-05-06 18:02:04] [ERROR]:invalid credentials
+[2025-05-06 18:02:24] [ERROR]:invalid credentials
+[2025-05-06 18:02:36] [ERROR]:invalid credentials
+[2025-05-06 18:02:44] [ERROR]:invalid credentials
+[2025-05-06 18:02:51] [ERROR]:invalid credentials
+[2025-05-06 18:03:47] [ERROR]:invalid credentials
+[2025-05-06 18:04:01] [ERROR]:invalid credentials
+[2025-05-06 18:05:45] [ERROR]:invalid credentials

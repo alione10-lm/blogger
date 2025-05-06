@@ -1,10 +1,6 @@
 import Feed from "../components/Feed";
 const AdminPanel = () => {
-  return (
-    <div>
-      <Feed />
-    </div>
-  );
+  return <div>admin panel</div>;
 };
 
 export default AdminPanel;

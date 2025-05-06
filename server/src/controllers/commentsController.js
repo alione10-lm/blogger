@@ -63,10 +63,6 @@ const createReply = async (req, res) => {
     }
   );
 
-  if (!comment) {
-    console.log("no comment");
-  }
-
   res.status(StatusCodes.CREATED).json({ comment });
 };
 

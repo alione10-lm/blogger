@@ -7,6 +7,8 @@ import { logger } from "../utils/logger.js";
 
 export const register = async (req, res) => {
   req.body.password = await hashPassword(req.body.password);
+
+  console.log(req.body.password);
   const newUser = await User.create(req.body);
 
   logger.info(`${newUser} registred `);

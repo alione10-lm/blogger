@@ -14,29 +14,32 @@ import Comments from "./Comments";
 import Modal from "./ui/Modal";
 import Button from "./ui/Button";
 
-import { Link } from "react-router-dom";
-
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
-
-dayjs.extend(relativeTime);
+import { Link, useOutletContext } from "react-router-dom";
+import {
+  checkIfTheUserHasLikedTheBlog,
+  TimeFromNow,
+} from "../services/helpers";
+import UserAvatar from "./ui/UserAvatar";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { deleteBlog, LikeBlog } from "../utils/api";
+import toast from "react-hot-toast";
+import FullSpinner from "./ui/FullSpinner";
+import AnimatedHeart from "./ui/AnimatedHeart";
 
 export default function BlogCard({
-  isCurrentUser,
+  isCurrentUser = false,
   title,
   description,
   createdBy,
   createdAt,
   id,
+  comments,
+  likes,
+  media,
 }) {
-  const [like, setLike] = useState(false);
+  // const [like, setLike] = useState(false);
   const [isOpenComments, setIsOpenComments] = useState(false);
-
   const [copyStatus, setCopyStatus] = useState("");
-
-  const toggleLike = () => {
-    setLike((like) => !like);
-  };
 
   const toggleComments = () => {
     setIsOpenComments((open) => !open);
@@ -53,25 +56,42 @@ export default function BlogCard({
       });
   };
 
-  const timeFromNow = dayjs(createdAt).fromNow();
+  const queryClient = useQueryClient();
+
+  const { mutate: likeFn } = useMutation({
+    mutationFn: LikeBlog,
+    onSuccess: () => {
+      queryClient.invalidateQueries("blogs");
+    },
+  });
+
+  const toggleLike = () => {
+    // setLike((like) => !like);
+    likeFn(id);
+  };
+
+  const { user } = useOutletContext();
 
   return (
-    <div className="overflow-hidden text-slate-500 dark:border-gray-800 border-b border-gray-200 p-2 ">
+    <div className="overflow-hidden text-slate-500  p-2 ">
       <div className="w-full flex items-center justify-between">
         <header className="flex gap-4">
-          <a
-            href="#"
-            className="relative inline-flex h-12 w-12 items-center justify-center rounded-full text-white"
-          >
-            <img
-              src="https://i.pravatar.cc/48?img=26"
-              alt="user name"
-              title="user name"
-              width="48"
-              height="48"
-              className="max-w-full rounded-full"
-            />
-          </a>
+          <Link to={`../users/${createdBy._id}`}>
+            {createdBy.avatar ? (
+              <img
+                src={`http://localhost:5000/uploads/${createdBy.avatar}`}
+                alt="user name"
+                title={`${createdBy.firstName}  ${createdBy.lastName}`}
+                className="max-w-full size-[2rem] rounded-lg cursor-pointer"
+              />
+            ) : (
+              <UserAvatar
+                size="size-[2rem]"
+                firstname={createdBy.firstName}
+                lastname={createdBy.lastName}
+              />
+            )}
+          </Link>
           <div>
             <h3 className="text-lg md:text-xl font-medium  dark:text-slate-200 text-slate-600">
               {/* Looking back at time */}
@@ -79,7 +99,8 @@ export default function BlogCard({
               {title}
             </h3>
             <p className="text-sm  text-indigo-500/100">
-              by {createdBy?.firstName} {createdBy?.lastName} , {timeFromNow}
+              by {createdBy?.firstName} {createdBy?.lastName} ,
+              {TimeFromNow(createdAt)}
             </p>
           </div>
         </header>
@@ -90,51 +111,74 @@ export default function BlogCard({
                 <Trash size={20} cursor="pointer" className="" />
               </Modal.Open>
               <Modal.Window name="delete">
-                <BlogOperations />
+                <BlogOperations blogId={id} />
               </Modal.Window>
             </Modal>
             <Pen size={20} cursor="pointer" className="" />
           </div>
         )}
       </div>
-      <div className="py-6 dark:text-gray-300 text-sm md:text-[1rem]">
-        <p>{description}</p>
-      </div>
-      <img
-        src="/picture.jpg"
-        alt="card image"
-        className="aspect-video w-full rounded-lg"
+      <div
+        className="description py-6 dark:text-gray-300 text-sm md:text-[1rem]"
+        dangerouslySetInnerHTML={{ __html: description }}
       />
+      {media &&
+        (media.endsWith("mp4") ? (
+          <video className="aspect-video rounded-lg" muted={false} controls>
+            <source
+              src={`http://localhost:5000/uploads/${media}`}
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        ) : (
+          <img
+            src={`http://localhost:5000/uploads/${media}`}
+            alt="card image"
+            className="aspect-vdeo  rounded-lg cursor-pointer"
+          />
+        ))}
+
       <div className="w-full flex gap-4 p-2 justify-end ">
         <button
-          onClick={() => toggleLike()}
+          onClick={() => toggleLike(id)}
           className="flex flex-col items-center"
         >
           <Heart
             stroke="#ef4444"
-            size={20}
-            fill={like ? "red" : "transparent"}
+            size={15}
+            fill={
+              checkIfTheUserHasLikedTheBlog(user?.user?._id, likes)
+                ? "red"
+                : "transparent"
+            }
             className="cursor-pointer"
           />
-          <span className="text-[0.6rem] text-red-500"> 100 likes</span>
+          <span className="text-[0.6rem] text-red-500">
+            {" "}
+            {likes.length} likes
+          </span>
         </button>
         <button
           className="flex flex-col items-center"
           onClick={() => toggleComments()}
         >
           <MessageCircle
-            size={20}
+            size={15}
             stroke="#10b981"
             className="cursor-pointer"
           />
-          <span className="text-[0.6rem] text-green-500"> 100 comments</span>
+          <span className="text-[0.6rem] text-green-500">
+            {comments.length} comments
+          </span>
         </button>
+
         <Modal>
           <Modal.Open>
             <div>
               <button className="flex flex-col items-center">
                 <Share2
-                  size={20}
+                  size={15}
                   stroke="#6366f1"
                   className=" cursor-pointer"
                 />
@@ -145,10 +189,12 @@ export default function BlogCard({
           <Modal.Window>
             <div className="flex bg-gray-50 gap-4 dark:bg-gray-100/6 p-4 mt-10 rounded-lg items-center justify-center">
               <p className="text-indigo-500 text-sm ">
-                {`${window.location.href}/${id}`}
+                {`http://localhost:5173/app/blogs/${id}`}
               </p>
               <button
-                onClick={() => handleCopy(`${window.location.href}/${id}`)}
+                onClick={() =>
+                  handleCopy(`http://localhost:5173/app/blogs/${id}`)
+                }
               >
                 {copyStatus === "copied" && (
                   <Check className="bg-indigo-100 text-indigo-500 p-2 size-8 rounded-lg cursor-pointer" />
@@ -170,19 +216,35 @@ export default function BlogCard({
         </Modal>
         <Link className="flex flex-col items-center" to={`../blog/${id}`}>
           <SquareArrowOutUpRight
-            size={20}
+            size={15}
             stroke="#6366f1"
             className=" cursor-pointer"
           />
           <span className="text-[0.6rem] text-indigo-500">overview</span>
         </Link>
       </div>
-      {isOpenComments ? <Comments /> : ""}
+      {isOpenComments ? <Comments blogId={id} comments={comments} /> : ""}
     </div>
   );
 }
 
-const BlogOperations = ({ closeModal }) => {
+const blogIntercations = () => {};
+
+const BlogOperations = ({ closeModal, blogId }) => {
+  const queryClient = useQueryClient();
+
+  const { mutate: deleteFn, isPending } = useMutation({
+    mutationFn: (id) => deleteBlog(id),
+    onSuccess: () => {
+      toast("deleted");
+      queryClient.invalidateQueries("blogs");
+      closeModal();
+    },
+    onError: (err) => {
+      toast.error(err.message);
+    },
+  });
+
   return (
     <div className="">
       <p className="mt-10 text-gray-700 dark:text-gray-300 mb-5">
@@ -191,7 +253,9 @@ const BlogOperations = ({ closeModal }) => {
       </p>
       <div className="flex items-center  justify-end  ">
         <div className="flex items-center gap-2">
-          <Button variant="secondary">delete</Button>
+          <Button onClick={() => deleteFn(blogId)} variant="secondary">
+            {isPending ? <FullSpinner size="small" /> : "delete"}
+          </Button>
           <Button onClick={() => closeModal?.()} variant="ghost">
             cancel
           </Button>

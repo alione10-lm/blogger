@@ -2,20 +2,59 @@ import { NotFoundError } from "../middlewares/errorsHandler.js";
 import Blog from "../models/Blog.js";
 import statusCodes, { StatusCodes } from "http-status-codes";
 import { logger } from "../utils/logger.js";
+import User from "../models/User.js";
 
 const getAllBlogs = async (req, res) => {
-  const blogs = await Blog.find().populate("createdBy");
+  const blogs = await Blog.find().populate([
+    { path: "createdBy" },
+    {
+      path: "comments",
+      populate: [
+        {
+          path: "createdBy",
+          model: "User",
+        },
+        {
+          path: "replies",
+          populate: {
+            path: "createdBy",
+            model: "User",
+          },
+        },
+      ],
+    },
+    { path: "likes" },
+  ]);
   res.status(statusCodes.OK).json({ blogs });
 };
 
 const createBlog = async (req, res) => {
+  console.log(req.file);
   req.body.createdBy = req.user.userId;
+
+  req.body.media = req.file.filename;
   const newBlog = await Blog.create(req.body);
 
-  res.status(statusCodes.CREATED).json({ newBlog });
+  const user = await User.findOneAndUpdate(
+    { _id: req.user.userId },
+    {
+      $push: { blogs: newBlog._id },
+    },
+    {
+      new: true,
+    }
+  );
+  res.status(statusCodes.CREATED).json({ newBlog, user });
 };
 const deleteBlog = async (req, res) => {
   const removedBlog = await Blog.findByIdAndDelete(req.params.id);
+  await User.findOneAndUpdate(
+    { _id: req.user.userId },
+    {
+      $pull: { blogs: req.params.id },
+    },
+    { new: true }
+  );
   res.status(statusCodes.OK).json({ removedBlog });
 };
 const updateBlog = async (req, res) => {
@@ -27,7 +66,26 @@ const updateBlog = async (req, res) => {
 };
 const getSingleBlog = async (req, res) => {
   const { id } = req.params;
-  const blog = await Blog.findById(id);
+  const blog = await Blog.findById(id).populate([
+    { path: "createdBy" },
+    {
+      path: "comments",
+      populate: [
+        {
+          path: "createdBy",
+          model: "User",
+        },
+        {
+          path: "replies",
+          populate: {
+            path: "createdBy",
+            model: "User",
+          },
+        },
+      ],
+    },
+    { path: "likes" },
+  ]);
   if (!blog) throw new NotFoundError("not found");
 
   res.status(statusCodes.OK).json({ blog });

@@ -10,6 +10,12 @@ const userSchema = new mongoose.Schema(
     birthDate: { type: Date },
     password: String,
     avatar: String,
+    blogs: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Blog",
+      },
+    ],
     gender: {
       type: String,
       enum: ["male", "female"],
@@ -23,10 +29,10 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-userSchema.methods.toJSON = function () {
-  let obj = this.toObject();
-  delete obj.password;
-  return obj;
-};
+// userSchema.methods.toJSON = function () {
+//   let obj = this.toObject();
+//   delete obj.password;
+//   return obj;
+// };
 
 export default mongoose.model("User", userSchema);

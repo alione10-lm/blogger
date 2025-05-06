@@ -36,7 +36,7 @@ const MenuBar = () => {
   }
 
   return (
-    <div className="editor-menu border dark:text-gray-300 text-gray-700 border-gray-200 dark:border-gray-700 mb-2 grid grid-cols-10 md:grid-cols-13 items-center gap-1  p-2  rounded-lg ">
+    <div className="editor-menu border dark:text-gray-300 text-gray-700 border-gray-200 dark:border-gray-700 mb-2 grid grid-cols-8 w-full md:grid-cols-10 items-center gap-1  p-2  rounded-lg ">
       <button
         type="button"
         onClick={() => editor.chain().focus().toggleBold().run()}
@@ -154,7 +154,7 @@ const Tiptap = ({ children }) => {
       content=""
       editorContainerProps={{
         className:
-          "  w-full editor-text overflow-y-auto bg-gray-50 dark:bg-slate-100/4 dark:text-gray-300 text-gray-700  rounded-lg p-2  mb-10  min-h-[10rem] max-h-[10rem]",
+          "  w-full editor-text overflow-y-auto bg-gray-50 dark:bg-slate-100/4 dark:text-gray-300 text-gray-700  rounded-lg p-2  mb-4  min-h-[10rem] max-h-[30rem] truncate max-w-[100%] ",
       }}
     >
       {children}

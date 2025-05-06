@@ -51,10 +51,9 @@ export default function Registration() {
                 <input
                   id="First name"
                   name="First name"
-                  type="texxt"
+                  type="text"
                   required
                   defaultValue="Oussama"
-                  autoComplete="email"
                   className="input"
                   {...register("firstName", {
                     required: "first name is required",
@@ -188,7 +187,7 @@ export default function Registration() {
             </FormRow>
 
             <Button type="submit">
-              regsiter {isPending && <FullSpinner />}
+              regsiter {isPending && <FullSpinner size={"small"} />}
             </Button>
           </form>
 

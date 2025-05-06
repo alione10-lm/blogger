@@ -48,7 +48,7 @@ function Window({ children, name }) {
     <div className="fixed inset-0 w-full h-full overflow-y-auto  bg-black/10 backdrop-blur-xs z-[1000] transition-all duration-500">
       <div
         ref={ref}
-        className="fixed w-full dark:border dark:border-slate-700 md:w-fit top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-dark-bg-1 rounded-lg shadow-lg p-8 transition-all duration-500"
+        className="fixed w-full dark:border dark:border-slate-700 md:w-1/3 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-dark-bg-1 rounded-lg shadow-lg p-8 transition-all duration-500"
       >
         <button
           onClick={close}

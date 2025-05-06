@@ -42,7 +42,7 @@ export default function Login() {
                 id="email"
                 name="email"
                 type="email"
-                defaultValue="john@doe2.com"
+                defaultValue="john@doe.com"
                 required
                 autoComplete="email"
                 className="input"
@@ -61,7 +61,7 @@ export default function Login() {
                 id="password"
                 name="password"
                 type="password"
-                defaultValue="JohnDoe10@"
+                defaultValue="JohnDeo10@"
                 required
                 autoComplete="current-password"
                 className="input"
@@ -71,11 +71,11 @@ export default function Login() {
                     value: 8,
                     message: "password must be at least 8 characters",
                   },
-                  pattern: {
-                    value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/,
-                    message:
-                      " include uppercase, lowercase, number, and special character",
-                  },
+                  // pattern: {
+                  //   value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/,
+                  //   message:
+                  //     " include uppercase, lowercase, number, and special character",
+                  // },
                 })}
               />
             </FormRow>

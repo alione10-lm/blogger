@@ -1,44 +1,89 @@
-import React from "react";
+import React, { useState } from "react";
 import FormRow from "./ui/FormRow";
 import { Send } from "lucide-react";
 import Button from "./ui/Button";
 import Feed from "./Feed";
+import EmptyComments from "./ui/EmptyComments";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { createComment } from "../utils/api";
+import { useForm } from "react-hook-form";
+import Error from "./ui/Error";
+import FullSpinner from "./ui/FullSpinner";
+import toast from "react-hot-toast";
+import clsx from "clsx";
 
-const Comments = () => {
+const Comments = ({ comments, blogId }) => {
+  const [commentSession, setCommentSession] = useState(true);
+
+  const queryClient = useQueryClient();
+
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    reset,
+  } = useForm();
+
+  const { mutate, isPending: isCreatingComment } = useMutation({
+    mutationFn: createComment,
+    onSuccess: () => {
+      queryClient.invalidateQueries("blogs");
+      reset();
+    },
+    onError: (err) => {
+      console.log(err);
+      toast.error(err.message || "something went wrong , try again later ");
+    },
+  });
+
+  const onSubmit = (data) => {
+    const commentData = {
+      text: data.text,
+      blogId,
+    };
+
+    mutate(commentData);
+  };
+
   return (
-    <div>
-      {/* <ul>
-        {Array.from({ length: 4 }).map((_, ndx) => (
-          <li
-            className="text-sm flex items-center mb-2 justify-between"
-            key={ndx}
-          >
-            <div className="flex items-center gap-2">
-              <img className="size-10 rounded-full" src="/avatar.jpg" alt="" />
-              <div>
-                <span className="dark:text-slate-300 text-slate-700">
-                  comment {ndx + 1}
-                </span>
-                <div className="space-x-3 text-xs dark:text-slate-400 text-slate-600">
-                  <span>like</span>
-                  <span>reply</span>
-                  <span>see 6 replies</span>
-                </div>
-              </div>
-            </div>
-            <p className="text-xs text-indigo-500">1 min ago</p>
-          </li>
-        ))}
-        <span className="dark:text-slate-300  text-slate-600">
-          load more comments ...
-        </span>
-      </ul> */}
-      <Feed />
-      <form className="flex items-center p-4 justify-center gap-1  ">
-        <input type="text" className="input" placeholder="add new comment" />
+    <div className="w-full flex flex-col">
+      <div className="max-h-[20rem] overflow-auto styled-scrollbar">
+        {!comments.length ? (
+          <EmptyComments />
+        ) : (
+          <Feed
+            commentSession={commentSession}
+            setCommentSession={setCommentSession}
+            comments={comments}
+          />
+        )}
+      </div>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex pl-4 py-2   gap-1  "
+      >
+        <div className="w-full">
+          <input
+            type="text"
+            className="input p-1"
+            placeholder={clsx(
+              commentSession ? "add new comment" : "add a reply"
+            )}
+            {...register("text", {
+              required: "comment must be at lest 1 character",
+            })}
+          />
+          {errors?.comment?.message && (
+            <Error>{errors?.comment?.message}</Error>
+          )}
+        </div>
         <div>
-          <Button>
-            <Send className="bg-indigo-2 size-5" />
+          <Button size="small" type="submit">
+            {isCreatingComment ? (
+              <FullSpinner size="small" />
+            ) : (
+              <Send className="bg-indigo-2 " size={15} />
+            )}
           </Button>
         </div>
       </form>

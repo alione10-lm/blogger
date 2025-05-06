@@ -1,6 +1,6 @@
 import { useContext, createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { login } from "../utils/api";
+import { login, logout } from "../utils/api";
 import toast from "react-hot-toast";
 import { useMutation } from "@tanstack/react-query";
 const AuthContext = createContext();
@@ -25,14 +25,22 @@ const AuthProvider = ({ children }) => {
     },
   });
 
-  const logOut = () => {
-    setToken("");
-    localStorage.removeItem("site");
-    navigate("/login");
-  };
+  const { mutate: logoutFn, isPending: isLoggingOut } = useMutation({
+    mutationFn: logout,
+    onSuccess: () => {
+      toast.success("logged out");
+      localStorage.removeItem("token");
+      navigate("/");
+    },
+    onError: () => {
+      toast.error("failed to logging out");
+    },
+  });
 
   return (
-    <AuthContext.Provider value={{ token, LoginFn, logOut, isLoginIn }}>
+    <AuthContext.Provider
+      value={{ token, LoginFn, logoutFn, isLoggingOut, isLoginIn }}
+    >
       {children}
     </AuthContext.Provider>
   );

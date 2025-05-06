@@ -23,17 +23,26 @@ DBconnection();
 
 export const app = express();
 
-app.use(helmet());
+// files upload
+
+// app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());
 app.use(morgan("dev"));
 app.use(limiter);
 app.use(cors());
 
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+import path from "path";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+app.use(express.static(path.resolve(__dirname, "./public")));
+
 app.use("/api/auth", authRoutes);
 app.use("/api/blogs", authMiddleware, blogRoutes);
 app.use("/api/blog/comment", authMiddleware, commentsRoutes);
-app.use("/api/current-user", authMiddleware, userRoutes);
+app.use("/api/users", authMiddleware, userRoutes);
 app.use(requestLogger);
 
 app.use("*", (req, res) => {

@@ -4,21 +4,24 @@ import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "../contexts/authContext";
 import { useQuery } from "@tanstack/react-query";
 import { getCurrentUser } from "../utils/api";
+import useCurrentUser from "../hooks/useCurrentUser";
 
 const AppLayout = () => {
   const { token } = useAuth();
 
-  const { data: currentUser, isLoading: isGettingCurrentUser } = useQuery({
-    queryKey: ["get-current-user"],
-    queryFn: getCurrentUser,
-  });
+  // const { data: currentUser, isLoading: isGettingCurrentUser } = useQuery({
+  //   queryKey: ["current-user"],
+  //   queryFn: getCurrentUser,
+  // });
+
+  const { currentUser } = useCurrentUser();
   if (!token) return <Navigate to={"/auth"} />;
 
   return (
     <div className="flex flex-col dark:bg-dark-bg-2 h-[100dvh] w-full ">
       <Navbar />
       <main className="w-full transition-colors styled-scrollbar duration-300 dark:bg-dark-bg-2 dark:text-slate-300  h-full overflow-y-auto  p-2  md:px-10">
-        <Outlet context={{ user: currentUser, isGettingCurrentUser }} />
+        <Outlet context={{ user: currentUser }} />
       </main>
     </div>
   );

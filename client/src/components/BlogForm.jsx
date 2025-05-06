@@ -3,11 +3,17 @@ import FormRow from "./ui/FormRow";
 import Button from "./ui/Button";
 import Tiptap, { Result } from "./Tiptap";
 import { useForm } from "react-hook-form";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import FullSpinner from "../components/ui/FullSpinner";
+import { createBlog } from "../utils/api";
 
-const BlogForm = () => {
+import { toast } from "react-hot-toast";
+import axios from "axios";
+const BlogForm = ({ closeModal }) => {
   const [description, setDescription] = useState("");
-
   const [descriptionError, setDescriptionError] = useState("");
+
+  const queryClient = useQueryClient();
 
   const {
     handleSubmit,
@@ -16,21 +22,45 @@ const BlogForm = () => {
     register,
   } = useForm();
 
+  const { mutate: createBlogFn, isPending } = useMutation({
+    mutationFn: createBlog,
+    onSuccess: () => {
+      toast.success("blog successfully published ");
+      closeModal();
+      queryClient.invalidateQueries("blogs");
+    },
+    onError: () => {
+      toast.error("failed");
+    },
+  });
+  // const { mutate, isPending } = useMutation({
+  //   mutationFn: (formData) =>
+  //     axios.post("/api/blogs", formData, {
+  //       headers: { "Content-Type": "multipart/form-data" },
+  //     }),
+  //   onSuccess: () => {
+  //     queryClient.invalidateQueries("blogs");
+  //     closeModal();
+  //     reset();
+  //     toast.success("published !");
+  //   },
+  //   onError: () => {
+  //     toast.error("blog publishion failed ");
+  //   },
+  // });
+
   const submitHandler = (data) => {
-    if (!description) {
-      setDescriptionError("description is required");
-      return;
-    }
-    const newData = {
-      data,
-      description: description,
-    };
-    console.log(newData);
-    reset();
+    const formData = new FormData();
+    formData.append("title", data.title);
+    formData.append("description", description);
+    formData.append("media", data.media[0]);
+
+    // mutate(formData);
+    createBlogFn(formData);
   };
 
   return (
-    <div className="w-full  flex  justify-center">
+    <div className="w-full  flex  justify-center" encType="multipart/form-data">
       <form className="" onSubmit={handleSubmit(submitHandler)}>
         <FormRow label="title" error={errors?.title?.message}>
           <input
@@ -43,14 +73,14 @@ const BlogForm = () => {
           />
         </FormRow>
 
-        <FormRow label="image/video" htmlFor="image-video">
+        <FormRow label="image/video" htmlFor="media">
           <div className="relative inline-flex items-center w-full dark:text-gray-300 gap-2 dark:dark:bg-gray-100/4    border-none outline-none bg-gray-50 text-sm border rounded border-slate-200 text-slate-500">
             <input
-              id="file-upload"
-              name="file-upload"
+              id="media"
+              name="media"
               type="file"
               className="peer order-2 w-full [&::file-selector-button]:hidden"
-              {...register("file")}
+              {...register("media")}
             />
             <label
               htmlFor="file-upload"
@@ -66,7 +96,9 @@ const BlogForm = () => {
           </Tiptap>
         </FormRow>
 
-        <Button type="submit">Publich</Button>
+        <Button type="submit">
+          {isPending ? <FullSpinner size={"small"} /> : "publish"}
+        </Button>
       </form>
     </div>
   );
