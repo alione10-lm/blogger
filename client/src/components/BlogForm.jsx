@@ -5,11 +5,12 @@ import Tiptap, { Result } from "./Tiptap";
 import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import FullSpinner from "../components/ui/FullSpinner";
-import { createBlog } from "../utils/api";
+import { createBlog, updateBlog } from "../utils/api";
 
 import { toast } from "react-hot-toast";
 import axios from "axios";
-const BlogForm = ({ closeModal }) => {
+
+const BlogForm = ({ closeModal, blogId = "", defaultValues = {} }) => {
   const [description, setDescription] = useState("");
   const [descriptionError, setDescriptionError] = useState("");
 
@@ -26,37 +27,45 @@ const BlogForm = ({ closeModal }) => {
     mutationFn: createBlog,
     onSuccess: () => {
       toast.success("blog successfully published ");
-      closeModal();
       queryClient.invalidateQueries("blogs");
+      closeModal();
     },
     onError: () => {
       toast.error("failed");
     },
   });
-  // const { mutate, isPending } = useMutation({
-  //   mutationFn: (formData) =>
-  //     axios.post("/api/blogs", formData, {
-  //       headers: { "Content-Type": "multipart/form-data" },
-  //     }),
-  //   onSuccess: () => {
-  //     queryClient.invalidateQueries("blogs");
-  //     closeModal();
-  //     reset();
-  //     toast.success("published !");
-  //   },
-  //   onError: () => {
-  //     toast.error("blog publishion failed ");
-  //   },
-  // });
+
+  const {
+    mutate: update,
+    isPending: isUpdatingBlog,
+    error,
+  } = useMutation({
+    mutationFn: updateBlog,
+    onSuccess: (data) => {
+      toast.success("blog successfully updated  ");
+      queryClient.invalidateQueries("blogs");
+      queryClient.invalidateQueries("current-user");
+      closeModal();
+      console.log(data);
+    },
+    onError: (err) => {
+      console.log(err);
+      toast.error("update failed");
+    },
+  });
 
   const submitHandler = (data) => {
     const formData = new FormData();
     formData.append("title", data.title);
     formData.append("description", description);
-    formData.append("media", data.media[0]);
+    data.media.length && formData.append("media", data.media[0]);
 
-    // mutate(formData);
-    createBlogFn(formData);
+    // const plainObj = Object.fromEntries(formData.entries());
+    // console.log(JSON.stringify(plainObj,null,2));
+
+    blogId ? update({ blogId, formData }) : createBlogFn(formData);
+
+    reset();
   };
 
   return (
@@ -66,6 +75,7 @@ const BlogForm = ({ closeModal }) => {
           <input
             type="text"
             id="title"
+            defaultValue={defaultValues?.title}
             className="input"
             {...register("title", {
               required: "title is required",
@@ -91,13 +101,21 @@ const BlogForm = ({ closeModal }) => {
           </div>
         </FormRow>
         <FormRow label="description" error={descriptionError}>
-          <Tiptap register={register} setDescription={setDescription}>
+          <Tiptap
+            register={register}
+            description={defaultValues.description}
+            setDescription={setDescription}
+          >
             <Result setDescription={setDescription} />
           </Tiptap>
         </FormRow>
 
         <Button type="submit">
-          {isPending ? <FullSpinner size={"small"} /> : "publish"}
+          {isPending || isUpdatingBlog ? (
+            <FullSpinner size={"small"} />
+          ) : (
+            "publish"
+          )}
         </Button>
       </form>
     </div>

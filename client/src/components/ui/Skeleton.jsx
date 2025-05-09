@@ -34,8 +34,6 @@ const Skeleton = () => {
           <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z" />
         </svg>
       </div>
-
-      <span className="sr-only">Loading...</span>
     </div>
   );
 };

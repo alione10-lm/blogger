@@ -25,6 +25,7 @@ import { deleteBlog, LikeBlog } from "../utils/api";
 import toast from "react-hot-toast";
 import FullSpinner from "./ui/FullSpinner";
 import AnimatedHeart from "./ui/AnimatedHeart";
+import BlogForm from "./BlogForm";
 
 export default function BlogCard({
   isCurrentUser = false,
@@ -37,7 +38,6 @@ export default function BlogCard({
   likes,
   media,
 }) {
-  // const [like, setLike] = useState(false);
   const [isOpenComments, setIsOpenComments] = useState(false);
   const [copyStatus, setCopyStatus] = useState("");
 
@@ -66,23 +66,26 @@ export default function BlogCard({
   });
 
   const toggleLike = () => {
-    // setLike((like) => !like);
     likeFn(id);
   };
 
   const { user } = useOutletContext();
 
+  const repliesCount = comments.reduce((sum, comment) => {
+    return sum + comment.replies.length;
+  }, 0);
+
   return (
     <div className="overflow-hidden text-slate-500  p-2 ">
       <div className="w-full flex items-center justify-between">
-        <header className="flex gap-4">
+        <header className="flex gap-4 items-start">
           <Link to={`../users/${createdBy._id}`}>
             {createdBy.avatar ? (
               <img
                 src={`http://localhost:5000/uploads/${createdBy.avatar}`}
                 alt="user name"
                 title={`${createdBy.firstName}  ${createdBy.lastName}`}
-                className="max-w-full size-[2rem] rounded-lg cursor-pointer"
+                className="max-w-full   size-[3rem] rounded-lg cursor-pointer"
               />
             ) : (
               <UserAvatar
@@ -92,10 +95,8 @@ export default function BlogCard({
               />
             )}
           </Link>
-          <div>
-            <h3 className="text-lg md:text-xl font-medium  dark:text-slate-200 text-slate-600">
-              {/* Looking back at time */}
-
+          <div className="w-full flex flex-col">
+            <h3 className="text-md md:text-xl font-medium  dark:text-slate-200 text-slate-600">
               {title}
             </h3>
             <p className="text-sm  text-indigo-500/100">
@@ -114,7 +115,14 @@ export default function BlogCard({
                 <BlogOperations blogId={id} />
               </Modal.Window>
             </Modal>
-            <Pen size={20} cursor="pointer" className="" />
+            <Modal>
+              <Modal.Open opens="delete">
+                <Pen size={20} cursor="pointer" className="" />
+              </Modal.Open>
+              <Modal.Window name="delete">
+                <BlogForm blogId={id} defaultValues={{ title, description }} />
+              </Modal.Window>
+            </Modal>
           </div>
         )}
       </div>
@@ -122,6 +130,9 @@ export default function BlogCard({
         className="description py-6 dark:text-gray-300 text-sm md:text-[1rem]"
         dangerouslySetInnerHTML={{ __html: description }}
       />
+      {
+        // TODO : remember to get back blog image
+      }
       {media &&
         (media.endsWith("mp4") ? (
           <video className="aspect-video rounded-lg" muted={false} controls>
@@ -135,10 +146,9 @@ export default function BlogCard({
           <img
             src={`http://localhost:5000/uploads/${media}`}
             alt="card image"
-            className="aspect-vdeo  rounded-lg cursor-pointer"
+            className="aspect-vdeo rounded-lg cursor-pointer"
           />
         ))}
-
       <div className="w-full flex gap-4 p-2 justify-end ">
         <button
           onClick={() => toggleLike(id)}
@@ -169,7 +179,7 @@ export default function BlogCard({
             className="cursor-pointer"
           />
           <span className="text-[0.6rem] text-green-500">
-            {comments.length} comments
+            {comments.length + repliesCount} comments
           </span>
         </button>
 

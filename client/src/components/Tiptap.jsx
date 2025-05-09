@@ -146,12 +146,12 @@ export const Result = ({ setDescription }) => {
   return null;
 };
 
-const Tiptap = ({ children }) => {
+const Tiptap = ({ children, description = "" }) => {
   return (
     <EditorProvider
       slotBefore={<MenuBar />}
       extensions={extensions}
-      content=""
+      content={description}
       editorContainerProps={{
         className:
           "  w-full editor-text overflow-y-auto bg-gray-50 dark:bg-slate-100/4 dark:text-gray-300 text-gray-700  rounded-lg p-2  mb-4  min-h-[10rem] max-h-[30rem] truncate max-w-[100%] ",

@@ -25,6 +25,8 @@ import useViewportWidth from "./hooks/useViewportWidth";
 import AuthProvider from "./contexts/authContext";
 
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import UserDetails from "./pages/UserDetails";
+import Projects from "./components/Projetcs";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -78,8 +80,10 @@ function App() {
               <Route path="profile" element={<Profile />}>
                 <Route path="saved" element={<p>saved</p>} />
               </Route>
+              <Route path="pro" element={<Projects />} />
               <Route path="admin" element={<AdminPanel />} />
               <Route path="blog/:blogId" element={<BlogDetails />} />
+              <Route path="users/:userId" element={<UserDetails />} />
             </Route>
           </Routes>
         </AuthProvider>

@@ -17,7 +17,7 @@ router
   .route("/:id")
   .get(getSingleBlog)
   .delete(deleteBlog)
-  .patch(validateBlogInputs, updateBlog);
+  .patch(upload.single("media"), updateBlog);
 router.route("/:id/like").post(likeBlog);
 // router.route("/like").post(likeBlog);
 router.route("/:id/comment");

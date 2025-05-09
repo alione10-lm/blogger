@@ -1,14 +1,25 @@
 import axios from "axios";
 
-export const getAllBlogs = async () => {
+// export const getAllBlogs = async ({ pageParam = 1 }, filter) => {
+export const getAllBlogs = async (filter) => {
   try {
-    const res = await axios.get("/api/blogs");
+    // const res = await axios.get(`/api/blogs?page=${pageParam}&filter=all`);
+    const res = await axios.get(`/api/blogs?filter=${filter}`);
 
-    return res.data.blogs;
+    return res.data;
   } catch (err) {
     throw new Error(err?.response?.data?.message || "failed to fetch");
   }
 };
+// export const getAllBlogs2 = async ({ pageParam = 1 }) => {
+//   try {
+//     const res = await axios.get(`http://localhost:5000/scroll?${pageParam}`);
+
+//     return res.data.blogs;
+//   } catch (err) {
+//     throw new Error(err?.response?.data?.message || "failed to fetch");
+//   }
+// };
 export const getSingleBlog = async (blogId) => {
   try {
     const res = await axios.get(`/api/blogs/${blogId}`);
@@ -18,7 +29,6 @@ export const getSingleBlog = async (blogId) => {
   }
 };
 export const createBlog = async (blogData) => {
-  console.log(blogData);
   try {
     const res = await axios.post("/api/blogs", blogData, {
       headers: { "Content-Type": "multipart/form-data" },
@@ -38,10 +48,12 @@ export const deleteBlog = async (blogId) => {
     throw new Error(err?.response?.data?.message);
   }
 };
-export const updateBlog = async (blogId) => {
+export const updateBlog = async ({ blogId, formData }) => {
   try {
-    const res = await axios.patch(`/api/blogs/${blogId}`);
-    return await res.json();
+    const res = await axios.patch(`/api/blogs/${blogId}`, formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+    return res.data;
   } catch (err) {
     throw new Error(err?.response?.data?.message);
   }
@@ -78,14 +90,21 @@ export const updateUser = async (userInfo) => {
 export const deleteUser = async () => {
   try {
     const res = await axios.delete("/api/current-user");
-    return await res.json();
+    return await res.data;
   } catch (err) {
     throw new Error(err?.response?.data?.message);
   }
 };
 
+export const getSingleUser = async (userId) => {
+  try {
+    const res = await axios.get(`/api/users/${userId}`);
+    return res.data.user;
+  } catch (err) {
+    throw new Error(err?.response?.data?.message);
+  }
+};
 export const createComment = async (commentInfo) => {
-  console.log(commentInfo);
   try {
     const res = await axios.post("/api/blog/comment", commentInfo);
     return await res.data;
@@ -112,10 +131,10 @@ export const updateComment = async () => {
   }
 };
 
-export const createReply = async () => {
+export const createReply = async (replyData) => {
   try {
-    const res = await axios.post("/api/blog/comment/reply");
-    return await res.json();
+    const res = await axios.post("/api/blog/comment/reply", replyData);
+    return res.data;
   } catch (err) {
     throw new Error(err?.response?.data?.message);
   }

@@ -7,14 +7,15 @@ export default function Button({
   type = "button",
   children,
   onClick,
+  disabled,
 }) {
   const varinats = {
     primary:
-      " flex items-center justify-center gap-2 font-medium tracking-wide text-white transition duration-300 cursor-pointer rounded-md whitespace-nowrap bg-indigo-500 hover:bg-indigo-600 focus:bg-indigo-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-indigo-300 disabled:bg-indigo-300 disabled:shadow-none  ",
+      "disabled:cursor-not-allowed flex items-center justify-center gap-2 font-medium tracking-wide text-white transition duration-300 cursor-pointer rounded-md whitespace-nowrap bg-indigo-500 hover:bg-indigo-600 focus:bg-indigo-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-indigo-300 disabled:bg-indigo-300 disabled:shadow-none  ",
     ghost:
-      " flex items-center justify-center  font-medium tracking-wide transition duration-300 rounded-md focus-visible:outline-none justify-self-center whitespace-nowrap bg-indigo-100 text-indigo-500 hover:bg-indigo-200 hover:text-indigo-600 focus:bg-indigo-200 focus:text-indigo-700 disabled:cursor-not-allowed disabled:border-indigo-300 cursor-pointer disabled:bg-indigo-100 disabled:text-indigo-400 disabled:shadow-none w-full ",
+      "disabled:cursor-not-allowed flex items-center justify-center  font-medium tracking-wide transition duration-300 rounded-md focus-visible:outline-none justify-self-center whitespace-nowrap bg-indigo-100 text-indigo-500 hover:bg-indigo-200 hover:text-indigo-600 focus:bg-indigo-200 focus:text-indigo-700 disabled:cursor-not-allowed disabled:border-indigo-300 cursor-pointer disabled:bg-indigo-100 disabled:text-indigo-400 disabled:shadow-none w-full ",
     secondary:
-      " flex items-center cursor-pointer w-full justify-center gap-2 font-medium tracking-wide text-white transition duration-300 rounded-md whitespace-nowrap bg-red-500 hover:bg-red-600 focus:bg-red-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-red-300 disabled:bg-red-300 disabled:shadow-none ",
+      "disabled:cursor-not-allowed flex items-center cursor-pointer w-full justify-center gap-2 font-medium tracking-wide text-white transition duration-300 rounded-md whitespace-nowrap bg-red-500 hover:bg-red-600 focus:bg-red-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-red-300 disabled:bg-red-300 disabled:shadow-none ",
   };
 
   const sizes = {
@@ -28,6 +29,7 @@ export default function Button({
     <>
       <button
         onClick={onClick}
+        disabled={disabled}
         type={type}
         className={clsx(varinats[variant], sizes[size])}
       >

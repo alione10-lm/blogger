@@ -33,8 +33,6 @@ export const getCurrentUser = async (req, res) => {
 };
 
 export const updateUser = async (req, res) => {
-  console.log(req.file);
-  console.log(req.body);
   if (req.file) {
     req.body.avatar = req.file.filename;
   }
@@ -85,7 +83,30 @@ export const getAllUser = async (req, res) => {
   res.status(StatusCodes.OK).json(users);
 };
 export const getSingleUser = async (req, res) => {
-  const user = await User.find(req.params.userId);
+  const { userId } = req.params;
+  const user = await User.findById(userId).populate({
+    path: "blogs",
+    populate: [
+      { path: "createdBy" },
+      {
+        path: "comments",
+        populate: [
+          {
+            path: "createdBy",
+            model: "User",
+          },
+          {
+            path: "replies",
+            populate: {
+              path: "createdBy",
+              model: "User",
+            },
+          },
+        ],
+      },
+      { path: "likes" },
+    ],
+  });
   if (!user) throw NotFoundError("user not found");
-  res.status(StatusCodes.OK).json(user);
+  res.status(StatusCodes.OK).json({ user });
 };

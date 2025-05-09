@@ -3,11 +3,9 @@ import { TimeFromNow } from "../services/helpers";
 import UserAvatar from "./ui/UserAvatar";
 import { Link, useOutletContext } from "react-router-dom";
 import { Trash } from "lucide-react";
-import ReplyForm from "./ReplyForm";
+import ReplyForm from "./ui/ReplyForm";
 
-export default function Feed({ comments }) {
-  const [isReplyFormOpens, setIsReplyFormOpens] = useState(false);
-
+export default function Feed({ comments, setCommentSession }) {
   const { user } = useOutletContext();
 
   return comments.map((comment) => (
@@ -15,10 +13,10 @@ export default function Feed({ comments }) {
       <ul
         aria-label="Nested user feed"
         role="feed"
-        className="relative flex  flex-col gap-4  pl-6 before:absolute before:top-0 before:left-6 before:h-full before:-translate-x-1/2 before:border before:border-dashed before:border-slate-200 after:absolute after:top-6 after:left-6 after:bottom-6 after:-translate-x-1/2 after:border after:border-slate-200 dark:after:border-slate-600 dark:before:border-slate-600 "
+        className="relative flex  w-full flex-col gap-4  pl-6 before:absolute before:top-0 before:left-6 before:h-full before:-translate-x-1/2 before:border before:border-dashed before:border-slate-200 after:absolute after:top-6 after:left-6 after:bottom-6 after:-translate-x-1/2 after:border after:border-slate-200 dark:after:border-slate-600 dark:before:border-slate-600 "
       >
-        <li role="article" className="relative pl-4 ">
-          <div className="flex flex-col flex-1 gap-2">
+        <li role="article" className="relative pl-4 w-full  ">
+          <div className="flex flex-col w-full flex-1 gap-2">
             <Link
               to={`../users/${comment.createdBy._id}`}
               className="absolute z-10 inline-flex items-center justify-center w-6 h-6 text-white rounded-sm -left-3"
@@ -56,21 +54,22 @@ export default function Feed({ comments }) {
                 {TimeFromNow(comment.createdAt)}
               </span>
             </h4>
-            <p className="text-sm text-slate-500 dark:text-gray-300">
+            <span className="text-sm text-slate-500  break-words max-w-[15rem] md:max-w-2/3 dark:text-gray-300">
               {comment.text}
-            </p>
+            </span>
           </div>
-          <button
-            onClick={() => setIsReplyFormOpens((prev) => !prev)}
-            className="text-gray-700 dark:text-gray-300 cursor-pointer"
-          >
-            {isReplyFormOpens ? "cancel" : "reply"}
-          </button>
-          {isReplyFormOpens && <ReplyForm />}
+          <ReplyForm>
+            <ReplyForm.OpenForm />
+            <ReplyForm.Form
+              id={comment._id}
+              commentCreator={comment.createdBy}
+            />
+          </ReplyForm>
+
           {comment.replies.length > 0 && (
             <ul
               role="group"
-              className="relative flex flex-col gap-5 py-5 pl-6 before:absolute before:top-6 before:left-6 before:bottom-6 before:-translate-x-1/2 before:border before:border-dashed before:border-slate-200 after:absolute after:top-12 after:left-6 after:bottom-12 after:-translate-x-1/2 after:border after:border-slate-200 dark:after:border-slate-600 dark:before:border-slate-600"
+              className="relative flex flex-col gap-5 w-full py-5 pl-6 before:absolute before:top-6 before:left-6 before:bottom-6 before:-translate-x-1/2 before:border before:border-dashed before:border-slate-200 after:absolute after:top-12 after:left-6 after:bottom-12 after:-translate-x-1/2 after:border after:border-slate-200 dark:after:border-slate-600 dark:before:border-slate-600"
             >
               {comment.replies.map((reply, ndx) => (
                 <li key={ndx} role="article" className="relative pl-6 ">
@@ -81,10 +80,10 @@ export default function Feed({ comments }) {
                     >
                       {reply.createdBy.avatar ? (
                         <img
-                          src={reply.createdBy.avatar}
+                          src={`http://localhost:5000/uploads/${reply.createdBy.avatar}`}
                           alt="user name"
                           title={`${comment.createdBy.firstName} ${comment.createdBy.lastName}`}
-                          className=" size-[1.5rem] rounded-sm  "
+                          className=" size-[1.5rem]  rounded-sm  "
                         />
                       ) : (
                         <UserAvatar
@@ -105,9 +104,9 @@ export default function Feed({ comments }) {
                         {TimeFromNow(reply.createdAt)}
                       </span>
                     </h4>
-                    <p className="text-sm text-slate-500 dark:text-gray-300">
+                    <span className="text-sm text-slate-500 md:max-w-1/2 max-w-[10rem]  dark:text-gray-300">
                       {reply.text}
-                    </p>
+                    </span>
                   </div>
                 </li>
               ))}

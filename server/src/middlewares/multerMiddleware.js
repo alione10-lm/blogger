@@ -1,14 +1,18 @@
 import multer from "multer";
+import path from "path";
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    // set the directory where uploaded files will be stored
     cb(null, "public/uploads/");
   },
   filename: (req, file, cb) => {
-    const fileName = file.originalname;
-    // set the name of the uploaded file
-    cb(null, fileName);
+    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+    const ext = path.extname(file.originalname);
+    cb(null, file.fieldname + "-" + uniqueSuffix + ext);
+
+    // previous code
+    // const fileName = file.originalname;
+    // cb(null, fileName);
   },
 });
 const upload = multer({ storage });

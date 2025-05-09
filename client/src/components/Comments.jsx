@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import FormRow from "./ui/FormRow";
-import { Send } from "lucide-react";
+import { Reply, Send } from "lucide-react";
 import Button from "./ui/Button";
 import Feed from "./Feed";
 import EmptyComments from "./ui/EmptyComments";
@@ -11,8 +11,9 @@ import Error from "./ui/Error";
 import FullSpinner from "./ui/FullSpinner";
 import toast from "react-hot-toast";
 import clsx from "clsx";
+import ReplyForm from "./ReplyForm";
 
-const Comments = ({ comments, blogId }) => {
+const Comments = ({ comments, blogId, commentId }) => {
   const [commentSession, setCommentSession] = useState(true);
 
   const queryClient = useQueryClient();

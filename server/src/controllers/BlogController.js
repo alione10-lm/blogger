@@ -5,46 +5,106 @@ import { logger } from "../utils/logger.js";
 import User from "../models/User.js";
 
 const getAllBlogs = async (req, res) => {
-  const blogs = await Blog.find().populate([
-    { path: "createdBy" },
-    {
-      path: "comments",
-      populate: [
-        {
-          path: "createdBy",
-          model: "User",
-        },
-        {
-          path: "replies",
-          populate: {
+  const { filter, search } = req.query;
+
+  const queryObj = {};
+
+  if (filter && filter !== "all") {
+    queryObj.$or = [
+      { title: { $regex: filter, $options: "i" } },
+      { description: { $regex: filter, $options: "i" } },
+    ];
+  }
+  if (search) {
+    queryObj.$or = [
+      { title: { $regex: search, $options: "i" } },
+      { description: { $regex: search, $options: "i" } },
+    ];
+  }
+
+  // const result = await Blog.find(queryObj);
+
+  // console.log(result);
+  const page = parseInt(req.query.page) || 1;
+  const limit = 10;
+
+  const total = await Blog.countDocuments();
+  const blogs = await Blog.find(queryObj)
+    .populate([
+      { path: "createdBy" },
+      {
+        path: "comments",
+        populate: [
+          {
             path: "createdBy",
             model: "User",
           },
-        },
-      ],
-    },
-    { path: "likes" },
-  ]);
-  res.status(statusCodes.OK).json({ blogs });
+          {
+            path: "replies",
+            populate: {
+              path: "createdBy",
+              model: "User",
+            },
+          },
+        ],
+      },
+      { path: "likes" },
+    ])
+    .skip((page - 1) * limit)
+    .limit(limit)
+    .sort({ createdAt: -1 });
+
+  res.status(StatusCodes.OK).json({
+    blogs,
+    length: blogs.length,
+    currentPage: page,
+    total,
+    hasMore: page * limit < total, // whether there are more pages
+  });
 };
 
+// const getAllBlogs = async (req, res) => {
+//   const blogs = await Blog.find()
+//     .populate([
+//       { path: "createdBy" },
+//       {
+//         path: "comments",
+//         populate: [
+//           {
+//             path: "createdBy",
+//             model: "User",
+//           },
+//           {
+//             path: "replies",
+//             populate: {
+//               path: "createdBy",
+//               model: "User",
+//             },
+//           },
+//         ],
+//       },
+//       { path: "likes" },
+//     ])
+//     .sort({ createdAt: -1 });
+//   res.status(statusCodes.OK).json({ blogs });
+// };
+
 const createBlog = async (req, res) => {
-  console.log(req.file);
   req.body.createdBy = req.user.userId;
 
-  req.body.media = req.file.filename;
+  if (req.file) {
+    req.body.media = req.file.filename;
+  }
+
   const newBlog = await Blog.create(req.body);
 
-  const user = await User.findOneAndUpdate(
+  await User.findOneAndUpdate(
     { _id: req.user.userId },
     {
       $push: { blogs: newBlog._id },
-    },
-    {
-      new: true,
     }
   );
-  res.status(statusCodes.CREATED).json({ newBlog, user });
+  res.status(statusCodes.CREATED).json({ newBlog });
 };
 const deleteBlog = async (req, res) => {
   const removedBlog = await Blog.findByIdAndDelete(req.params.id);
@@ -58,6 +118,12 @@ const deleteBlog = async (req, res) => {
   res.status(statusCodes.OK).json({ removedBlog });
 };
 const updateBlog = async (req, res) => {
+  console.log(req.file);
+
+  if (req.file) {
+    req.body.media = req.file.filename;
+  }
+
   const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
   });

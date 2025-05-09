@@ -8,7 +8,7 @@ import Skeleton from "../components/ui/Skeleton";
 
 import { useQuery } from "@tanstack/react-query";
 import { getAllBlogs } from "../utils/api";
-import { Link, useOutletContext, useSearchParams } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 
 import Spinner from "../components/ui/FullSpinner";
 import FullSpinner from "../components/ui/FullSpinner";
@@ -17,46 +17,22 @@ import { useAuth } from "../contexts/authContext";
 import useCurrentUser from "../hooks/useCurrentUser";
 import UserSkeleton from "../components/ui/UserSkeleton";
 
-//
-
-import { useInfiniteQuery } from "@tanstack/react-query";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
-import { useForm } from "react-hook-form";
-
 const Home = () => {
+  const {
+    data: blogs,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["blogs"],
+    queryFn: getAllBlogs,
+  });
+
   const { isGettingCurrentUser } = useCurrentUser();
   const { logoutFn, isLoggingOut } = useAuth();
   const { user } = useOutletContext();
 
-  const [searchParams, _] = useSearchParams();
+  if (error) return <div>{error.message}</div>;
 
-  const filter = searchParams.get("filter") || "all";
-
-  const {
-    data,
-    error: error,
-    status,
-    fetchNextPage,
-    isFetchingNextPage,
-  } = useInfiniteQuery({
-    queryKey: ["blogs", filter],
-    queryFn: () => getAllBlogs(filter),
-    initialPageParam: 0,
-    getNextPageParam: (lastPage, pages) => {
-      return lastPage.hasMore ? pages.length + 1 : undefined;
-    },
-  });
-
-  const { ref, inView } = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      fetchNextPage();
-    }
-  }, [fetchNextPage, inView]);
-
-  if (status === "error") return <div>{error.message}</div>;
   return (
     <div className="w-full grid md:h-full md:grid-cols-4  gap-10 ">
       <div className="md:flex flex-col items-center   hidden  rounded-md h-fit  ">
@@ -70,6 +46,11 @@ const Home = () => {
             className=" size-[6rem] rounded-full mb-5"
           />
         ) : (
+          // <UserAvatar
+          //   size="large"
+          //   firstname={user?.user?.firstName}
+          //   lastname={user?.user?.lastName}
+          // />
           ""
         )}
 
@@ -117,15 +98,15 @@ const Home = () => {
             </Modal.Window>
           </Modal>
         </div>
-        <div className="w-full">
-          {status === "pending"
+        <div>
+          {isLoading
             ? Array.from({ length: 5 }).map((_, ndx) => <Skeleton key={ndx} />)
-            : data?.pages[0].blogs.map((blog, ndx) => (
+            : blogs.map((blog) => (
                 <BlogCard
                   media={blog.media}
                   comments={blog.comments}
                   likes={blog.likes}
-                  key={ndx}
+                  key={blog._id}
                   id={blog._id}
                   createdBy={blog.createdBy}
                   createdAt={blog.createdAt}
@@ -134,13 +115,27 @@ const Home = () => {
                 />
               ))}
         </div>
-        <div className="h-10 w-full" ref={ref}>
-          {/* {isFetchingNextPage && <Skeleton />} */}
-          {isFetchingNextPage && "loading more blogs ..."}
-        </div>
       </div>
-
-      <Filter />
+      <form
+        action=""
+        className="hidden dark:bg-dark-bg-1 p-3 h-fit w-2/3 rounded-lg md:block"
+      >
+        <div className="mb-5">
+          {["sports", "football", "education", "technologie"].map(
+            (item, ndx) => (
+              <div key={ndx} className="flex items-center gap-2 ">
+                <input type="checkbox" />
+                <label className="text-slate-700 dark:text-gray-300">
+                  {item}
+                </label>
+              </div>
+            )
+          )}
+        </div>
+        <Button type="submit" size="small">
+          apply filter
+        </Button>
+      </form>
     </div>
   );
 };
@@ -153,51 +148,3 @@ const ListItem = ({ children }) => {
   );
 };
 export default Home;
-const Filter = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const { register, handleSubmit } = useForm();
-
-  const FormSubmit = (data) => {
-    searchParams.set("filter", data.filter);
-    setSearchParams(searchParams);
-  };
-
-  const handleClear = () => {
-    setSearchParams("");
-  };
-
-  return (
-    <form
-      onSubmit={handleSubmit(FormSubmit)}
-      action=""
-      className="hidden dark:bg-dark-bg-1 p-3 h-fit w-2/3 rounded-lg md:block"
-    >
-      <div className="mb-5 w-full grid grid-cols-2">
-        {["sports", "football", "education", "trading", "programming"].map(
-          (item, ndx) => (
-            <div key={ndx} className="flex items-center gap-2 ">
-              <input value={item} type="radio" {...register("filter")} />
-              <label className="text-slate-700 dark:text-gray-300">
-                {item}
-              </label>
-            </div>
-          )
-        )}
-      </div>
-      <div className="flex items-center justify-center gap-2">
-        <Button type="submit" size="small">
-          apply filter
-        </Button>
-        <Button
-          variant="ghost"
-          size="small"
-          onClick={handleClear}
-          type="button"
-        >
-          remove filter
-        </Button>
-      </div>
-    </form>
-  );
-};

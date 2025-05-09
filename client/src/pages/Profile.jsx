@@ -16,21 +16,15 @@ import { updateUser } from "../utils/api";
 import toast from "react-hot-toast";
 import useCurrentUser from "../hooks/useCurrentUser";
 import ProfileSkeleton from "../components/ui/ProfileSkeleton";
+import { formatBirthDay } from "../services/helpers";
+import EmptyBlogs from "../components/ui/EmptyBlogs";
 
 const Profile = () => {
   const { user } = useOutletContext();
 
-  console.log(user);
-
-  const formatBirthDay = (d) => {
-    const date = dayjs(d);
-    const formatted = date.locale("fr").format("DD MMM YYYY"); // "12 janv. 2005"
-
-    const displayDate = formatted.replace(".", "");
-    return displayDate;
-  };
-
   const { isGettingCurrentUser } = useCurrentUser();
+
+  console.log(user?.user?.blogs);
 
   return (
     <div className="w-full">
@@ -86,7 +80,7 @@ const Profile = () => {
 
       <div className="md:w-2/3 w-full">
         {user?.user?.blogs.length === 0 ? (
-          <EmptyBlogs />
+          <EmptyBlogs isCurrentUser />
         ) : (
           user?.user?.blogs?.map((blog) => (
             <BlogCard
@@ -126,7 +120,6 @@ const EditProfileForm = ({ user, closeModal }) => {
       closeModal();
     },
     onError: (err) => {
-      // console.log(err);
       toast.error(err.message);
     },
   });
@@ -134,7 +127,7 @@ const EditProfileForm = ({ user, closeModal }) => {
   const submitHandler = (data) => {
     const formData = new FormData();
 
-    formData.append("avatar", data.avatar[0]);
+    data.avatar.length && formData.append("avatar", data.avatar[0]);
     formData.append("bio", data.bio);
     formData.append("firstName", data.firstName);
     formData.append("lastName", data.lastName);
@@ -249,17 +242,4 @@ const EditProfileForm = ({ user, closeModal }) => {
   );
 };
 
-const EmptyBlogs = () => {
-  return (
-    <div className="text-center py-10">
-      <FileText className="mx-auto h-12 w-12 text-indigo-300" />
-      <h3 className="mt-2 text-sm font-semibold text-gray-700 dark:text-gray-200">
-        No blogs yet
-      </h3>
-      <p className="mt-1 text-sm text-gray-400">
-        You haven’t written any blogs yet. Start creating one!
-      </p>
-    </div>
-  );
-};
 export default Profile;

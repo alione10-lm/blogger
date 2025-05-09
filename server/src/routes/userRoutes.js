@@ -3,6 +3,7 @@ import {
   deleteUser,
   getAllUser,
   getCurrentUser,
+  getSingleUser,
   updateUser,
 } from "../controllers/userController.js";
 
@@ -15,6 +16,6 @@ router
   .delete(deleteUser)
   .patch(upload.single("avatar"), updateUser);
 router.get("/", getAllUser);
-router.get("/:userId");
+router.get("/:userId", getSingleUser);
 
 export default router;
