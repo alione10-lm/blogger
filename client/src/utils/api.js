@@ -1,10 +1,15 @@
 import axios from "axios";
 
-// export const getAllBlogs = async ({ pageParam = 1 }, filter) => {
-export const getAllBlogs = async (filter) => {
+export const getAllBlogs = async (params) => {
+  const filter = params.queryKey.at(-1);
+  const { pageParam } = params;
+
+  console.log(params.queryKey.at(-1));
+
   try {
-    // const res = await axios.get(`/api/blogs?page=${pageParam}&filter=all`);
-    const res = await axios.get(`/api/blogs?filter=${filter}`);
+    const res = await axios.get(
+      `/api/blogs?page=${pageParam}&filter=${filter}`
+    );
 
     return res.data;
   } catch (err) {
@@ -170,6 +175,15 @@ export const register = async (registerInfo) => {
 export const logout = async () => {
   try {
     const res = await axios.get("/api/auth/logout");
+    return res.data;
+  } catch (err) {
+    throw new Error(err?.response?.data?.message);
+  }
+};
+
+export const search = async (query) => {
+  try {
+    const res = await axios.get(`/api/search?search=${query}`);
     return res.data;
   } catch (err) {
     throw new Error(err?.response?.data?.message);

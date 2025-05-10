@@ -5,7 +5,7 @@ const UserAvatar = ({ firstname, lastname, size }) => {
   return (
     <span
       className={clsx(
-        " uppercase inline-flex items-center justify-center  text-xs text-white rounded-sm bg-indigo-500",
+        " uppercase inline-flex items-center  justify-center  text-xs text-white rounded-sm bg-indigo-500",
         size
       )}
     >

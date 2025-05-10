@@ -24,7 +24,6 @@ const ProfileSkeleton = () => {
         <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[460px] mb-2.5"></div>
         <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px]"></div>
       </div>
-      <span className="sr-only">Loading...</span>
     </div>
   );
 };

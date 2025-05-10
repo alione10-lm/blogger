@@ -37,6 +37,7 @@ import { fileURLToPath } from "url";
 import path from "path";
 import Blog from "./src/models/Blog.js";
 import { StatusCodes } from "http-status-codes";
+import { search } from "./src/controllers/BlogController.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 app.use(express.static(path.resolve(__dirname, "./public")));
@@ -45,65 +46,67 @@ app.use("/api/auth", authRoutes);
 app.use("/api/blogs", authMiddleware, blogRoutes);
 app.use("/api/blog/comment", authMiddleware, commentsRoutes);
 app.use("/api/users", authMiddleware, userRoutes);
+
+app.get("/api/search", authMiddleware, search);
 app.use(requestLogger);
 
-app.get("/scroll", async (req, res) => {
-  const page = parseInt(req.query.page) || 1;
-  const limit = 4;
+// app.get("/scroll", async (req, res) => {
+//   const page = parseInt(req.query.page) || 1;
+//   const limit = 4;
 
-  const total = await Blog.countDocuments();
-  const blogs = await Blog.find()
-    .populate([
-      { path: "createdBy" },
-      {
-        path: "comments",
-        populate: [
-          {
-            path: "createdBy",
-            model: "User",
-          },
-          {
-            path: "replies",
-            populate: {
-              path: "createdBy",
-              model: "User",
-            },
-          },
-        ],
-      },
-      { path: "likes" },
-    ])
-    .skip((page - 1) * limit)
-    .limit(limit)
-    .sort({ createdAt: -1 });
+//   const total = await Blog.countDocuments();
+//   const blogs = await Blog.find()
+//     .populate([
+//       { path: "createdBy" },
+//       {
+//         path: "comments",
+//         populate: [
+//           {
+//             path: "createdBy",
+//             model: "User",
+//           },
+//           {
+//             path: "replies",
+//             populate: {
+//               path: "createdBy",
+//               model: "User",
+//             },
+//           },
+//         ],
+//       },
+//       { path: "likes" },
+//     ])
+//     .skip((page - 1) * limit)
+//     .limit(limit)
+//     .sort({ createdAt: -1 });
 
-  // const blogs = await Blog.find().populate([
-  //   { path: "createdBy" },
-  //   {
-  //     path: "comments",
-  //     populate: [
-  //       {
-  //         path: "createdBy",
-  //         model: "User",
-  //       },
-  //       {
-  //         path: "replies",
-  //         populate: {
-  //           path: "createdBy",
-  //           model: "User",
-  //         },
-  //       },
-  //     ],
-  //   },
-  //   { path: "likes" },
-  // ]);
-  res.status(StatusCodes.OK).json({
-    blogs,
-    currentPage: page,
-    total,
-    hasMore: page * limit < total, // whether there are more pages
-  });
-});
+//   // const blogs = await Blog.find().populate([
+//   //   { path: "createdBy" },
+//   //   {
+//   //     path: "comments",
+//   //     populate: [
+//   //       {
+//   //         path: "createdBy",
+//   //         model: "User",
+//   //       },
+//   //       {
+//   //         path: "replies",
+//   //         populate: {
+//   //           path: "createdBy",
+//   //           model: "User",
+//   //         },
+//   //       },
+//   //     ],
+//   //   },
+//   //   { path: "likes" },
+//   // ]);
+//   res.status(StatusCodes.OK).json({
+//     blogs,
+//     currentPage: page,
+//     total,
+//     hasMore: page * limit < total, // whether there are more pages
+//   });
+// });
 
 app.use("*", (req, res) => {
   res.status(404).json({ message: "not found" });

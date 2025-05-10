@@ -38,7 +38,7 @@ const Profile = () => {
                 src={`http://localhost:5000/uploads/${user?.user?.avatar}`}
                 alt=""
                 loading="lazy"
-                className="rounded-lg md:w-[20rem] w-[10rem] "
+                className="rounded-lg md:size-50 size-20 "
               />
             ) : (
               <span className="relative uppercase md:w-[5rem]  md:h-[5rem]  size-[4rem] md:mb-4 inline-flex items-center justify-center  text-lg text-white rounded bg-indigo-500 ">
@@ -115,7 +115,7 @@ const EditProfileForm = ({ user, closeModal }) => {
     mutationFn: updateUser,
 
     onSuccess: () => {
-      queryClient.invalidateQueries("current-user");
+      queryClient.invalidateQueries({ queryKey: ["current-user"] });
       toast.success("profile successfully updated");
       closeModal();
     },
@@ -218,7 +218,7 @@ const EditProfileForm = ({ user, closeModal }) => {
         <input
           id="Birth date"
           type="date"
-          defaultValue="2000-10-10"
+          defaultValue={dayjs(user?.user?.birthDate).format("YYYY-MM-DD")}
           name="id-date07"
           className="input"
           {...register("birthDate", {

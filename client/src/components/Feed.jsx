@@ -95,7 +95,7 @@ export default function Feed({ comments, setCommentSession }) {
                     </Link>
                     <h4 className="flex flex-col items-start text-sm font-medium leading-6 text-slate-600 dark:text-gray-200 md:flex-row lg:items-center">
                       <span className="flex-1">
-                        {reply.createdBy.firstName} {reply.createdBy.firstName}
+                        {reply.createdBy.firstName} {reply.createdBy.lastName}
                         <span className="ml-2 text-xs md:text-sm font-normal text-slate-400">
                           replied
                         </span>

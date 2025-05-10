@@ -27,6 +27,8 @@ import AuthProvider from "./contexts/authContext";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import UserDetails from "./pages/UserDetails";
 import Projects from "./components/Projetcs";
+
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -41,6 +43,7 @@ function App() {
   const width = useViewportWidth();
   return (
     <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={false} />
       <Toaster
         position={clsx(width <= 300 ? "top-right" : "bottom-right")}
         reverseOrder={false}
@@ -82,7 +85,7 @@ function App() {
               </Route>
               <Route path="pro" element={<Projects />} />
               <Route path="admin" element={<AdminPanel />} />
-              <Route path="blog/:blogId" element={<BlogDetails />} />
+              <Route path="blogs/:blogId" element={<BlogDetails />} />
               <Route path="users/:userId" element={<UserDetails />} />
             </Route>
           </Routes>

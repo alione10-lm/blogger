@@ -61,7 +61,7 @@ export default function BlogCard({
   const { mutate: likeFn } = useMutation({
     mutationFn: LikeBlog,
     onSuccess: () => {
-      queryClient.invalidateQueries("blogs");
+      queryClient.invalidateQueries({ queryKey: ["blogs"] });
     },
   });
 
@@ -75,17 +75,19 @@ export default function BlogCard({
     return sum + comment.replies.length;
   }, 0);
 
+  console.log(user);
+
   return (
     <div className="overflow-hidden text-slate-500  p-2 ">
       <div className="w-full flex items-center justify-between">
-        <header className="flex gap-4 items-start">
+        <header className="flex w-full gap-3 items-start">
           <Link to={`../users/${createdBy._id}`}>
             {createdBy.avatar ? (
               <img
                 src={`http://localhost:5000/uploads/${createdBy.avatar}`}
                 alt="user name"
                 title={`${createdBy.firstName}  ${createdBy.lastName}`}
-                className="max-w-full   size-[3rem] rounded-lg cursor-pointer"
+                className="max-w-full  size-12 rounded-lg cursor-pointer"
               />
             ) : (
               <UserAvatar
@@ -96,7 +98,7 @@ export default function BlogCard({
             )}
           </Link>
           <div className="w-full flex flex-col">
-            <h3 className="text-md md:text-xl font-medium  dark:text-slate-200 text-slate-600">
+            <h3 className="text-md md:text-lg font-medium  dark:text-slate-200 text-slate-600">
               {title}
             </h3>
             <p className="text-sm  text-indigo-500/100">
@@ -224,7 +226,7 @@ export default function BlogCard({
             </div>
           </Modal.Window>
         </Modal>
-        <Link className="flex flex-col items-center" to={`../blog/${id}`}>
+        <Link className="flex flex-col items-center" to={`../blogs/${id}`}>
           <SquareArrowOutUpRight
             size={15}
             stroke="#6366f1"

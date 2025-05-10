@@ -23,6 +23,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useForm } from "react-hook-form";
+import BlogsFilter from "../components/BlogsFilter";
 
 const Home = () => {
   const { isGettingCurrentUser } = useCurrentUser();
@@ -41,12 +42,15 @@ const Home = () => {
     isFetchingNextPage,
   } = useInfiniteQuery({
     queryKey: ["blogs", filter],
-    queryFn: () => getAllBlogs(filter),
+    // queryFn: () => getAllBlogs(filter),
+    queryFn: getAllBlogs,
     initialPageParam: 0,
     getNextPageParam: (lastPage, pages) => {
       return lastPage.hasMore ? pages.length + 1 : undefined;
     },
   });
+
+  console.log(data);
 
   const { ref, inView } = useInView();
 
@@ -106,7 +110,7 @@ const Home = () => {
           </ListItem>
         </ul>
       </div>
-      <div className="w-full md:overflow-y-scroll styled-scrollbar px-2 md:h-full  col-span-2 ">
+      <div className="w-full md:overflow-y-auto styled-scrollbar px-2 md:h-full  col-span-2 ">
         <div className="flex start">
           <Modal>
             <Modal.Open opens="new-blog">
@@ -120,31 +124,46 @@ const Home = () => {
         <div className="w-full">
           {status === "pending"
             ? Array.from({ length: 5 }).map((_, ndx) => <Skeleton key={ndx} />)
-            : data?.pages[0].blogs.map((blog, ndx) => (
-                <BlogCard
-                  media={blog.media}
-                  comments={blog.comments}
-                  likes={blog.likes}
-                  key={ndx}
-                  id={blog._id}
-                  createdBy={blog.createdBy}
-                  createdAt={blog.createdAt}
-                  description={blog.description}
-                  title={blog.title}
-                />
-              ))}
+            : data?.pages?.map((page) =>
+                page.blogs.map((blog, ndx) => (
+                  <BlogCard
+                    media={blog.media}
+                    comments={blog.comments}
+                    likes={blog.likes}
+                    key={ndx}
+                    id={blog._id}
+                    createdBy={blog.createdBy}
+                    createdAt={blog.createdAt}
+                    description={blog.description}
+                    title={blog.title}
+                  />
+                ))
+              )}
         </div>
         <div className="h-10 w-full" ref={ref}>
           {/* {isFetchingNextPage && <Skeleton />} */}
           {isFetchingNextPage && "loading more blogs ..."}
         </div>
       </div>
-
-      <Filter />
+      <div className="hidden md:block">
+        <BlogsFilter />
+      </div>
     </div>
   );
 };
-
+//  data?.blogs.map((blog, ndx) => (
+//                 <BlogCard
+//                   media={blog.media}
+//                   comments={blog.comments}
+//                   likes={blog.likes}
+//                   key={ndx}
+//                   id={blog._id}
+//                   createdBy={blog.createdBy}
+//                   createdAt={blog.createdAt}
+//                   description={blog.description}
+//                   title={blog.title}
+//                 />
+//               ))
 const ListItem = ({ children }) => {
   return (
     <li className="text-gray-500 group  dark:text-gray-200 flex dark:hover:bg-slate-100/6 hover:bg-indigo-50 py-1 px-3 hover:text-indigo-500 rounded-md transition-all duration-200 cursor-pointer  mb-1 items-center gap-5">
@@ -152,52 +171,5 @@ const ListItem = ({ children }) => {
     </li>
   );
 };
+
 export default Home;
-const Filter = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const { register, handleSubmit } = useForm();
-
-  const FormSubmit = (data) => {
-    searchParams.set("filter", data.filter);
-    setSearchParams(searchParams);
-  };
-
-  const handleClear = () => {
-    setSearchParams("");
-  };
-
-  return (
-    <form
-      onSubmit={handleSubmit(FormSubmit)}
-      action=""
-      className="hidden dark:bg-dark-bg-1 p-3 h-fit w-2/3 rounded-lg md:block"
-    >
-      <div className="mb-5 w-full grid grid-cols-2">
-        {["sports", "football", "education", "trading", "programming"].map(
-          (item, ndx) => (
-            <div key={ndx} className="flex items-center gap-2 ">
-              <input value={item} type="radio" {...register("filter")} />
-              <label className="text-slate-700 dark:text-gray-300">
-                {item}
-              </label>
-            </div>
-          )
-        )}
-      </div>
-      <div className="flex items-center justify-center gap-2">
-        <Button type="submit" size="small">
-          apply filter
-        </Button>
-        <Button
-          variant="ghost"
-          size="small"
-          onClick={handleClear}
-          type="button"
-        >
-          remove filter
-        </Button>
-      </div>
-    </form>
-  );
-};

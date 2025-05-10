@@ -28,7 +28,7 @@ const Comments = ({ comments, blogId, commentId }) => {
   const { mutate, isPending: isCreatingComment } = useMutation({
     mutationFn: createComment,
     onSuccess: () => {
-      queryClient.invalidateQueries("blogs");
+      queryClient.invalidateQueries({ queryKey: ["blogs"] });
       reset();
     },
     onError: (err) => {

@@ -1,7 +1,6 @@
 import { NotFoundError } from "../middlewares/errorsHandler.js";
 import Blog from "../models/Blog.js";
 import statusCodes, { StatusCodes } from "http-status-codes";
-import { logger } from "../utils/logger.js";
 import User from "../models/User.js";
 
 const getAllBlogs = async (req, res) => {
@@ -15,12 +14,12 @@ const getAllBlogs = async (req, res) => {
       { description: { $regex: filter, $options: "i" } },
     ];
   }
-  if (search) {
-    queryObj.$or = [
-      { title: { $regex: search, $options: "i" } },
-      { description: { $regex: search, $options: "i" } },
-    ];
-  }
+  // if (search) {
+  //   queryObj.$or = [
+  //     { title: { $regex: search, $options: "i" } },
+  //     { description: { $regex: search, $options: "i" } },
+  //   ];
+  // }
 
   // const result = await Blog.find(queryObj);
 
@@ -271,6 +270,30 @@ const likeBlog = async (req, res) => {
 
   res.status(200).json({ blog });
 };
+
+const search = async (req, res) => {
+  const { search } = req.query;
+
+  console.log(search);
+
+  const blogs = await Blog.find({
+    $or: [
+      { title: { $regex: search, $options: "i" } },
+      { description: { $regex: search, $options: "i" } },
+    ],
+  })
+    .populate("createdBy")
+    .sort({ createdAt: -1 });
+
+  const users = await User.find({
+    $or: [
+      { firstName: { $regex: search, $options: "i" } },
+      { lastName: { $regex: search, $options: "i" } },
+    ],
+  });
+
+  res.status(StatusCodes.OK).json({ blogs, users });
+};
 export {
   createBlog,
   updateBlog,
@@ -278,4 +301,5 @@ export {
   getAllBlogs,
   getSingleBlog,
   likeBlog,
+  search,
 };

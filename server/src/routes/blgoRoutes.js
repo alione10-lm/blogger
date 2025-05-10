@@ -19,7 +19,6 @@ router
   .delete(deleteBlog)
   .patch(upload.single("media"), updateBlog);
 router.route("/:id/like").post(likeBlog);
-// router.route("/like").post(likeBlog);
 router.route("/:id/comment");
 
 export default router;

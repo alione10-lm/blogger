@@ -73,9 +73,7 @@ export const deleteUser = async (req, res) => {
 
   await Blog.deleteMany({ createdBy: req.user.userId });
 
-  res
-    .status(StatusCodes.OK)
-    .json({ message: "delete", replies, comments, blogs });
+  res.status(StatusCodes.OK).json({ message: "delete" });
 };
 
 export const getAllUser = async (req, res) => {

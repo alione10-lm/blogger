@@ -42,7 +42,7 @@ export default function Login() {
                 id="email"
                 name="email"
                 type="email"
-                defaultValue="john@doe.com"
+                defaultValue="oussama@ali1.com"
                 required
                 autoComplete="email"
                 className="input"

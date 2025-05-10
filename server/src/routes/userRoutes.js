@@ -15,7 +15,7 @@ router
   .get(getCurrentUser)
   .delete(deleteUser)
   .patch(upload.single("avatar"), updateUser);
-router.get("/", getAllUser);
 router.get("/:userId", getSingleUser);
+router.get("/", getAllUser);
 
 export default router;

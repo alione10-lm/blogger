@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useId } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
 import { getSingleUser } from "../utils/api";
 import ProfileSkeleton from "../components/ui/ProfileSkeleton";
 import { Navigate } from "react-router-dom";
 import { formatBirthDay } from "../services/helpers";
-import { Calendar, Mail } from "lucide-react";
+import { Calendar, Mail, Notebook } from "lucide-react";
 import BlogCard from "../components/BlogCard";
 import EmptyBlogs from "../components/ui/EmptyBlogs";
 
@@ -17,7 +17,7 @@ const UserDetails = () => {
     isLoading,
     error,
   } = useQuery({
-    queryKey: ["single-user"],
+    queryKey: ["single-user", userId],
     queryFn: () => getSingleUser(userId),
   });
 
@@ -65,6 +65,9 @@ const UserDetails = () => {
               </div>
               <p className="mb-4 text-gray-700 dark:text-gray-300">
                 {user.bio}
+              </p>
+              <p className=" text-gray-700 flex flex-col  w-fit items-center dark:text-gray-300">
+                {user.blogs.length} blogs
               </p>
             </div>
           </div>

@@ -27,7 +27,7 @@ const BlogForm = ({ closeModal, blogId = "", defaultValues = {} }) => {
     mutationFn: createBlog,
     onSuccess: () => {
       toast.success("blog successfully published ");
-      queryClient.invalidateQueries("blogs");
+      queryClient.invalidateQueries({ queryKey: ["blogs"] });
       closeModal();
     },
     onError: () => {
