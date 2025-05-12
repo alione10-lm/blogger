@@ -1,12 +1,5 @@
 import { X } from "lucide-react";
-import {
-  cloneElement,
-  createContext,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { cloneElement, createContext, useContext, useState } from "react";
 import { createPortal } from "react-dom";
 import useOutsideClick from "../../hooks/useOutsideClick";
 const ModalContext = createContext();

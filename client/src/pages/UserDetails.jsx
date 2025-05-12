@@ -30,8 +30,8 @@ const UserDetails = () => {
   if (error) return <p>{error.message}</p>;
 
   return (
-    <div className="w-full">
-      <div className="border mb-10 rounded-lg p-4 border-gray-300 dark:border-gray-700 ">
+    <div className="w-full ">
+      <div className="border mb-10 rounded-lg p-4  border-gray-300 dark:border-gray-700 ">
         {isLoading ? (
           <ProfileSkeleton />
         ) : (
@@ -41,10 +41,10 @@ const UserDetails = () => {
                 src={`http://localhost:5000/uploads/${user.avatar}`}
                 alt=""
                 loading="lazy"
-                className="rounded-lg md:w-[20rem] w-[10rem] "
+                className="rounded-lg md:size-50 size-20"
               />
             ) : (
-              <span className="relative uppercase md:w-[5rem]  md:h-[5rem]  size-[4rem] md:mb-4 inline-flex items-center justify-center  text-lg text-white rounded bg-indigo-500 ">
+              <span className="relative uppercase md:w-[5rem]  md:h-[5rem]  size-[4rem] md:mb-4 inline-flex items-center justify-center  text-lg text-white rounded bg-indigo-500">
                 {`${user.firstName[0]} ${user.lastName[0]}`}
               </span>
             )}
@@ -74,11 +74,11 @@ const UserDetails = () => {
         )}
       </div>
 
-      <div className="md:w-2/3 w-full">
-        {user.blogs.length === 0 ? (
-          <EmptyBlogs />
-        ) : (
-          user.blogs?.map((blog) => (
+      {user.blogs.length === 0 ? (
+        <EmptyBlogs />
+      ) : (
+        <div className="md:w-2/3 w-full">
+          {user.blogs?.map((blog) => (
             <BlogCard
               media={blog.media}
               key={blog._id}
@@ -90,9 +90,9 @@ const UserDetails = () => {
               title={blog.title}
               description={blog.description}
             />
-          ))
-        )}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

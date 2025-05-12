@@ -78,11 +78,11 @@ const Profile = () => {
         )}
       </div>
 
-      <div className="md:w-2/3 w-full">
-        {user?.user?.blogs.length === 0 ? (
-          <EmptyBlogs isCurrentUser />
-        ) : (
-          user?.user?.blogs?.map((blog) => (
+      {user?.user?.blogs.length === 0 ? (
+        <EmptyBlogs isCurrentUser />
+      ) : (
+        <div className="md:w-2/3 w-full">
+          {user?.user?.blogs?.map((blog) => (
             <BlogCard
               isCurrentUser
               media={blog.media}
@@ -95,9 +95,9 @@ const Profile = () => {
               title={blog.title}
               description={blog.description}
             />
-          ))
-        )}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
@@ -143,7 +143,7 @@ const EditProfileForm = ({ user, closeModal }) => {
       onSubmit={handleSubmit(submitHandler)}
       encType="multipart/form-data"
     >
-      <FormRow label="avatar">
+      <FormRow label="avatar" htmlFor="file-upload">
         <div className="relative inline-flex items-center w-full dark:text-gray-300 gap-2 dark:dark:bg-gray-100/4    border-none outline-none bg-gray-50 text-sm border rounded border-slate-200 text-slate-500">
           <input
             id="file-upload"
@@ -162,7 +162,7 @@ const EditProfileForm = ({ user, closeModal }) => {
         </div>
       </FormRow>
       <FormRow
-        label="Email adress"
+        label="Email address"
         htmlFor="email"
         error={errors?.email?.message}
       >
@@ -176,7 +176,7 @@ const EditProfileForm = ({ user, closeModal }) => {
           className="input"
           {...register("email", {
             required: "email is required",
-            papattern: {
+            pattern: {
               value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
               message: "Invalid email format",
             },

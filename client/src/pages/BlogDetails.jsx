@@ -60,7 +60,9 @@ const BlogDetails = ({ isCurrentUser = false }) => {
         setCopyStatus("not-copied");
       });
   };
+  console.log(error);
   if (isLoading) return <Skeleton />;
+  if (error) return <p>{error.message}</p>;
 
   const {
     createdBy,
@@ -75,8 +77,8 @@ const BlogDetails = ({ isCurrentUser = false }) => {
 
   // console.log(likes);
   return (
-    <div className="w-full grid grid-cols-1   md:grid-cols-3 items-start ">
-      <div className="overflow-hidden md:col-span-2 border border-gray-200 dark:border-gray-800 rounded-lg text-slate-500  p-2 ">
+    <div className="w-full grid grid-cols-1  md:grid-cols-3 items-start ">
+      <div className="overflow-hidden  md:col-span-2 border border-gray-200 dark:border-gray-800 rounded-lg text-slate-500  p-2 ">
         <div className="w-full flex items-center justify-between">
           <header className="flex gap-4">
             <Link to={`../users/${createdBy._id}`}>
@@ -139,7 +141,7 @@ const BlogDetails = ({ isCurrentUser = false }) => {
             <img
               src={`http://localhost:5000/uploads/${media}`}
               alt="card image"
-              className="aspect-vdeo  rounded-lg  "
+              className="aspect-video w-full  rounded-lg  "
             />
           ))}
 

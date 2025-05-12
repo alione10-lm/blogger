@@ -62,7 +62,7 @@ const Home = () => {
 
   if (status === "error") return <div>{error.message}</div>;
   return (
-    <div className="w-full grid md:h-full md:grid-cols-4  gap-10 ">
+    <div className="w-full grid md:h-full md:grid-cols-4 gap-10 ">
       <div className="md:flex flex-col items-center   hidden  rounded-md h-fit  ">
         {isGettingCurrentUser ? (
           <UserSkeleton />
@@ -83,7 +83,7 @@ const Home = () => {
           </h1>
           <span className="text-indigo-500  text-sm">{user?.user?.email}</span>
         </div>
-        <ul className="mt-10 text-sm dark:bg-dark-bg-1 p-2 rounded-lg">
+        <ul className="mt-10 text-sm dark:bg-dark-bg-1 p-2 border dark:border-gray-800 border-gray-200 rounded-lg">
           <Link to="../profile">
             <ListItem>
               <User size={15} />

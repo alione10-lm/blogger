@@ -2,8 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Search } from "lucide-react";
 import React, { useState } from "react";
 import { search } from "../utils/api";
-import UserSkeleton from "./ui/UserSkeleton";
-import ProfileSkeleton from "./ui/ProfileSkeleton";
+
 import { Link } from "react-router-dom";
 import SearchUserSkeleton from "./ui/SearchUserSkeleton";
 import UserAvatar from "./ui/UserAvatar";
@@ -29,7 +28,8 @@ const SearchWindow = ({ close }) => {
       <div className="relative  max-w-md">
         <input
           onChange={(e) => setQuery(e.target.value)}
-          type="serach"
+          type="search"
+          value={query}
           aria-label="search"
           placeholder="Search..."
           className="w-full pl-10 pr-4 py-2 input"
@@ -132,8 +132,8 @@ const UserItem = ({
   return (
     <Link
       onClick={() => {
-        setQuery("");
         close?.();
+        setQuery("");
       }}
       to={`./users/${userId}`}
       className="flex items-center gap-4 px-4 py-3 rounded-md hover:bg-white transition-colors duration-200 dark:hover:bg-dark-bg-2"
@@ -169,8 +169,8 @@ const BlogItem = ({ blogId, title, description, setQuery }) => {
   return (
     <Link
       onClick={() => {
-        setQuery("");
         close?.();
+        setQuery("");
       }}
       to={`./blogs/${blogId}`}
       className="flex items-center rounded-md gap-4 px-4 py-3 hover:bg-white transition-colors duration-200 dark:hover:bg-dark-bg-2"

@@ -29,6 +29,8 @@ import UserDetails from "./pages/UserDetails";
 import Projects from "./components/Projetcs";
 
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import NotFoundPage from "./pages/NotFoundPage";
+import NotificationsPage from "./pages/NotificationsPage";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -87,6 +89,8 @@ function App() {
               <Route path="admin" element={<AdminPanel />} />
               <Route path="blogs/:blogId" element={<BlogDetails />} />
               <Route path="users/:userId" element={<UserDetails />} />
+              <Route path="notifications" element={<NotificationsPage />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Route>
           </Routes>
         </AuthProvider>

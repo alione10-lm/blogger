@@ -9,6 +9,7 @@ import authRoutes from "./src/routes/authRoutes.js";
 import blogRoutes from "./src/routes/blgoRoutes.js";
 import commentsRoutes from "./src/routes/commentsRoutes.js";
 import userRoutes from "./src/routes/userRoutes.js";
+import notificationRoutes from "./src/routes/notificationRoutes.js";
 
 import { DBconnection } from "./src/config/database.js";
 import errorHandlerMiddleware from "./src/middlewares/errorsHandler.js";
@@ -46,7 +47,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/blogs", authMiddleware, blogRoutes);
 app.use("/api/blog/comment", authMiddleware, commentsRoutes);
 app.use("/api/users", authMiddleware, userRoutes);
-
+app.use("/api/notifications", authMiddleware, notificationRoutes);
 app.get("/api/search", authMiddleware, search);
 app.use(requestLogger);
 

@@ -30,7 +30,9 @@ export const getSingleBlog = async (blogId) => {
     const res = await axios.get(`/api/blogs/${blogId}`);
     return res.data.blog;
   } catch (err) {
-    throw new Error(err?.response?.data?.message);
+    throw new Error(
+      err?.response?.data?.message || "no blog found with this id"
+    );
   }
 };
 export const createBlog = async (blogData) => {
@@ -118,10 +120,10 @@ export const createComment = async (commentInfo) => {
   }
 };
 
-export const deleteComment = async () => {
+export const deleteComment = async (id) => {
   try {
-    const res = await axios.delete("/api/blog/comment");
-    return await res.json();
+    const res = await axios.delete(`/api/blog/comment/${id}`);
+    return res.data;
   } catch (err) {
     throw new Error(err?.response?.data?.message);
   }
@@ -145,10 +147,11 @@ export const createReply = async (replyData) => {
   }
 };
 
-export const deleteReply = async () => {
+export const deleteReply = async (id) => {
   try {
-    const res = await axios.delete();
-    return await res.json;
+    const res = await axios.delete(`/api/blog/comment/reply/${id}`);
+    console.log(res.data);
+    return res.data;
   } catch (err) {
     throw new Error(err?.response?.data?.message);
   }
@@ -187,5 +190,31 @@ export const search = async (query) => {
     return res.data;
   } catch (err) {
     throw new Error(err?.response?.data?.message);
+  }
+};
+
+export const createNotification = async (notificationInfo) => {
+  try {
+    const res = await axios.post("/api/notifications", notificationInfo);
+    return res.data;
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+
+export const deleteNotification = async (id) => {
+  try {
+    const res = await axios.delete(`/api/notifications/${id}`);
+    return res.data;
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+export const getUserNotification = async () => {
+  try {
+    const res = await axios.get("/api/notifications");
+    return res.data.notifications;
+  } catch (err) {
+    throw new Error(err);
   }
 };

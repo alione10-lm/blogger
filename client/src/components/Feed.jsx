@@ -4,8 +4,31 @@ import UserAvatar from "./ui/UserAvatar";
 import { Link, useOutletContext } from "react-router-dom";
 import { Trash } from "lucide-react";
 import ReplyForm from "./ui/ReplyForm";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { deleteComment, deleteReply } from "../utils/api";
+import FullSpinner from "./ui/FullSpinner";
 
-export default function Feed({ comments, setCommentSession }) {
+export default function Feed({ comments }) {
+  const queryClient = useQueryClient();
+
+  const { mutate: deleteCommentFn, isPending: isDeleting } = useMutation({
+    mutationFn: deleteComment,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["blogs"] });
+    },
+  });
+
+  const {
+    mutate: deleteReplyFn,
+    isPending: isDeletingReply,
+    error,
+  } = useMutation({
+    mutationFn: deleteReply,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["blogs"] });
+    },
+  });
+
   const { user } = useOutletContext();
 
   return comments.map((comment) => (
@@ -38,16 +61,28 @@ export default function Feed({ comments, setCommentSession }) {
             </Link>
             <h4 className="flex flex-col items-start text-sm md:text-base font-medium leading-6 text-slate-600 dark:text-gray-200 md:flex-row lg:items-center">
               <div className="flex-1 flex items-center">
-                {comment.createdBy.firstName} {comment.createdBy.firstName}
+                {comment.createdBy.firstName} {comment.createdBy.lastName}
                 <div className=" flex items-center md:gap-4 gap-2">
                   <span className="md:text-sm ml-2  font-normal text-xs text-slate-400">
                     commented
                   </span>
-                  <span className="cursor-pointer text-indigo-500">
+                  <button
+                    disabled={isDeleting}
+                    className="cursor-pointer disabled:cursor-not-allowed text-indigo-500"
+                  >
                     {comment.createdBy._id === user?.user?._id && (
-                      <Trash size={15} />
+                      <span className="cursor-pointer ">
+                        {isDeleting ? (
+                          <FullSpinner size="small" />
+                        ) : (
+                          <Trash
+                            size={15}
+                            onClick={() => deleteCommentFn(comment._id)}
+                          />
+                        )}
+                      </span>
                     )}
-                  </span>
+                  </button>
                 </div>
               </div>
               <span className="text-xs font-normal text-slate-400">
@@ -94,15 +129,31 @@ export default function Feed({ comments, setCommentSession }) {
                       )}
                     </Link>
                     <h4 className="flex flex-col items-start text-sm font-medium leading-6 text-slate-600 dark:text-gray-200 md:flex-row lg:items-center">
-                      <span className="flex-1">
+                      <div className="flex-1 flex items-center">
                         {reply.createdBy.firstName} {reply.createdBy.lastName}
-                        <span className="ml-2 text-xs md:text-sm font-normal text-slate-400">
-                          replied
-                        </span>
-                      </span>
-                      <span className="text-xs font-normal text-slate-400">
-                        {TimeFromNow(reply.createdAt)}
-                      </span>
+                        <div className=" flex items-center md:gap-4 gap-2">
+                          <span className="md:text-sm ml-2  font-normal text-xs text-slate-400">
+                            replied
+                          </span>
+                          <button
+                            disabled={isDeletingReply}
+                            className="cursor-pointer disabled:cursor-not-allowed text-indigo-500"
+                          >
+                            {reply.createdBy._id === user?.user?._id && (
+                              <span className="cursor-pointer ">
+                                {isDeletingReply ? (
+                                  <FullSpinner size="small" />
+                                ) : (
+                                  <Trash
+                                    size={15}
+                                    onClick={() => deleteReplyFn(reply._id)}
+                                  />
+                                )}
+                              </span>
+                            )}
+                          </button>
+                        </div>
+                      </div>
                     </h4>
                     <span className="text-sm text-slate-500 md:max-w-1/2 max-w-[10rem]  dark:text-gray-300">
                       {reply.text}

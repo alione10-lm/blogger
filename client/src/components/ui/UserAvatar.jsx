@@ -9,7 +9,7 @@ const UserAvatar = ({ firstname, lastname, size }) => {
         size
       )}
     >
-      {`${firstname[0]} ${lastname[0]}`}
+      {`${firstname?.[0]} ${lastname?.[0]}`}
     </span>
   );
 };

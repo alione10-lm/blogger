@@ -73,12 +73,12 @@ const deleteReply = async (req, res) => {
     {
       replies: {
         $elemMatch: {
-          _id: replyId,
+          _id: id,
         },
       },
     },
     {
-      $pull: { replies: { _id: replyId } },
+      $pull: { replies: { _id: id } },
     },
     { new: true }
   );

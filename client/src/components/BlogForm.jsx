@@ -9,6 +9,7 @@ import { createBlog, updateBlog } from "../utils/api";
 
 import { toast } from "react-hot-toast";
 import axios from "axios";
+import { Sparkles } from "lucide-react";
 
 const BlogForm = ({ closeModal, blogId = "", defaultValues = {} }) => {
   const [description, setDescription] = useState("");
@@ -43,8 +44,8 @@ const BlogForm = ({ closeModal, blogId = "", defaultValues = {} }) => {
     mutationFn: updateBlog,
     onSuccess: (data) => {
       toast.success("blog successfully updated  ");
-      queryClient.invalidateQueries("blogs");
-      queryClient.invalidateQueries("current-user");
+      queryClient.invalidateQueries({ queryKey: ["blogs"] });
+      queryClient.invalidateQueries({ queryKey: ["current-user"] });
       closeModal();
       console.log(data);
     },
@@ -93,7 +94,7 @@ const BlogForm = ({ closeModal, blogId = "", defaultValues = {} }) => {
               {...register("media")}
             />
             <label
-              htmlFor="file-upload"
+              htmlFor="media"
               className="inline-flex items-center justify-center h-10 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded cursor-pointer whitespace-nowrap bg-indigo-500 hover:bg-indigo-600 focus:bg-indigo-700 focus-visible:outline-none peer-disabled:cursor-not-allowed peer-disabled:border-indigo-300 peer-disabled:bg-indigo-300"
             >
               Upload
@@ -114,7 +115,10 @@ const BlogForm = ({ closeModal, blogId = "", defaultValues = {} }) => {
           {isPending || isUpdatingBlog ? (
             <FullSpinner size={"small"} />
           ) : (
-            "publish"
+            <>
+              <Sparkles size={15} />
+              publish
+            </>
           )}
         </Button>
       </form>

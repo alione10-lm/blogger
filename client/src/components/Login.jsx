@@ -34,7 +34,7 @@ export default function Login() {
             className="space-y-6"
           >
             <FormRow
-              label="Email adress"
+              label="Email address"
               htmlFor="email"
               error={errors?.email?.message}
             >
@@ -48,7 +48,7 @@ export default function Login() {
                 className="input"
                 {...register("email", {
                   required: "email is required",
-                  papattern: {
+                  pattern: {
                     value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                     message: "Invalid email format",
                   },

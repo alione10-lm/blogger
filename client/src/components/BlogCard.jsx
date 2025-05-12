@@ -78,22 +78,22 @@ export default function BlogCard({
   console.log(user);
 
   return (
-    <div className="overflow-hidden text-slate-500  p-2 ">
+    <div className="overflow-hidden text-slate-500 border rounded-md mt-2 border-gray-200 dark:border-gray-800  p-2 ">
       <div className="w-full flex items-center justify-between">
         <header className="flex w-full gap-3 items-start">
-          <Link to={`../users/${createdBy._id}`}>
-            {createdBy.avatar ? (
+          <Link to={`../users/${createdBy?._id}`}>
+            {createdBy?.avatar ? (
               <img
-                src={`http://localhost:5000/uploads/${createdBy.avatar}`}
+                src={`http://localhost:5000/uploads/${createdBy?.avatar}`}
                 alt="user name"
-                title={`${createdBy.firstName}  ${createdBy.lastName}`}
+                title={`${createdBy?.firstName}  ${createdBy?.lastName}`}
                 className="max-w-full  size-12 rounded-lg cursor-pointer"
               />
             ) : (
               <UserAvatar
                 size="size-[2rem]"
-                firstname={createdBy.firstName}
-                lastname={createdBy.lastName}
+                firstname={createdBy?.firstName}
+                lastname={createdBy?.lastName}
               />
             )}
           </Link>
@@ -118,10 +118,10 @@ export default function BlogCard({
               </Modal.Window>
             </Modal>
             <Modal>
-              <Modal.Open opens="delete">
+              <Modal.Open opens="edit">
                 <Pen size={20} cursor="pointer" className="" />
               </Modal.Open>
-              <Modal.Window name="delete">
+              <Modal.Window name="edit">
                 <BlogForm blogId={id} defaultValues={{ title, description }} />
               </Modal.Window>
             </Modal>
@@ -132,9 +132,7 @@ export default function BlogCard({
         className="description py-6 dark:text-gray-300 text-sm md:text-[1rem]"
         dangerouslySetInnerHTML={{ __html: description }}
       />
-      {
-        // TODO : remember to get back blog image
-      }
+
       {media &&
         (media.endsWith("mp4") ? (
           <video className="aspect-video rounded-lg" muted={false} controls>
@@ -148,7 +146,7 @@ export default function BlogCard({
           <img
             src={`http://localhost:5000/uploads/${media}`}
             alt="card image"
-            className="aspect-vdeo rounded-lg cursor-pointer"
+            className="aspect-video rounded-lg cursor-pointer"
           />
         ))}
       <div className="w-full flex gap-4 p-2 justify-end ">
@@ -235,7 +233,11 @@ export default function BlogCard({
           <span className="text-[0.6rem] text-indigo-500">overview</span>
         </Link>
       </div>
-      {isOpenComments ? <Comments blogId={id} comments={comments} /> : ""}
+      {isOpenComments ? (
+        <Comments blogId={id} comments={comments} blogCreator={createdBy._id} />
+      ) : (
+        ""
+      )}
     </div>
   );
 }
@@ -260,7 +262,7 @@ const BlogOperations = ({ closeModal, blogId }) => {
   return (
     <div className="">
       <p className="mt-10 text-gray-700 dark:text-gray-300 mb-5">
-        Are you sure you want to delete this cabins permanently? This action
+        Are you sure you want to delete this blog permanently? This action
         cannot be undone.
       </p>
       <div className="flex items-center  justify-end  ">

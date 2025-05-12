@@ -5,16 +5,19 @@ import Button from "./ui/Button";
 import Feed from "./Feed";
 import EmptyComments from "./ui/EmptyComments";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { createComment } from "../utils/api";
+import { createComment, createNotification } from "../utils/api";
 import { useForm } from "react-hook-form";
 import Error from "./ui/Error";
 import FullSpinner from "./ui/FullSpinner";
 import toast from "react-hot-toast";
 import clsx from "clsx";
 import ReplyForm from "./ReplyForm";
+import { useOutletContext } from "react-router-dom";
 
-const Comments = ({ comments, blogId, commentId }) => {
+const Comments = ({ comments, blogId, commentId, blogCreator }) => {
   const [commentSession, setCommentSession] = useState(true);
+
+  const { user } = useOutletContext();
 
   const queryClient = useQueryClient();
 
@@ -37,6 +40,22 @@ const Comments = ({ comments, blogId, commentId }) => {
     },
   });
 
+  const {
+    mutate: createNotificationFn,
+    isPending: isCreatingNotification,
+    error,
+  } = useMutation({
+    mutationFn: createNotification,
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: ["notifications"] });
+      toast.success("done !");
+      console.log(data);
+    },
+    onError: () => {
+      toast.error("error");
+    },
+  });
+
   const onSubmit = (data) => {
     const commentData = {
       text: data.text,
@@ -44,6 +63,13 @@ const Comments = ({ comments, blogId, commentId }) => {
     };
 
     mutate(commentData);
+
+    createNotificationFn({
+      user: blogCreator,
+      content: `${user?.user?.firstName} ${user?.user?.lastName} commented on your blog`,
+      type: "comment",
+      link: `http://localhost:5173/app/blogs/${blogId}`,
+    });
   };
 
   return (

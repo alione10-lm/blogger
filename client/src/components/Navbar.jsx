@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import DarkModeToggle from "./DarkModeToggle";
 import Button from "./ui/Button";
-import { LogOut, Search } from "lucide-react";
+import { Funnel, LogOut, Search } from "lucide-react";
 import { useAuth } from "../contexts/authContext";
 import FullSpinner from "./ui/FullSpinner";
 import SearchWindow from "./SearchWindow";
 import BlogsFilter from "./BlogsFilter";
+import Modal from "./ui/Modal";
 
 const NAVLINKS = [
   {
@@ -14,8 +15,8 @@ const NAVLINKS = [
     label: "home",
   },
   {
-    to: "admin",
-    label: "admin panel",
+    to: "notifications",
+    label: "notifications",
   },
 
   {
@@ -31,7 +32,7 @@ export default function Navbar() {
 
   return (
     <header className="z-20 transition-colors duration-200   dark:bg-dark-bg-1 w-full border border-gray-200 bg-white/90 dark:border-gray-800 shadow-lg shadow-slate-700/2 after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:backdrop-blur-sm lg:after:hidden ">
-      <div className="relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem]">
+      <div className="relative mx-auto max-w-full md:px-20 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem]">
         <nav
           aria-label="main navigation"
           className="flex md:h-[5rem] items-stretch justify-between font-medium text-slate-600"
@@ -110,10 +111,20 @@ export default function Navbar() {
                 </StyledNavLink>
               </li>
             ))}
-            <div className="block md:hidden">
-              <BlogsFilter close={setIsToggleOpen} />
-            </div>
-            <li className="flex mt-20 md:mt-0 items-center gap-20 md:border-none border border-gray-200 w-fit p-2 rounded-lg dark:border-slate-800">
+            <li className="block md:hidden  mt-15 md:mt-0">
+              <Modal>
+                <Modal.Open opens="new-blog">
+                  <Button size="small">
+                    <Funnel size={15} />
+                    filter
+                  </Button>
+                </Modal.Open>
+                <Modal.Window name="new-blog">
+                  <BlogsFilter close={setIsToggleOpen} />
+                </Modal.Window>
+              </Modal>
+            </li>
+            <li className="flex items-center mt-5 md:mt-0 justify-between gap-20 md:border-none border border-gray-200  w-full md:w-fit p-2 rounded-lg dark:border-slate-800">
               <span className="text-lg md:hidden  ">toggle appearance</span>
               <DarkModeToggle />
             </li>

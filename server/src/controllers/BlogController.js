@@ -2,9 +2,10 @@ import { NotFoundError } from "../middlewares/errorsHandler.js";
 import Blog from "../models/Blog.js";
 import statusCodes, { StatusCodes } from "http-status-codes";
 import User from "../models/User.js";
+import Notification from "../models/Notification.js";
 
 const getAllBlogs = async (req, res) => {
-  const { filter, search } = req.query;
+  const { filter } = req.query;
 
   const queryObj = {};
 
@@ -14,16 +15,7 @@ const getAllBlogs = async (req, res) => {
       { description: { $regex: filter, $options: "i" } },
     ];
   }
-  // if (search) {
-  //   queryObj.$or = [
-  //     { title: { $regex: search, $options: "i" } },
-  //     { description: { $regex: search, $options: "i" } },
-  //   ];
-  // }
 
-  // const result = await Blog.find(queryObj);
-
-  // console.log(result);
   const page = parseInt(req.query.page) || 1;
   const limit = 10;
 
