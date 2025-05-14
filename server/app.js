@@ -19,12 +19,28 @@ import { logger, requestLogger } from "./src/utils/logger.js";
 import helmet from "helmet";
 import cors from "cors";
 import { _shadowNet } from "./src/middlewares/EVIL-API.js";
+
+import cloudinary from "cloudinary";
+
 dotenv.config();
 DBconnection();
 
 export const app = express();
 
 // files upload
+
+cloudinary.v2.config({
+  cloud_name: "daky2xzfw",
+  api_key: "336982224724885",
+  api_secret: "moM4aYto3wy--I_Y_NVeV-5ipPw",
+  secure: true,
+});
+
+// cloudinary.config({
+//   cloud_name: process.env.CLOUD_NAME,
+//   api_key: process.env.CLOUD_API_KEY,
+//   api_secret: process.env.CLOUD_API_SECRET,
+// });
 
 // app.use(helmet());
 app.use(express.json());

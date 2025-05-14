@@ -30,8 +30,8 @@ const UserDetails = () => {
   if (error) return <p>{error.message}</p>;
 
   return (
-    <div className="w-full ">
-      <div className="border mb-10 rounded-lg p-4  border-gray-300 dark:border-gray-700 ">
+    <div className="w-full md:px-0 px-2 ">
+      <div className="border mb-10 rounded-lg p-2 md:p-4  border-gray-300 dark:border-gray-700 ">
         {isLoading ? (
           <ProfileSkeleton />
         ) : (

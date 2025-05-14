@@ -2,7 +2,8 @@ import { NotFoundError } from "../middlewares/errorsHandler.js";
 import Blog from "../models/Blog.js";
 import statusCodes, { StatusCodes } from "http-status-codes";
 import User from "../models/User.js";
-import Notification from "../models/Notification.js";
+import cloudinary from "cloudinary";
+import { promises as fs } from "fs";
 
 const getAllBlogs = async (req, res) => {
   const { filter } = req.query;
@@ -84,7 +85,14 @@ const createBlog = async (req, res) => {
   req.body.createdBy = req.user.userId;
 
   if (req.file) {
-    req.body.media = req.file.filename;
+  }
+
+  if (req.file) {
+    const response = await cloudinary.v2.uploader.upload(req.file.path);
+
+    req.body.media = response.secure_url;
+    req.body.public_id = response.public_id;
+    console.log(response);
   }
 
   const newBlog = await Blog.create(req.body);
@@ -109,17 +117,32 @@ const deleteBlog = async (req, res) => {
   res.status(statusCodes.OK).json({ removedBlog });
 };
 const updateBlog = async (req, res) => {
-  console.log(req.file);
+  const newBlog = { ...req.body };
 
   if (req.file) {
-    req.body.media = req.file.filename;
+    const response = await cloudinary.v2.uploader.upload(req.file.path);
+
+    newBlog.media = response.secure_url;
+    newBlog.blogPublicId = response.public_id;
+
+    await fs.unlink(req.file.path);
   }
 
-  const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-  });
+  const blog = await Blog.findByIdAndUpdate(req.params.id, newBlog);
 
-  res.status(statusCodes.OK).json({ updatedBlog });
+  if (req.file && blog.blogPublicId) {
+    await cloudinary.v2.uploader.destroy(blog.blogPublicId);
+  }
+
+  // if (req.file) {
+  //   req.body.media = req.file.filename;
+  // }
+
+  // const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, req.body, {
+  //   new: true,
+  // });
+
+  res.status(statusCodes.OK).json({ blog });
 };
 const getSingleBlog = async (req, res) => {
   const { id } = req.params;

@@ -5,11 +5,16 @@ import { Send } from "lucide-react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 
-import { createReply } from "../../utils/api";
+import {
+  createComment,
+  createNotification,
+  createReply,
+} from "../../utils/api";
 
 import FullSpinner from "./FullSpinner";
 
 import Error from "./Error";
+import { useOutletContext } from "react-router-dom";
 const ReplyContext = createContext();
 
 const ReplyForm = ({ children }) => {
@@ -42,11 +47,13 @@ const OpenForm = () => {
     </button>
   );
 };
-const Form = ({ id, commentCreator = {} }) => {
+const Form = ({ id, commentCreator = {}, blogCreator, blogId }) => {
   const { open } = useContext(ReplyContext);
 
   const queryClient = useQueryClient();
   const { openName } = useContext(ReplyContext);
+
+  const { user } = useOutletContext();
 
   const {
     register,
@@ -62,7 +69,7 @@ const Form = ({ id, commentCreator = {} }) => {
   } = useMutation({
     mutationFn: createReply,
     onSuccess: () => {
-      queryClient.invalidateQueries("blogs");
+      queryClient.invalidateQueries({ queryKey: ["blogs"] });
       open(false);
       reset();
     },
@@ -71,9 +78,34 @@ const Form = ({ id, commentCreator = {} }) => {
     },
   });
 
+  const { mutate: createNotificationFn } = useMutation({
+    mutationFn: createNotification,
+  });
+
+  // console.log(blogCreator, commentCreator);
   const formSubmit = (data) => {
-    // console.log(data, commentCreator, id);
     reply({ ...data, replyTo: id });
+
+    // ila kan mol reply how mol comment ===> madir walo ;
+    // ila kan mol reply how mol blog === madir walo ;
+
+    //  if(user?.user?._id === commentCreator) return ;
+
+    if (user?.user?._id === blogCreator || user?.user?._id === commentCreator)
+      return;
+
+    createNotificationFn({
+      user: blogCreator,
+      content: `${user?.user?.firstName} ${user?.user?.lastName} commented on your blog , "${data.text}"`,
+      type: "comment",
+      link: `${window.location.origin}/app/blogs/${blogId}`,
+    });
+    createNotificationFn({
+      user: commentCreator,
+      content: `${user?.user?.firstName} ${user?.user?.lastName} replied to your comment , "${data.text}"`,
+      type: "reply",
+      link: `${window.location.origin}/app/blogs/${blogId}`,
+    });
   };
 
   if (!openName) return null;
@@ -91,7 +123,6 @@ const Form = ({ id, commentCreator = {} }) => {
           type="text"
           disabled={isPending}
           className="input p-1 disabled:cursor-not-allowed"
-          // defaultValue={`@${commentCreator.firstName} ${commentCreator.lastName} `}
         />
         <Button disabled={isPending} type="submit" size="small">
           {isPending ? (

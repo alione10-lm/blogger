@@ -2,17 +2,11 @@ import React from "react";
 import Navbar from "./Navbar";
 import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "../contexts/authContext";
-import { useQuery } from "@tanstack/react-query";
-import { getCurrentUser } from "../utils/api";
+
 import useCurrentUser from "../hooks/useCurrentUser";
 
 const AppLayout = () => {
   const { token } = useAuth();
-
-  // const { data: currentUser, isLoading: isGettingCurrentUser } = useQuery({
-  //   queryKey: ["current-user"],
-  //   queryFn: getCurrentUser,
-  // });
 
   const { currentUser } = useCurrentUser();
   if (!token) return <Navigate to={"/auth"} />;

@@ -5,7 +5,7 @@ export const getUserNotifications = async (req, res) => {
   console.log(req.user.userId);
   const notifications = await Notification.find({
     user: req.user.userId,
-  });
+  }).sort({ createdAt: -1 });
   res.status(StatusCodes.OK).json({ notifications });
 };
 export const createNotification = async (req, res) => {

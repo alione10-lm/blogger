@@ -15,8 +15,6 @@ import ReplyForm from "./ReplyForm";
 import { useOutletContext } from "react-router-dom";
 
 const Comments = ({ comments, blogId, commentId, blogCreator }) => {
-  const [commentSession, setCommentSession] = useState(true);
-
   const { user } = useOutletContext();
 
   const queryClient = useQueryClient();
@@ -31,7 +29,10 @@ const Comments = ({ comments, blogId, commentId, blogCreator }) => {
   const { mutate, isPending: isCreatingComment } = useMutation({
     mutationFn: createComment,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["blogs"] });
+      // queryClient.invalidateQueries({ queryKey: ["blogs"] });
+      // queryClient.invalidateQueries({ queryKey: ["get-single-blog"] });
+      // queryClient.invalidateQueries({ queryKey: ["single-user"] });
+      queryClient.invalidateQueries();
       reset();
     },
     onError: (err) => {
@@ -40,16 +41,10 @@ const Comments = ({ comments, blogId, commentId, blogCreator }) => {
     },
   });
 
-  const {
-    mutate: createNotificationFn,
-    isPending: isCreatingNotification,
-    error,
-  } = useMutation({
+  const { mutate: createNotificationFn } = useMutation({
     mutationFn: createNotification,
-    onSuccess: (data) => {
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["notifications"] });
-      toast.success("done !");
-      console.log(data);
     },
     onError: () => {
       toast.error("error");
@@ -64,11 +59,12 @@ const Comments = ({ comments, blogId, commentId, blogCreator }) => {
 
     mutate(commentData);
 
+    if (user?.user?._id === blogCreator) return;
     createNotificationFn({
       user: blogCreator,
-      content: `${user?.user?.firstName} ${user?.user?.lastName} commented on your blog`,
+      content: `${user?.user?.firstName} ${user?.user?.lastName} commented on your blog ,"${data.text}"`,
       type: "comment",
-      link: `http://localhost:5173/app/blogs/${blogId}`,
+      link: `${window.location.origin}/app/blogs/${blogId}`,
     });
   };
 
@@ -78,11 +74,7 @@ const Comments = ({ comments, blogId, commentId, blogCreator }) => {
         {!comments.length ? (
           <EmptyComments />
         ) : (
-          <Feed
-            commentSession={commentSession}
-            setCommentSession={setCommentSession}
-            comments={comments}
-          />
+          <Feed blogCreator={blogCreator} comments={comments} blogId={blogId} />
         )}
       </div>
       <form
@@ -93,9 +85,7 @@ const Comments = ({ comments, blogId, commentId, blogCreator }) => {
           <input
             type="text"
             className="input p-1"
-            placeholder={clsx(
-              commentSession ? "add new comment" : "add a reply"
-            )}
+            placeholder={"add new comment"}
             {...register("text", {
               required: "comment must be at lest 1 character",
             })}

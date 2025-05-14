@@ -77,8 +77,8 @@ const BlogDetails = ({ isCurrentUser = false }) => {
 
   // console.log(likes);
   return (
-    <div className="w-full grid grid-cols-1  md:grid-cols-3 items-start ">
-      <div className="overflow-hidden  md:col-span-2 border border-gray-200 dark:border-gray-800 rounded-lg text-slate-500  p-2 ">
+    <div className="w-full grid grid-cols-1  md:px-0 px-2 items-start ">
+      {/* <div className="overflow-hidden  md:col-span-2 border border-gray-200 dark:border-gray-800 rounded-lg text-slate-500  p-2 ">
         <div className="w-full flex items-center justify-between">
           <header className="flex gap-4">
             <Link to={`../users/${createdBy._id}`}>
@@ -99,8 +99,6 @@ const BlogDetails = ({ isCurrentUser = false }) => {
             </Link>
             <div>
               <h3 className="text-lg md:text-xl font-medium  dark:text-slate-200 text-slate-600">
-                {/* Looking back at time */}
-
                 {title}
               </h3>
               <p className="text-sm  text-indigo-500/100">
@@ -220,17 +218,18 @@ const BlogDetails = ({ isCurrentUser = false }) => {
             <span className="text-[0.6rem] text-indigo-500">overview</span>
           </Link>
         </div>
-      </div>
-      <Comments blogId={id} comments={comments} />
-      {/* <BlogCard
+      </div> */}
+      {/* <Comments blogId={id} comments={comments} /> */}
+      <BlogCard
         likes={likes}
         comments={comments}
         createdBy={createdBy}
         createdAt={createdAt}
+        media={media}
         title={title}
         description={description}
         id={id}
-      /> */}
+      />
     </div>
   );
 };

@@ -24,18 +24,18 @@ const Profile = () => {
 
   const { isGettingCurrentUser } = useCurrentUser();
 
-  console.log(user?.user?.blogs);
+  console.log(user?.user);
 
   return (
-    <div className="w-full">
-      <div className="border mb-10 rounded-lg p-4 border-gray-300 dark:border-gray-700 ">
+    <div className="w-full p-2 md:p-0">
+      <div className="border mb-10 rounded-lg p-2 md:p-4 border-gray-300 dark:border-gray-700 ">
         {isGettingCurrentUser ? (
           <ProfileSkeleton />
         ) : (
           <div className="w-full md:flex-row flex  flex-col md:gap-10">
             {user?.user?.avatar ? (
               <img
-                src={`http://localhost:5000/uploads/${user?.user?.avatar}`}
+                src={user?.user?.avatar}
                 alt=""
                 loading="lazy"
                 className="rounded-lg md:size-50 size-20 "
@@ -115,7 +115,7 @@ const EditProfileForm = ({ user, closeModal }) => {
     mutationFn: updateUser,
 
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["current-user"] });
+      queryClient.invalidateQueries();
       toast.success("profile successfully updated");
       closeModal();
     },

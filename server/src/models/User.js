@@ -10,6 +10,7 @@ const userSchema = new mongoose.Schema(
     birthDate: { type: Date },
     password: String,
     avatar: String,
+    avatarPublicId: String,
     blogs: [
       {
         type: mongoose.Schema.Types.ObjectId,

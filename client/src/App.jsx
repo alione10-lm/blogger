@@ -45,10 +45,10 @@ function App() {
   const width = useViewportWidth();
   return (
     <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools initialIsOpen={false} />
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       <Toaster
         position={clsx(width <= 300 ? "top-right" : "bottom-right")}
-        reverseOrder={false}
+        // reverseOrder={false}
         gutter={8}
         containerClassName=""
         containerStyle={{}}

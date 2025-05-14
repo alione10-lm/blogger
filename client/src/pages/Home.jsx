@@ -6,7 +6,6 @@ import BlogForm from "../components/BlogForm";
 import Modal from "../components/ui/Modal";
 import Skeleton from "../components/ui/Skeleton";
 
-import { useQuery } from "@tanstack/react-query";
 import { getAllBlogs } from "../utils/api";
 import { Link, useOutletContext, useSearchParams } from "react-router-dom";
 
@@ -22,7 +21,6 @@ import UserSkeleton from "../components/ui/UserSkeleton";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { useForm } from "react-hook-form";
 import BlogsFilter from "../components/BlogsFilter";
 
 const Home = () => {
@@ -62,19 +60,25 @@ const Home = () => {
 
   if (status === "error") return <div>{error.message}</div>;
   return (
-    <div className="w-full grid md:h-full md:grid-cols-4 gap-10 ">
+    <div className="w-full grid md:h-full md:grid-cols-4  gap-10 ">
       <div className="md:flex flex-col items-center   hidden  rounded-md h-fit  ">
         {isGettingCurrentUser ? (
           <UserSkeleton />
         ) : user?.user?.avatar ? (
           <img
-            src={`http://localhost:5000/uploads/${user?.user?.avatar}`}
+            src={user?.user?.avatar}
+            // src={`http://localhost:5000/uploads/${user?.user?.avatar}`}
             alt="user name"
             title="user name"
-            className=" size-[6rem] rounded-full mb-5"
+            className=" size-30 rounded-full mb-5"
           />
         ) : (
-          ""
+          <UserAvatar
+            rounded="rounded-full"
+            size="size-20"
+            firstname={user?.user?.firstName}
+            lastname={user?.user?.lastName}
+          />
         )}
 
         <div className="text-center">
@@ -111,7 +115,7 @@ const Home = () => {
         </ul>
       </div>
       <div className="w-full md:overflow-y-auto styled-scrollbar px-2 md:h-full  col-span-2 ">
-        <div className="flex start">
+        <div className="flex start mt-2 md:mt-0">
           <Modal>
             <Modal.Open opens="new-blog">
               <Button>new blog</Button>

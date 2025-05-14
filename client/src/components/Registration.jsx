@@ -53,7 +53,7 @@ export default function Registration() {
                   name="First name"
                   type="text"
                   required
-                  defaultValue="Oussama"
+                  defaultValue=""
                   className="input"
                   {...register("firstName", {
                     required: "first name is required",
@@ -66,7 +66,7 @@ export default function Registration() {
                   name="last name"
                   type="text"
                   required
-                  defaultValue="Ali1"
+                  defaultValue=""
                   autoComplete="email"
                   className="input"
                   {...register("lastName", {
@@ -106,7 +106,7 @@ export default function Registration() {
               <input
                 id="Birth date"
                 type="date"
-                defaultValue="2000-10-10"
+                defaultValue=""
                 name="id-date07"
                 className="input"
                 {...register("birthDate", {
@@ -127,7 +127,7 @@ export default function Registration() {
                 id="email"
                 name="email"
                 type="email"
-                defaultValue="test@test.com"
+                defaultValue=""
                 required
                 autoComplete="email"
                 className="input"
@@ -145,7 +145,7 @@ export default function Registration() {
                 id="password"
                 name="password"
                 type="password"
-                defaultValue="Test1234@"
+                defaultValue=""
                 required
                 autoComplete="current-password"
                 className="input"
@@ -172,7 +172,7 @@ export default function Registration() {
                 id="confirm-password"
                 name="confirm-password"
                 type="password"
-                defaultValue="Test1234@"
+                defaultValue=""
                 required
                 autoComplete="current-password"
                 className="input"

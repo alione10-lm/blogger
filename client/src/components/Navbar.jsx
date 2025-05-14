@@ -35,7 +35,7 @@ export default function Navbar() {
       <div className="relative mx-auto max-w-full md:px-20 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem]">
         <nav
           aria-label="main navigation"
-          className="flex md:h-[5rem] items-stretch justify-between font-medium text-slate-600"
+          className="flex md:h-[5rem] items-stretch px-2 md:p-0 justify-between font-medium text-slate-600"
           role="navigation"
         >
           <NavLink

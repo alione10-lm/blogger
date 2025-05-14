@@ -21,10 +21,9 @@ import {
 } from "../services/helpers";
 import UserAvatar from "./ui/UserAvatar";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { deleteBlog, LikeBlog } from "../utils/api";
+import { createNotification, deleteBlog, LikeBlog } from "../utils/api";
 import toast from "react-hot-toast";
 import FullSpinner from "./ui/FullSpinner";
-import AnimatedHeart from "./ui/AnimatedHeart";
 import BlogForm from "./BlogForm";
 
 export default function BlogCard({
@@ -61,21 +60,38 @@ export default function BlogCard({
   const { mutate: likeFn } = useMutation({
     mutationFn: LikeBlog,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["blogs"] });
+      // queryClient.invalidateQueries({ queryKey: ["blogs"] });
+      // queryClient.invalidateQueries({ queryKey: ["single-user"] });
+      queryClient.invalidateQueries();
     },
   });
 
   const toggleLike = () => {
     likeFn(id);
+    if (
+      checkIfTheUserHasLikedTheBlog(user?.user?._id, likes) ||
+      user?.user?._id === createdBy._id
+    )
+      return;
+    createNotificationFn({
+      user: createdBy._id,
+      content: `${user?.user?.firstName} ${user?.user?.lastName} liked  your blog`,
+      type: "like",
+      link: `${window.location.origin}/app/blogs/${id}`,
+    });
   };
 
+  console.log(window.location.origin);
+
   const { user } = useOutletContext();
+
+  const { mutate: createNotificationFn } = useMutation({
+    mutationFn: createNotification,
+  });
 
   const repliesCount = comments.reduce((sum, comment) => {
     return sum + comment.replies.length;
   }, 0);
-
-  console.log(user);
 
   return (
     <div className="overflow-hidden text-slate-500 border rounded-md mt-2 border-gray-200 dark:border-gray-800  p-2 ">
@@ -84,14 +100,14 @@ export default function BlogCard({
           <Link to={`../users/${createdBy?._id}`}>
             {createdBy?.avatar ? (
               <img
-                src={`http://localhost:5000/uploads/${createdBy?.avatar}`}
+                src={createdBy?.avatar}
                 alt="user name"
                 title={`${createdBy?.firstName}  ${createdBy?.lastName}`}
-                className="max-w-full  size-12 rounded-lg cursor-pointer"
+                className="max-w-full  size-12 rounded-md cursor-pointer"
               />
             ) : (
               <UserAvatar
-                size="size-[2rem]"
+                size="size-12"
                 firstname={createdBy?.firstName}
                 lastname={createdBy?.lastName}
               />
@@ -136,15 +152,12 @@ export default function BlogCard({
       {media &&
         (media.endsWith("mp4") ? (
           <video className="aspect-video rounded-lg" muted={false} controls>
-            <source
-              src={`http://localhost:5000/uploads/${media}`}
-              type="video/mp4"
-            />
+            <source src={media} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         ) : (
           <img
-            src={`http://localhost:5000/uploads/${media}`}
+            src={media}
             alt="card image"
             className="aspect-video rounded-lg cursor-pointer"
           />
@@ -197,13 +210,13 @@ export default function BlogCard({
             </div>
           </Modal.Open>
           <Modal.Window>
-            <div className="flex bg-gray-50 gap-4 dark:bg-gray-100/6 p-4 mt-10 rounded-lg items-center justify-center">
-              <p className="text-indigo-500 text-sm ">
-                {`http://localhost:5173/app/blogs/${id}`}
+            <div className="flex  bg-gray-50 w-full gap-4 dark:bg-gray-100/6 p-4 mt-10 rounded-lg items-center justify-center">
+              <p className="text-indigo-500 text-xs w-full truncate ">
+                {`${window.location.origin}/app/blogs/${id}`}
               </p>
               <button
                 onClick={() =>
-                  handleCopy(`http://localhost:5173/app/blogs/${id}`)
+                  handleCopy(`${window.location.origin}/app/blogs/${id}`)
                 }
               >
                 {copyStatus === "copied" && (
@@ -241,8 +254,6 @@ export default function BlogCard({
     </div>
   );
 }
-
-const blogIntercations = () => {};
 
 const BlogOperations = ({ closeModal, blogId }) => {
   const queryClient = useQueryClient();

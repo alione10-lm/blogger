@@ -141,7 +141,7 @@ const UserItem = ({
       <div className="shrink-0">
         {avatar ? (
           <img
-            src={`http://localhost:5000/uploads/${avatar}`}
+            src={avatar}
             alt="user name"
             className="max-w-full size-10 rounded-sm "
           />

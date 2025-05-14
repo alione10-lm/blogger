@@ -21,7 +21,6 @@ const AuthProvider = ({ children }) => {
       navigate("/app");
     },
     onError: (error) => {
-      console.log(error);
       toast.error(error.message);
     },
   });
