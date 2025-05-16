@@ -8,6 +8,7 @@ import FullSpinner from "./ui/FullSpinner";
 import SearchWindow from "./SearchWindow";
 import BlogsFilter from "./BlogsFilter";
 import Modal from "./ui/Modal";
+import useNotifications from "../hooks/useNotifications";
 
 const NAVLINKS = [
   {
@@ -29,6 +30,9 @@ export default function Navbar() {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
 
   const { logoutFn, isLoggingOut } = useAuth();
+
+  const { isAllRed } = useNotifications();
+  console.log(isAllRed);
 
   return (
     <header className="z-20 transition-colors duration-200   dark:bg-dark-bg-1 w-full border border-gray-200 bg-white/90 dark:border-gray-800 shadow-lg shadow-slate-700/2 after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:backdrop-blur-sm lg:after:hidden ">
@@ -106,9 +110,18 @@ export default function Navbar() {
             <SearchWindow close={setIsToggleOpen} />
             {NAVLINKS.map(({ label, to }, ndx) => (
               <li key={ndx} className="flex items-center">
-                <StyledNavLink to={to} onClick={() => setIsToggleOpen(false)}>
-                  <span className="capitalize">{label}</span>
-                </StyledNavLink>
+                {label === "notifications" ? (
+                  <StyledNavLink to={to} onClick={() => setIsToggleOpen(false)}>
+                    <p className="capitalize relative">
+                      {label}
+                      {isAllRed && <Dot />}
+                    </p>
+                  </StyledNavLink>
+                ) : (
+                  <StyledNavLink to={to} onClick={() => setIsToggleOpen(false)}>
+                    <p className="capitalize">{label}</p>
+                  </StyledNavLink>
+                )}
               </li>
             ))}
             <li className="block md:hidden  mt-15 md:mt-0">
@@ -152,9 +165,15 @@ const StyledNavLink = ({ children, to, onClick }) => {
     <NavLink
       onClick={onClick}
       to={to}
-      className="flex items-center md:text-[1rem] text-xl gap-2 py-4 transition-colors duration-300 hover:text-indigo-500 focus:text-indigo-600 focus:outline-none focus-visible:outline-none lg:px-8"
+      className="flex  items-center md:text-[1rem] text-xl gap-2 py-4 transition-colors duration-300 hover:text-indigo-500 focus:text-indigo-600 focus:outline-none focus-visible:outline-none lg:px-8"
     >
       {children}
     </NavLink>
+  );
+};
+
+const Dot = () => {
+  return (
+    <span className="bg-indigo-600 animate-ping size-2 absolute top-0 rounded-full -right-1" />
   );
 };

@@ -42,12 +42,14 @@ const BlogForm = ({ closeModal, blogId = "", defaultValues = {} }) => {
     error,
   } = useMutation({
     mutationFn: updateBlog,
-    onSuccess: (data) => {
+    onSuccess: () => {
       toast.success("blog successfully updated  ");
       queryClient.invalidateQueries({ queryKey: ["blogs"] });
       queryClient.invalidateQueries({ queryKey: ["current-user"] });
       closeModal();
-      console.log(data);
+
+      reset();
+      setDescription("");
     },
     onError: (err) => {
       console.log(err);
@@ -65,8 +67,6 @@ const BlogForm = ({ closeModal, blogId = "", defaultValues = {} }) => {
     // console.log(JSON.stringify(plainObj,null,2));
 
     blogId ? update({ blogId, formData }) : createBlogFn(formData);
-
-    reset();
   };
 
   return (

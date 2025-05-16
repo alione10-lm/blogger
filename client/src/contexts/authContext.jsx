@@ -16,6 +16,7 @@ const AuthProvider = ({ children }) => {
       setToken(data.token);
 
       localStorage.setItem("token", data.token);
+      localStorage.setItem("last-check", Date.now());
 
       toast.success("login in");
       navigate("/app");
@@ -31,6 +32,7 @@ const AuthProvider = ({ children }) => {
       toast.success("logged out");
       localStorage.removeItem("token");
       navigate("/");
+      localStorage.removeItem("last-check");
     },
     onError: () => {
       toast.error("failed to logging out");

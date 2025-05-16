@@ -5,16 +5,19 @@ import NotificationItem from "./NotificationItem";
 import NotificationSkeleton from "./ui/NotificationsSkeleton";
 import { Menus } from "./ui/Menu2";
 import { EllipsisVertical } from "lucide-react";
+import useNotifications from "../hooks/useNotifications";
 
 const Notifications = () => {
-  const {
-    data: notifications,
-    isLoading,
-    error,
-  } = useQuery({
-    queryKey: ["notifications"],
-    queryFn: getUserNotification,
-  });
+  // const {
+  //   data: notifications,
+  //   isLoading,
+  //   error,
+  // } = useQuery({
+  //   queryKey: ["notifications"],
+  //   queryFn: getUserNotification,
+  // });
+
+  const { isLoading, notifications, error } = useNotifications();
 
   // const handleNotify = (notifBody) => {
   //   Notification.requestPermission().then((permission) => {

@@ -20,7 +20,6 @@ const BlogsFilter = ({ close, closeModal }) => {
     closeModal?.();
   };
 
-  console.log(searchParams.get("filter"));
   return (
     <form
       onSubmit={handleSubmit(FormSubmit)}

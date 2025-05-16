@@ -218,3 +218,12 @@ export const getUserNotification = async () => {
     throw new Error(err);
   }
 };
+
+export const readAllNotifications = async () => {
+  try {
+    const res = await axios.get("/api/notfications/read-all");
+    return res.data;
+  } catch (err) {
+    throw new Error(err?.response?.data?.message);
+  }
+};

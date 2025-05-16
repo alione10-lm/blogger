@@ -17,3 +17,13 @@ export const deleteNotifation = async (req, res) => {
   await Notification.findByIdAndDelete(req.params.id);
   res.status(StatusCodes.OK).json({ message: "deleted" });
 };
+
+export const readAllNotications = async (req, res) => {
+  await Notification.updateMany(
+    { isRead: true },
+    { isRead: false },
+    { new: true }
+  );
+
+  res.status(StatusCodes.OK).json({ message: "done" });
+};

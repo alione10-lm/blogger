@@ -12117,3 +12117,971 @@
   ],
   avatarPublicId: 'j4uwebwhxmqoxgkwo3yd'
 } logged in 
+[2025-05-15 12:20:12] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'oussama@ali1.com',
+  firstName: 'oussama',
+  lastName: 'alione',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-14T22:01:04.385Z,
+  __v: 0,
+  bio: 'web developer',
+  avatar: 'https://res.cloudinary.com/daky2xzfw/image/upload/v1747256443/j4uwebwhxmqoxgkwo3yd.jpg',
+  blogs: [
+    new ObjectId('681a440e2dc7e7c24a9c7ae2'),
+    new ObjectId('681b4513578ef362b2328321'),
+    new ObjectId('681b451f578ef362b2328336'),
+    new ObjectId('681b452d578ef362b232834b'),
+    new ObjectId('681b4535578ef362b2328360'),
+    new ObjectId('681b4540578ef362b2328375'),
+    new ObjectId('681b454c578ef362b232838a'),
+    new ObjectId('681b4555578ef362b232839f'),
+    new ObjectId('681b4560578ef362b23283b4'),
+    new ObjectId('681b4569578ef362b23283c9'),
+    new ObjectId('681b4574578ef362b23283de'),
+    new ObjectId('681c92eb6abb8ebcde5463f2'),
+    new ObjectId('681ca8596abb8ebcde547900'),
+    new ObjectId('681ca8756abb8ebcde54790d'),
+    new ObjectId('681e12c278ad3e0088b2b855'),
+    new ObjectId('681e2443d5f41eb02d5bca97'),
+    new ObjectId('681f325e85bea5582a2373d7'),
+    new ObjectId('6825110c5e69d7734727faee'),
+    new ObjectId('682512a00445b9814953d03f')
+  ],
+  avatarPublicId: 'j4uwebwhxmqoxgkwo3yd'
+} logged in 
+[2025-05-15 12:40:10] [ERROR]:not authenticated
+[2025-05-15 12:40:27] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'oussama@ali1.com',
+  firstName: 'oussama',
+  lastName: 'alione',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-14T22:01:04.385Z,
+  __v: 0,
+  bio: 'web developer',
+  avatar: 'https://res.cloudinary.com/daky2xzfw/image/upload/v1747256443/j4uwebwhxmqoxgkwo3yd.jpg',
+  blogs: [
+    new ObjectId('681a440e2dc7e7c24a9c7ae2'),
+    new ObjectId('681b4513578ef362b2328321'),
+    new ObjectId('681b451f578ef362b2328336'),
+    new ObjectId('681b452d578ef362b232834b'),
+    new ObjectId('681b4535578ef362b2328360'),
+    new ObjectId('681b4540578ef362b2328375'),
+    new ObjectId('681b454c578ef362b232838a'),
+    new ObjectId('681b4555578ef362b232839f'),
+    new ObjectId('681b4560578ef362b23283b4'),
+    new ObjectId('681b4569578ef362b23283c9'),
+    new ObjectId('681b4574578ef362b23283de'),
+    new ObjectId('681c92eb6abb8ebcde5463f2'),
+    new ObjectId('681ca8596abb8ebcde547900'),
+    new ObjectId('681ca8756abb8ebcde54790d'),
+    new ObjectId('681e12c278ad3e0088b2b855'),
+    new ObjectId('681e2443d5f41eb02d5bca97'),
+    new ObjectId('681f325e85bea5582a2373d7'),
+    new ObjectId('6825110c5e69d7734727faee'),
+    new ObjectId('682512a00445b9814953d03f')
+  ],
+  avatarPublicId: 'j4uwebwhxmqoxgkwo3yd'
+} logged in 
+[2025-05-15 12:42:12] [ERROR]:res is not defined
+[2025-05-15 12:47:29] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:47:29] [ERROR]:url not found
+[2025-05-15 12:52:39] [INFO]:{
+  _id: new ObjectId('681caf2b6abb8ebcde547a08'),
+  email: 'leo@leo.com',
+  firstName: 'leo',
+  lastName: 'messi',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$j09XMrjz3h84VFi5ux9CVuUcXflShhiaZ7kxZdimvWDt14jLk9wsS',
+  blogs: [ new ObjectId('6823153a143cfcfbc9688138') ],
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-08T13:18:35.144Z,
+  updatedAt: 2025-05-13T09:47:38.190Z,
+  __v: 0,
+  avatar: 'avatar-1746710359531-191189317.jpg',
+  bio: 'ahssen la3ib f l3alam'
+} logged in 
+[2025-05-15 12:52:45] [INFO]:HTTP GET /uploads/https://res.cloudinary.com/daky2xzfw/image/upload/v1747256443/j4uwebwhxmqoxgkwo3yd.jpg [object Object]
+[2025-05-15 12:52:45] [ERROR]:url not found
+[2025-05-15 12:53:05] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'oussama@ali1.com',
+  firstName: 'oussama',
+  lastName: 'alione',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-14T22:01:04.385Z,
+  __v: 0,
+  bio: 'web developer',
+  avatar: 'https://res.cloudinary.com/daky2xzfw/image/upload/v1747256443/j4uwebwhxmqoxgkwo3yd.jpg',
+  blogs: [
+    new ObjectId('681a440e2dc7e7c24a9c7ae2'),
+    new ObjectId('681b4513578ef362b2328321'),
+    new ObjectId('681b451f578ef362b2328336'),
+    new ObjectId('681b452d578ef362b232834b'),
+    new ObjectId('681b4535578ef362b2328360'),
+    new ObjectId('681b4540578ef362b2328375'),
+    new ObjectId('681b454c578ef362b232838a'),
+    new ObjectId('681b4555578ef362b232839f'),
+    new ObjectId('681b4560578ef362b23283b4'),
+    new ObjectId('681b4569578ef362b23283c9'),
+    new ObjectId('681b4574578ef362b23283de'),
+    new ObjectId('681c92eb6abb8ebcde5463f2'),
+    new ObjectId('681ca8596abb8ebcde547900'),
+    new ObjectId('681ca8756abb8ebcde54790d'),
+    new ObjectId('681e12c278ad3e0088b2b855'),
+    new ObjectId('681e2443d5f41eb02d5bca97'),
+    new ObjectId('681f325e85bea5582a2373d7'),
+    new ObjectId('6825110c5e69d7734727faee'),
+    new ObjectId('682512a00445b9814953d03f')
+  ],
+  avatarPublicId: 'j4uwebwhxmqoxgkwo3yd'
+} logged in 
+[2025-05-15 12:54:39] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:39] [ERROR]:url not found
+[2025-05-15 12:54:39] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:39] [ERROR]:url not found
+[2025-05-15 12:54:39] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:39] [ERROR]:url not found
+[2025-05-15 12:54:39] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:39] [ERROR]:url not found
+[2025-05-15 12:54:39] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:39] [ERROR]:url not found
+[2025-05-15 12:54:39] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:39] [ERROR]:url not found
+[2025-05-15 12:54:40] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:40] [ERROR]:url not found
+[2025-05-15 12:54:40] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:40] [ERROR]:url not found
+[2025-05-15 12:54:40] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:40] [ERROR]:url not found
+[2025-05-15 12:54:40] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:40] [ERROR]:url not found
+[2025-05-15 12:54:40] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:40] [ERROR]:url not found
+[2025-05-15 12:54:40] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:40] [ERROR]:url not found
+[2025-05-15 12:54:40] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:40] [ERROR]:url not found
+[2025-05-15 12:54:40] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:40] [ERROR]:url not found
+[2025-05-15 12:54:40] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:40] [ERROR]:url not found
+[2025-05-15 12:54:40] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:40] [ERROR]:url not found
+[2025-05-15 12:54:40] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:40] [ERROR]:url not found
+[2025-05-15 12:54:41] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:41] [ERROR]:url not found
+[2025-05-15 12:54:41] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:41] [ERROR]:url not found
+[2025-05-15 12:54:41] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:41] [ERROR]:url not found
+[2025-05-15 12:54:41] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:41] [ERROR]:url not found
+[2025-05-15 12:54:41] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:41] [ERROR]:url not found
+[2025-05-15 12:54:41] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:41] [ERROR]:url not found
+[2025-05-15 12:54:41] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:41] [ERROR]:url not found
+[2025-05-15 12:54:41] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:41] [ERROR]:url not found
+[2025-05-15 12:54:41] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:41] [ERROR]:url not found
+[2025-05-15 12:54:41] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:41] [ERROR]:url not found
+[2025-05-15 12:54:41] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:41] [ERROR]:url not found
+[2025-05-15 12:54:41] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:41] [ERROR]:url not found
+[2025-05-15 12:54:42] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:42] [ERROR]:url not found
+[2025-05-15 12:54:42] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:42] [ERROR]:url not found
+[2025-05-15 12:54:42] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:42] [ERROR]:url not found
+[2025-05-15 12:54:42] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:42] [ERROR]:url not found
+[2025-05-15 12:54:42] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:42] [ERROR]:url not found
+[2025-05-15 12:54:42] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:42] [ERROR]:url not found
+[2025-05-15 12:54:42] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:42] [ERROR]:url not found
+[2025-05-15 12:54:42] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:42] [ERROR]:url not found
+[2025-05-15 12:54:42] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:42] [ERROR]:url not found
+[2025-05-15 12:54:42] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:42] [ERROR]:url not found
+[2025-05-15 12:54:43] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:43] [ERROR]:url not found
+[2025-05-15 12:54:43] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:43] [ERROR]:url not found
+[2025-05-15 12:54:43] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:43] [ERROR]:url not found
+[2025-05-15 12:54:43] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:43] [ERROR]:url not found
+[2025-05-15 12:54:43] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:43] [ERROR]:url not found
+[2025-05-15 12:54:44] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:44] [ERROR]:url not found
+[2025-05-15 12:54:44] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:44] [ERROR]:url not found
+[2025-05-15 12:54:44] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:44] [ERROR]:url not found
+[2025-05-15 12:54:44] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:44] [ERROR]:url not found
+[2025-05-15 12:54:44] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:44] [ERROR]:url not found
+[2025-05-15 12:54:44] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:44] [ERROR]:url not found
+[2025-05-15 12:54:44] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:44] [ERROR]:url not found
+[2025-05-15 12:54:44] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:44] [ERROR]:url not found
+[2025-05-15 12:54:44] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:44] [ERROR]:url not found
+[2025-05-15 12:54:44] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:44] [ERROR]:url not found
+[2025-05-15 12:54:44] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:44] [ERROR]:url not found
+[2025-05-15 12:54:44] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:44] [ERROR]:url not found
+[2025-05-15 12:54:45] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:45] [ERROR]:url not found
+[2025-05-15 12:54:45] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:45] [ERROR]:url not found
+[2025-05-15 12:54:45] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:45] [ERROR]:url not found
+[2025-05-15 12:54:45] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:45] [ERROR]:url not found
+[2025-05-15 12:54:45] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:45] [ERROR]:url not found
+[2025-05-15 12:54:45] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:45] [ERROR]:url not found
+[2025-05-15 12:54:45] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:45] [ERROR]:url not found
+[2025-05-15 12:54:45] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:45] [ERROR]:url not found
+[2025-05-15 12:54:45] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:45] [ERROR]:url not found
+[2025-05-15 12:54:45] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:45] [ERROR]:url not found
+[2025-05-15 12:54:45] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:45] [ERROR]:url not found
+[2025-05-15 12:54:46] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:46] [ERROR]:url not found
+[2025-05-15 12:54:46] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:46] [ERROR]:url not found
+[2025-05-15 12:54:46] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:46] [ERROR]:url not found
+[2025-05-15 12:54:46] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:46] [ERROR]:url not found
+[2025-05-15 12:54:46] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:46] [ERROR]:url not found
+[2025-05-15 12:54:46] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:46] [ERROR]:url not found
+[2025-05-15 12:54:46] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:46] [ERROR]:url not found
+[2025-05-15 12:54:46] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:46] [ERROR]:url not found
+[2025-05-15 12:54:46] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:46] [ERROR]:url not found
+[2025-05-15 12:54:46] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:46] [ERROR]:url not found
+[2025-05-15 12:54:46] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:46] [ERROR]:url not found
+[2025-05-15 12:54:47] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:47] [ERROR]:url not found
+[2025-05-15 12:54:47] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:47] [ERROR]:url not found
+[2025-05-15 12:54:47] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:47] [ERROR]:url not found
+[2025-05-15 12:54:47] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:47] [ERROR]:url not found
+[2025-05-15 12:54:47] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:47] [ERROR]:url not found
+[2025-05-15 12:54:47] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:47] [ERROR]:url not found
+[2025-05-15 12:54:47] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:47] [ERROR]:url not found
+[2025-05-15 12:54:47] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:47] [ERROR]:url not found
+[2025-05-15 12:54:47] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:47] [ERROR]:url not found
+[2025-05-15 12:54:48] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:48] [ERROR]:url not found
+[2025-05-15 12:54:48] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:48] [ERROR]:url not found
+[2025-05-15 12:54:48] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:48] [ERROR]:url not found
+[2025-05-15 12:54:48] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:48] [ERROR]:url not found
+[2025-05-15 12:54:48] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:48] [ERROR]:url not found
+[2025-05-15 12:54:48] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:48] [ERROR]:url not found
+[2025-05-15 12:54:48] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:48] [ERROR]:url not found
+[2025-05-15 12:54:48] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:48] [ERROR]:url not found
+[2025-05-15 12:54:49] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:49] [ERROR]:url not found
+[2025-05-15 12:54:49] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:49] [ERROR]:url not found
+[2025-05-15 12:54:49] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:49] [ERROR]:url not found
+[2025-05-15 12:54:49] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:49] [ERROR]:url not found
+[2025-05-15 12:54:49] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:49] [ERROR]:url not found
+[2025-05-15 12:54:49] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:49] [ERROR]:url not found
+[2025-05-15 12:54:49] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:49] [ERROR]:url not found
+[2025-05-15 12:54:49] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:49] [ERROR]:url not found
+[2025-05-15 12:54:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:50] [ERROR]:url not found
+[2025-05-15 12:54:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:50] [ERROR]:url not found
+[2025-05-15 12:54:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:50] [ERROR]:url not found
+[2025-05-15 12:54:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:50] [ERROR]:url not found
+[2025-05-15 12:54:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:50] [ERROR]:url not found
+[2025-05-15 12:54:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:50] [ERROR]:url not found
+[2025-05-15 12:54:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:50] [ERROR]:url not found
+[2025-05-15 12:54:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:50] [ERROR]:url not found
+[2025-05-15 12:54:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:50] [ERROR]:url not found
+[2025-05-15 12:54:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:50] [ERROR]:url not found
+[2025-05-15 12:54:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:50] [ERROR]:url not found
+[2025-05-15 12:54:51] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:51] [ERROR]:url not found
+[2025-05-15 12:54:51] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:51] [ERROR]:url not found
+[2025-05-15 12:54:51] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:51] [ERROR]:url not found
+[2025-05-15 12:54:51] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:51] [ERROR]:url not found
+[2025-05-15 12:54:51] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:51] [ERROR]:url not found
+[2025-05-15 12:54:51] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:51] [ERROR]:url not found
+[2025-05-15 12:54:51] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:51] [ERROR]:url not found
+[2025-05-15 12:54:52] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:52] [ERROR]:url not found
+[2025-05-15 12:54:52] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:52] [ERROR]:url not found
+[2025-05-15 12:54:52] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:52] [ERROR]:url not found
+[2025-05-15 12:54:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:53] [ERROR]:url not found
+[2025-05-15 12:54:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:53] [ERROR]:url not found
+[2025-05-15 12:54:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:53] [ERROR]:url not found
+[2025-05-15 12:54:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:53] [ERROR]:url not found
+[2025-05-15 12:54:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:53] [ERROR]:url not found
+[2025-05-15 12:54:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:53] [ERROR]:url not found
+[2025-05-15 12:54:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:53] [ERROR]:url not found
+[2025-05-15 12:54:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:53] [ERROR]:url not found
+[2025-05-15 12:54:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:53] [ERROR]:url not found
+[2025-05-15 12:54:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:53] [ERROR]:url not found
+[2025-05-15 12:54:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:53] [ERROR]:url not found
+[2025-05-15 12:54:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:53] [ERROR]:url not found
+[2025-05-15 12:54:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:54] [ERROR]:url not found
+[2025-05-15 12:54:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:54] [ERROR]:url not found
+[2025-05-15 12:54:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:54] [ERROR]:url not found
+[2025-05-15 12:54:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:54] [ERROR]:url not found
+[2025-05-15 12:54:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:54] [ERROR]:url not found
+[2025-05-15 12:54:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:54] [ERROR]:url not found
+[2025-05-15 12:54:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:54] [ERROR]:url not found
+[2025-05-15 12:54:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:54] [ERROR]:url not found
+[2025-05-15 12:54:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:54] [ERROR]:url not found
+[2025-05-15 12:54:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:54] [ERROR]:url not found
+[2025-05-15 12:54:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:54] [ERROR]:url not found
+[2025-05-15 12:54:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:54] [ERROR]:url not found
+[2025-05-15 12:54:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:54] [ERROR]:url not found
+[2025-05-15 12:54:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:54] [ERROR]:url not found
+[2025-05-15 12:54:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:54] [ERROR]:url not found
+[2025-05-15 12:54:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:55] [ERROR]:url not found
+[2025-05-15 12:54:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:55] [ERROR]:url not found
+[2025-05-15 12:54:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:55] [ERROR]:url not found
+[2025-05-15 12:54:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:55] [ERROR]:url not found
+[2025-05-15 12:54:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:55] [ERROR]:url not found
+[2025-05-15 12:54:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:55] [ERROR]:url not found
+[2025-05-15 12:54:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:55] [ERROR]:url not found
+[2025-05-15 12:54:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:55] [ERROR]:url not found
+[2025-05-15 12:54:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:55] [ERROR]:url not found
+[2025-05-15 12:54:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:55] [ERROR]:url not found
+[2025-05-15 12:54:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:55] [ERROR]:url not found
+[2025-05-15 12:54:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:55] [ERROR]:url not found
+[2025-05-15 12:54:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:55] [ERROR]:url not found
+[2025-05-15 12:54:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:55] [ERROR]:url not found
+[2025-05-15 12:54:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:55] [ERROR]:url not found
+[2025-05-15 12:54:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:55] [ERROR]:url not found
+[2025-05-15 12:54:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:55] [ERROR]:url not found
+[2025-05-15 12:54:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:56] [ERROR]:url not found
+[2025-05-15 12:54:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:56] [ERROR]:url not found
+[2025-05-15 12:54:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:56] [ERROR]:url not found
+[2025-05-15 12:54:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:56] [ERROR]:url not found
+[2025-05-15 12:54:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:56] [ERROR]:url not found
+[2025-05-15 12:54:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:56] [ERROR]:url not found
+[2025-05-15 12:54:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:56] [ERROR]:url not found
+[2025-05-15 12:54:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:56] [ERROR]:url not found
+[2025-05-15 12:54:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:56] [ERROR]:url not found
+[2025-05-15 12:54:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:56] [ERROR]:url not found
+[2025-05-15 12:54:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:56] [ERROR]:url not found
+[2025-05-15 12:54:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:56] [ERROR]:url not found
+[2025-05-15 12:54:57] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:57] [ERROR]:url not found
+[2025-05-15 12:54:57] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:57] [ERROR]:url not found
+[2025-05-15 12:54:57] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:57] [ERROR]:url not found
+[2025-05-15 12:54:57] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:57] [ERROR]:url not found
+[2025-05-15 12:54:57] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:57] [ERROR]:url not found
+[2025-05-15 12:54:57] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:57] [ERROR]:url not found
+[2025-05-15 12:54:57] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:57] [ERROR]:url not found
+[2025-05-15 12:54:57] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:57] [ERROR]:url not found
+[2025-05-15 12:54:57] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:57] [ERROR]:url not found
+[2025-05-15 12:54:58] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:58] [ERROR]:url not found
+[2025-05-15 12:54:58] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:58] [ERROR]:url not found
+[2025-05-15 12:54:58] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:58] [ERROR]:url not found
+[2025-05-15 12:54:58] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:58] [ERROR]:url not found
+[2025-05-15 12:54:58] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:58] [ERROR]:url not found
+[2025-05-15 12:54:58] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:58] [ERROR]:url not found
+[2025-05-15 12:54:58] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:58] [ERROR]:url not found
+[2025-05-15 12:54:59] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:59] [ERROR]:url not found
+[2025-05-15 12:54:59] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:59] [ERROR]:url not found
+[2025-05-15 12:54:59] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:59] [ERROR]:url not found
+[2025-05-15 12:54:59] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:59] [ERROR]:url not found
+[2025-05-15 12:54:59] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:59] [ERROR]:url not found
+[2025-05-15 12:54:59] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:59] [ERROR]:url not found
+[2025-05-15 12:54:59] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:59] [ERROR]:url not found
+[2025-05-15 12:54:59] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:59] [ERROR]:url not found
+[2025-05-15 12:54:59] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:59] [ERROR]:url not found
+[2025-05-15 12:54:59] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:54:59] [ERROR]:url not found
+[2025-05-15 12:55:45] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:45] [ERROR]:url not found
+[2025-05-15 12:55:45] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:45] [ERROR]:url not found
+[2025-05-15 12:55:45] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:45] [ERROR]:url not found
+[2025-05-15 12:55:45] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:45] [ERROR]:url not found
+[2025-05-15 12:55:45] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:45] [ERROR]:url not found
+[2025-05-15 12:55:45] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:45] [ERROR]:url not found
+[2025-05-15 12:55:45] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:45] [ERROR]:url not found
+[2025-05-15 12:55:45] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:45] [ERROR]:url not found
+[2025-05-15 12:55:46] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:46] [ERROR]:url not found
+[2025-05-15 12:55:46] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:46] [ERROR]:url not found
+[2025-05-15 12:55:46] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:46] [ERROR]:url not found
+[2025-05-15 12:55:46] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:46] [ERROR]:url not found
+[2025-05-15 12:55:46] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:46] [ERROR]:url not found
+[2025-05-15 12:55:46] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:46] [ERROR]:url not found
+[2025-05-15 12:55:46] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:46] [ERROR]:url not found
+[2025-05-15 12:55:47] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:47] [ERROR]:url not found
+[2025-05-15 12:55:47] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:47] [ERROR]:url not found
+[2025-05-15 12:55:47] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:47] [ERROR]:url not found
+[2025-05-15 12:55:47] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:47] [ERROR]:url not found
+[2025-05-15 12:55:47] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:47] [ERROR]:url not found
+[2025-05-15 12:55:49] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:49] [ERROR]:url not found
+[2025-05-15 12:55:49] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:49] [ERROR]:url not found
+[2025-05-15 12:55:49] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:49] [ERROR]:url not found
+[2025-05-15 12:55:49] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:49] [ERROR]:url not found
+[2025-05-15 12:55:49] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:49] [ERROR]:url not found
+[2025-05-15 12:55:49] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:49] [ERROR]:url not found
+[2025-05-15 12:55:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:50] [ERROR]:url not found
+[2025-05-15 12:55:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:50] [ERROR]:url not found
+[2025-05-15 12:55:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:50] [ERROR]:url not found
+[2025-05-15 12:55:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:50] [ERROR]:url not found
+[2025-05-15 12:55:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:50] [ERROR]:url not found
+[2025-05-15 12:55:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:50] [ERROR]:url not found
+[2025-05-15 12:55:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:50] [ERROR]:url not found
+[2025-05-15 12:55:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:50] [ERROR]:url not found
+[2025-05-15 12:55:50] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:50] [ERROR]:url not found
+[2025-05-15 12:55:51] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:51] [ERROR]:url not found
+[2025-05-15 12:55:51] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:51] [ERROR]:url not found
+[2025-05-15 12:55:51] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:51] [ERROR]:url not found
+[2025-05-15 12:55:51] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:51] [ERROR]:url not found
+[2025-05-15 12:55:51] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:51] [ERROR]:url not found
+[2025-05-15 12:55:51] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:51] [ERROR]:url not found
+[2025-05-15 12:55:51] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:51] [ERROR]:url not found
+[2025-05-15 12:55:51] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:51] [ERROR]:url not found
+[2025-05-15 12:55:51] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:51] [ERROR]:url not found
+[2025-05-15 12:55:51] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:51] [ERROR]:url not found
+[2025-05-15 12:55:52] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:52] [ERROR]:url not found
+[2025-05-15 12:55:52] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:52] [ERROR]:url not found
+[2025-05-15 12:55:52] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:52] [ERROR]:url not found
+[2025-05-15 12:55:52] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:52] [ERROR]:url not found
+[2025-05-15 12:55:52] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:52] [ERROR]:url not found
+[2025-05-15 12:55:52] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:52] [ERROR]:url not found
+[2025-05-15 12:55:52] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:52] [ERROR]:url not found
+[2025-05-15 12:55:52] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:52] [ERROR]:url not found
+[2025-05-15 12:55:52] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:53] [ERROR]:url not found
+[2025-05-15 12:55:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:53] [ERROR]:url not found
+[2025-05-15 12:55:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:53] [ERROR]:url not found
+[2025-05-15 12:55:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:53] [ERROR]:url not found
+[2025-05-15 12:55:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:53] [ERROR]:url not found
+[2025-05-15 12:55:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:53] [ERROR]:url not found
+[2025-05-15 12:55:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:53] [ERROR]:url not found
+[2025-05-15 12:55:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:53] [ERROR]:url not found
+[2025-05-15 12:55:53] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:53] [ERROR]:url not found
+[2025-05-15 12:55:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:54] [ERROR]:url not found
+[2025-05-15 12:55:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:54] [ERROR]:url not found
+[2025-05-15 12:55:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:54] [ERROR]:url not found
+[2025-05-15 12:55:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:54] [ERROR]:url not found
+[2025-05-15 12:55:54] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:54] [ERROR]:url not found
+[2025-05-15 12:55:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:55] [ERROR]:url not found
+[2025-05-15 12:55:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:55] [ERROR]:url not found
+[2025-05-15 12:55:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:55] [ERROR]:url not found
+[2025-05-15 12:55:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:55] [ERROR]:url not found
+[2025-05-15 12:55:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:55] [ERROR]:url not found
+[2025-05-15 12:55:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:55] [ERROR]:url not found
+[2025-05-15 12:55:55] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:55] [ERROR]:url not found
+[2025-05-15 12:55:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:56] [ERROR]:url not found
+[2025-05-15 12:55:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:56] [ERROR]:url not found
+[2025-05-15 12:55:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:56] [ERROR]:url not found
+[2025-05-15 12:55:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:56] [ERROR]:url not found
+[2025-05-15 12:55:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:56] [ERROR]:url not found
+[2025-05-15 12:55:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:56] [ERROR]:url not found
+[2025-05-15 12:55:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:56] [ERROR]:url not found
+[2025-05-15 12:55:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:56] [ERROR]:url not found
+[2025-05-15 12:55:56] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:56] [ERROR]:url not found
+[2025-05-15 12:55:57] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:57] [ERROR]:url not found
+[2025-05-15 12:55:57] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:57] [ERROR]:url not found
+[2025-05-15 12:55:57] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:57] [ERROR]:url not found
+[2025-05-15 12:55:57] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:57] [ERROR]:url not found
+[2025-05-15 12:55:57] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:57] [ERROR]:url not found
+[2025-05-15 12:55:58] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:58] [ERROR]:url not found
+[2025-05-15 12:55:58] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:58] [ERROR]:url not found
+[2025-05-15 12:55:58] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:58] [ERROR]:url not found
+[2025-05-15 12:55:58] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:58] [ERROR]:url not found
+[2025-05-15 12:55:58] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:58] [ERROR]:url not found
+[2025-05-15 12:55:58] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:58] [ERROR]:url not found
+[2025-05-15 12:55:58] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:58] [ERROR]:url not found
+[2025-05-15 12:55:59] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:59] [ERROR]:url not found
+[2025-05-15 12:55:59] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:59] [ERROR]:url not found
+[2025-05-15 12:55:59] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:59] [ERROR]:url not found
+[2025-05-15 12:55:59] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:59] [ERROR]:url not found
+[2025-05-15 12:55:59] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:59] [ERROR]:url not found
+[2025-05-15 12:55:59] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:55:59] [ERROR]:url not found
+[2025-05-15 12:56:00] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:00] [ERROR]:url not found
+[2025-05-15 12:56:00] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:00] [ERROR]:url not found
+[2025-05-15 12:56:00] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:00] [ERROR]:url not found
+[2025-05-15 12:56:00] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:00] [ERROR]:url not found
+[2025-05-15 12:56:00] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:00] [ERROR]:url not found
+[2025-05-15 12:56:00] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:00] [ERROR]:url not found
+[2025-05-15 12:56:00] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:00] [ERROR]:url not found
+[2025-05-15 12:56:00] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:00] [ERROR]:url not found
+[2025-05-15 12:56:01] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:01] [ERROR]:url not found
+[2025-05-15 12:56:01] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:01] [ERROR]:url not found
+[2025-05-15 12:56:01] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:01] [ERROR]:url not found
+[2025-05-15 12:56:01] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:01] [ERROR]:url not found
+[2025-05-15 12:56:01] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:01] [ERROR]:url not found
+[2025-05-15 12:56:01] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:01] [ERROR]:url not found
+[2025-05-15 12:56:01] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:01] [ERROR]:url not found
+[2025-05-15 12:56:01] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:01] [ERROR]:url not found
+[2025-05-15 12:56:01] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:01] [ERROR]:url not found
+[2025-05-15 12:56:01] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:01] [ERROR]:url not found
+[2025-05-15 12:56:01] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:01] [ERROR]:url not found
+[2025-05-15 12:56:01] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:01] [ERROR]:url not found
+[2025-05-15 12:56:01] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:01] [ERROR]:url not found
+[2025-05-15 12:56:01] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:01] [ERROR]:url not found
+[2025-05-15 12:56:02] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:02] [ERROR]:url not found
+[2025-05-15 12:56:03] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:03] [ERROR]:url not found
+[2025-05-15 12:56:03] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:03] [ERROR]:url not found
+[2025-05-15 12:56:26] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:26] [ERROR]:url not found
+[2025-05-15 12:56:26] [INFO]:HTTP GET /api/notfications/read-all [object Object]
+[2025-05-15 12:56:26] [ERROR]:url not found
+[2025-05-15 12:59:34] [INFO]:HTTP GET /uploads/https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000 [object Object]
+[2025-05-15 12:59:34] [ERROR]:url not found
+[2025-05-15 12:59:43] [INFO]:HTTP GET /uploads/avatar-1746710359531-191189317.jpg [object Object]
+[2025-05-15 12:59:43] [ERROR]:url not found
+[2025-05-15 13:00:11] [INFO]:{
+  _id: new ObjectId('681caf2b6abb8ebcde547a08'),
+  email: 'leo@leo.com',
+  firstName: 'leo',
+  lastName: 'messi',
+  birthDate: 2000-10-10T00:00:00.000Z,
+  password: '$2b$10$j09XMrjz3h84VFi5ux9CVuUcXflShhiaZ7kxZdimvWDt14jLk9wsS',
+  blogs: [ new ObjectId('6823153a143cfcfbc9688138') ],
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-08T13:18:35.144Z,
+  updatedAt: 2025-05-13T09:47:38.190Z,
+  __v: 0,
+  avatar: 'avatar-1746710359531-191189317.jpg',
+  bio: 'ahssen la3ib f l3alam'
+} logged in 
+[2025-05-15 13:02:17] [INFO]:HTTP GET /uploads/https://res.cloudinary.com/daky2xzfw/image/upload/v1747256443/j4uwebwhxmqoxgkwo3yd.jpg [object Object]
+[2025-05-15 13:02:17] [ERROR]:url not found
+[2025-05-15 13:03:14] [INFO]:HTTP GET /uploads/https://res.cloudinary.com/daky2xzfw/image/upload/v1747256443/j4uwebwhxmqoxgkwo3yd.jpg [object Object]
+[2025-05-15 13:03:14] [ERROR]:url not found
+[2025-05-15 13:03:19] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'oussama@ali1.com',
+  firstName: 'oussama',
+  lastName: 'alione',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-14T22:01:04.385Z,
+  __v: 0,
+  bio: 'web developer',
+  avatar: 'https://res.cloudinary.com/daky2xzfw/image/upload/v1747256443/j4uwebwhxmqoxgkwo3yd.jpg',
+  blogs: [
+    new ObjectId('681a440e2dc7e7c24a9c7ae2'),
+    new ObjectId('681b4513578ef362b2328321'),
+    new ObjectId('681b451f578ef362b2328336'),
+    new ObjectId('681b452d578ef362b232834b'),
+    new ObjectId('681b4535578ef362b2328360'),
+    new ObjectId('681b4540578ef362b2328375'),
+    new ObjectId('681b454c578ef362b232838a'),
+    new ObjectId('681b4555578ef362b232839f'),
+    new ObjectId('681b4560578ef362b23283b4'),
+    new ObjectId('681b4569578ef362b23283c9'),
+    new ObjectId('681b4574578ef362b23283de'),
+    new ObjectId('681c92eb6abb8ebcde5463f2'),
+    new ObjectId('681ca8596abb8ebcde547900'),
+    new ObjectId('681ca8756abb8ebcde54790d'),
+    new ObjectId('681e12c278ad3e0088b2b855'),
+    new ObjectId('681e2443d5f41eb02d5bca97'),
+    new ObjectId('681f325e85bea5582a2373d7'),
+    new ObjectId('6825110c5e69d7734727faee'),
+    new ObjectId('682512a00445b9814953d03f')
+  ],
+  avatarPublicId: 'j4uwebwhxmqoxgkwo3yd'
+} logged in 
+[2025-05-15 13:10:47] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'oussama@ali1.com',
+  firstName: 'oussama',
+  lastName: 'alione',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-14T22:01:04.385Z,
+  __v: 0,
+  bio: 'web developer',
+  avatar: 'https://res.cloudinary.com/daky2xzfw/image/upload/v1747256443/j4uwebwhxmqoxgkwo3yd.jpg',
+  blogs: [
+    new ObjectId('681a440e2dc7e7c24a9c7ae2'),
+    new ObjectId('681b4513578ef362b2328321'),
+    new ObjectId('681b451f578ef362b2328336'),
+    new ObjectId('681b452d578ef362b232834b'),
+    new ObjectId('681b4535578ef362b2328360'),
+    new ObjectId('681b4540578ef362b2328375'),
+    new ObjectId('681b454c578ef362b232838a'),
+    new ObjectId('681b4555578ef362b232839f'),
+    new ObjectId('681b4560578ef362b23283b4'),
+    new ObjectId('681b4569578ef362b23283c9'),
+    new ObjectId('681b4574578ef362b23283de'),
+    new ObjectId('681c92eb6abb8ebcde5463f2'),
+    new ObjectId('681ca8596abb8ebcde547900'),
+    new ObjectId('681ca8756abb8ebcde54790d'),
+    new ObjectId('681e12c278ad3e0088b2b855'),
+    new ObjectId('681e2443d5f41eb02d5bca97'),
+    new ObjectId('681f325e85bea5582a2373d7'),
+    new ObjectId('6825110c5e69d7734727faee'),
+    new ObjectId('682512a00445b9814953d03f')
+  ],
+  avatarPublicId: 'j4uwebwhxmqoxgkwo3yd'
+} logged in 
+[2025-05-15 14:51:23] [ERROR]:invalid credentials
+[2025-05-15 14:51:34] [ERROR]:invalid credentials
+[2025-05-15 14:51:39] [ERROR]:invalid credentials
+[2025-05-15 14:51:59] [ERROR]:invalid credentials
+[2025-05-15 14:52:25] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'oussama@ali1.com',
+  firstName: 'oussama',
+  lastName: 'alione',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-14T22:01:04.385Z,
+  __v: 0,
+  bio: 'web developer',
+  avatar: 'https://res.cloudinary.com/daky2xzfw/image/upload/v1747256443/j4uwebwhxmqoxgkwo3yd.jpg',
+  blogs: [
+    new ObjectId('681a440e2dc7e7c24a9c7ae2'),
+    new ObjectId('681b4513578ef362b2328321'),
+    new ObjectId('681b451f578ef362b2328336'),
+    new ObjectId('681b452d578ef362b232834b'),
+    new ObjectId('681b4535578ef362b2328360'),
+    new ObjectId('681b4540578ef362b2328375'),
+    new ObjectId('681b454c578ef362b232838a'),
+    new ObjectId('681b4555578ef362b232839f'),
+    new ObjectId('681b4560578ef362b23283b4'),
+    new ObjectId('681b4569578ef362b23283c9'),
+    new ObjectId('681b4574578ef362b23283de'),
+    new ObjectId('681c92eb6abb8ebcde5463f2'),
+    new ObjectId('681ca8596abb8ebcde547900'),
+    new ObjectId('681ca8756abb8ebcde54790d'),
+    new ObjectId('681e12c278ad3e0088b2b855'),
+    new ObjectId('681e2443d5f41eb02d5bca97'),
+    new ObjectId('681f325e85bea5582a2373d7'),
+    new ObjectId('6825110c5e69d7734727faee'),
+    new ObjectId('682512a00445b9814953d03f')
+  ],
+  avatarPublicId: 'j4uwebwhxmqoxgkwo3yd'
+} logged in 
+[2025-05-15 14:53:39] [INFO]:{
+  email: 'oumaima@gmail.com',
+  firstName: 'oumaima',
+  lastName: 'oumaima',
+  birthDate: 2009-03-08T00:00:00.000Z,
+  password: '$2b$10$pxYhDRcr/T7V7BWSCVXUYO7O.n.ogsZioxc.KIu./5VqrzJ2kqeZG',
+  blogs: [],
+  gender: 'female',
+  role: 'user',
+  _id: new ObjectId('6825f1e35061ad2efca37609'),
+  createdAt: 2025-05-15T13:53:39.475Z,
+  updatedAt: 2025-05-15T13:53:39.475Z,
+  __v: 0
+} registred 
+[2025-05-15 14:53:58] [INFO]:{
+  _id: new ObjectId('6825f1e35061ad2efca37609'),
+  email: 'oumaima@gmail.com',
+  firstName: 'oumaima',
+  lastName: 'oumaima',
+  birthDate: 2009-03-08T00:00:00.000Z,
+  password: '$2b$10$pxYhDRcr/T7V7BWSCVXUYO7O.n.ogsZioxc.KIu./5VqrzJ2kqeZG',
+  blogs: [],
+  gender: 'female',
+  role: 'user',
+  createdAt: 2025-05-15T13:53:39.475Z,
+  updatedAt: 2025-05-15T13:53:39.475Z,
+  __v: 0
+} logged in 

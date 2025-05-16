@@ -48,8 +48,6 @@ const Home = () => {
     },
   });
 
-  console.log(data);
-
   const { ref, inView } = useInView();
 
   useEffect(() => {

@@ -81,8 +81,6 @@ export default function BlogCard({
     });
   };
 
-  console.log(window.location.origin);
-
   const { user } = useOutletContext();
 
   const { mutate: createNotificationFn } = useMutation({
