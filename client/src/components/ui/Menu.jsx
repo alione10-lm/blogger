@@ -56,9 +56,10 @@ const Item = ({ children }) => {
   const { closeMenu } = useContext(MenuContext);
 
   return (
-    <span className="flex items-center p-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5 rounded-md cursor-pointer">
-      {children}
-    </span>
+    <div className="flex items-center p-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5 rounded-md cursor-pointer">
+      {/* {children} */}
+      {cloneElement(children, { closeMenu })}
+    </div>
   );
 };
 

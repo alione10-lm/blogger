@@ -13085,3 +13085,120 @@
   updatedAt: 2025-05-15T13:53:39.475Z,
   __v: 0
 } logged in 
+[2025-05-16 14:25:20] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'oussama@ali1.com',
+  firstName: 'oussama',
+  lastName: 'alione',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-14T22:01:04.385Z,
+  __v: 0,
+  bio: 'web developer',
+  avatar: 'https://res.cloudinary.com/daky2xzfw/image/upload/v1747256443/j4uwebwhxmqoxgkwo3yd.jpg',
+  blogs: [
+    new ObjectId('681a440e2dc7e7c24a9c7ae2'),
+    new ObjectId('681b4513578ef362b2328321'),
+    new ObjectId('681b451f578ef362b2328336'),
+    new ObjectId('681b452d578ef362b232834b'),
+    new ObjectId('681b4535578ef362b2328360'),
+    new ObjectId('681b4540578ef362b2328375'),
+    new ObjectId('681b454c578ef362b232838a'),
+    new ObjectId('681b4555578ef362b232839f'),
+    new ObjectId('681b4560578ef362b23283b4'),
+    new ObjectId('681b4569578ef362b23283c9'),
+    new ObjectId('681b4574578ef362b23283de'),
+    new ObjectId('681c92eb6abb8ebcde5463f2'),
+    new ObjectId('681ca8596abb8ebcde547900'),
+    new ObjectId('681ca8756abb8ebcde54790d'),
+    new ObjectId('681e12c278ad3e0088b2b855'),
+    new ObjectId('681e2443d5f41eb02d5bca97'),
+    new ObjectId('681f325e85bea5582a2373d7'),
+    new ObjectId('6825110c5e69d7734727faee'),
+    new ObjectId('682512a00445b9814953d03f')
+  ],
+  avatarPublicId: 'j4uwebwhxmqoxgkwo3yd'
+} logged in 
+[2025-05-17 07:59:45] [ERROR]:connection <monitor> to 65.62.36.120:27017 timed out
+[2025-05-17 10:23:36] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'oussama@ali1.com',
+  firstName: 'oussama',
+  lastName: 'alione',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-16T13:43:37.787Z,
+  __v: 0,
+  bio: 'web developer',
+  avatar: 'https://res.cloudinary.com/daky2xzfw/image/upload/v1747256443/j4uwebwhxmqoxgkwo3yd.jpg',
+  blogs: [
+    new ObjectId('681a440e2dc7e7c24a9c7ae2'),
+    new ObjectId('681b4513578ef362b2328321'),
+    new ObjectId('681b451f578ef362b2328336'),
+    new ObjectId('681b452d578ef362b232834b'),
+    new ObjectId('681b4535578ef362b2328360'),
+    new ObjectId('681b4540578ef362b2328375'),
+    new ObjectId('681b454c578ef362b232838a'),
+    new ObjectId('681b4555578ef362b232839f'),
+    new ObjectId('681b4560578ef362b23283b4'),
+    new ObjectId('681b4569578ef362b23283c9'),
+    new ObjectId('681b4574578ef362b23283de'),
+    new ObjectId('681c92eb6abb8ebcde5463f2'),
+    new ObjectId('681ca8596abb8ebcde547900'),
+    new ObjectId('681ca8756abb8ebcde54790d'),
+    new ObjectId('681e12c278ad3e0088b2b855'),
+    new ObjectId('681e2443d5f41eb02d5bca97'),
+    new ObjectId('681f325e85bea5582a2373d7'),
+    new ObjectId('682512a00445b9814953d03f')
+  ],
+  avatarPublicId: 'j4uwebwhxmqoxgkwo3yd'
+} logged in 
+[2025-05-17 10:23:50] [INFO]:{
+  _id: new ObjectId('6813cee48b45fea2e8dbe5d0'),
+  email: 'oussama@ali1.com',
+  firstName: 'oussama',
+  lastName: 'alione',
+  birthDate: 2003-11-16T00:00:00.000Z,
+  password: '$2b$10$5IAGzWDiSR/9i.qQZp7qYe2HegkcDK/mhhRyqLOVrchO3dufVdZba',
+  gender: 'male',
+  role: 'user',
+  createdAt: 2025-05-01T19:43:32.082Z,
+  updatedAt: 2025-05-16T13:43:37.787Z,
+  __v: 0,
+  bio: 'web developer',
+  avatar: 'https://res.cloudinary.com/daky2xzfw/image/upload/v1747256443/j4uwebwhxmqoxgkwo3yd.jpg',
+  blogs: [
+    new ObjectId('681a440e2dc7e7c24a9c7ae2'),
+    new ObjectId('681b4513578ef362b2328321'),
+    new ObjectId('681b451f578ef362b2328336'),
+    new ObjectId('681b452d578ef362b232834b'),
+    new ObjectId('681b4535578ef362b2328360'),
+    new ObjectId('681b4540578ef362b2328375'),
+    new ObjectId('681b454c578ef362b232838a'),
+    new ObjectId('681b4555578ef362b232839f'),
+    new ObjectId('681b4560578ef362b23283b4'),
+    new ObjectId('681b4569578ef362b23283c9'),
+    new ObjectId('681b4574578ef362b23283de'),
+    new ObjectId('681c92eb6abb8ebcde5463f2'),
+    new ObjectId('681ca8596abb8ebcde547900'),
+    new ObjectId('681ca8756abb8ebcde54790d'),
+    new ObjectId('681e12c278ad3e0088b2b855'),
+    new ObjectId('681e2443d5f41eb02d5bca97'),
+    new ObjectId('681f325e85bea5582a2373d7'),
+    new ObjectId('682512a00445b9814953d03f')
+  ],
+  avatarPublicId: 'j4uwebwhxmqoxgkwo3yd'
+} logged in 
+[2025-05-17 10:25:08] [ERROR]:invalid credentials
+[2025-05-17 10:25:26] [ERROR]:invalid credentials
+[2025-05-17 10:25:37] [ERROR]:invalid credentials
+[2025-05-17 10:25:41] [ERROR]:invalid credentials
+[2025-05-17 10:28:32] [ERROR]:getaddrinfo ENOTFOUND cluster0-shard-00-00.ahw36.mongodb.net
+[2025-05-17 10:28:32] [ERROR]:getaddrinfo ENOTFOUND cluster0-shard-00-00.ahw36.mongodb.net
+[2025-05-17 10:28:32] [ERROR]:getaddrinfo ENOTFOUND cluster0-shard-00-00.ahw36.mongodb.net

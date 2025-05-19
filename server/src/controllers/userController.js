@@ -9,6 +9,7 @@ import cloudinary from "cloudinary";
 export const getCurrentUser = async (req, res) => {
   const user = await User.findById(req.user.userId).populate({
     path: "blogs",
+    options: { sort: { createdAt: -1 } },
     populate: [
       { path: "createdBy" },
       {

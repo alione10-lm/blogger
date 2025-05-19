@@ -25,6 +25,7 @@ import { createNotification, deleteBlog, LikeBlog } from "../utils/api";
 import toast from "react-hot-toast";
 import FullSpinner from "./ui/FullSpinner";
 import BlogForm from "./BlogForm";
+import Menu from "./ui/Menu";
 
 export default function BlogCard({
   isCurrentUser = false,
@@ -102,6 +103,7 @@ export default function BlogCard({
                 alt="user name"
                 title={`${createdBy?.firstName}  ${createdBy?.lastName}`}
                 className="max-w-full  size-12 rounded-md cursor-pointer"
+                onError="picture.jpg"
               />
             ) : (
               <UserAvatar
@@ -123,7 +125,40 @@ export default function BlogCard({
         </header>
         {isCurrentUser && (
           <div className="flex items-center  gap-4">
-            <Modal>
+            <Menu>
+              <Menu.Button />
+              <Menu.List>
+                <Modal>
+                  <Menu.Item>
+                    <Modal.Open opens="delete">
+                      <button className="w-full flex items-center  cursor-pointer gap-2 text-start">
+                        <Trash size={14} />
+                        delete
+                      </button>
+                    </Modal.Open>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <Modal.Open opens="edit">
+                      <button className="w-full flex items-center  cursor-pointer gap-2 text-start">
+                        <Pen size={14} cursor="pointer" className="" />
+                        edit
+                      </button>
+                    </Modal.Open>
+                  </Menu.Item>
+
+                  <Modal.Window name="delete">
+                    <DeleteConfirmation id={id} />
+                  </Modal.Window>
+                  <Modal.Window name="edit">
+                    <BlogForm
+                      blogId={id}
+                      defaultValues={{ title, description }}
+                    />
+                  </Modal.Window>
+                </Modal>
+              </Menu.List>
+            </Menu>
+            {/* <Modal>
               <Modal.Open opens="delete">
                 <Trash size={20} cursor="pointer" className="" />
               </Modal.Open>
@@ -138,7 +173,7 @@ export default function BlogCard({
               <Modal.Window name="edit">
                 <BlogForm blogId={id} defaultValues={{ title, description }} />
               </Modal.Window>
-            </Modal>
+            </Modal> */}
           </div>
         )}
       </div>
@@ -277,6 +312,41 @@ const BlogOperations = ({ closeModal, blogId }) => {
       <div className="flex items-center  justify-end  ">
         <div className="flex items-center gap-2">
           <Button onClick={() => deleteFn(blogId)} variant="secondary">
+            {isPending ? <FullSpinner size="small" /> : "delete"}
+          </Button>
+          <Button onClick={() => closeModal?.()} variant="ghost">
+            cancel
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const DeleteConfirmation = ({ closeModal, id, closeMenu }) => {
+  const queryClient = useQueryClient();
+
+  const { mutate: deleteFn, isPending } = useMutation({
+    mutationFn: () => deleteBlog(id),
+    onSuccess: () => {
+      toast("deleted");
+      queryClient.invalidateQueries("blogs");
+      closeModal();
+      closeMenu?.();
+    },
+    onError: (err) => {
+      toast.error(err.message);
+    },
+  });
+  return (
+    <div className="">
+      <p className="mt-10 text-gray-700 dark:text-gray-300 mb-5">
+        Are you sure you want to delete this blog permanently? This action
+        cannot be undone.
+      </p>
+      <div className="flex items-center  justify-end  ">
+        <div className="flex items-center gap-2">
+          <Button onClick={deleteFn} variant="secondary">
             {isPending ? <FullSpinner size="small" /> : "delete"}
           </Button>
           <Button onClick={() => closeModal?.()} variant="ghost">

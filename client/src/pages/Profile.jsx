@@ -24,11 +24,11 @@ const Profile = () => {
 
   const { isGettingCurrentUser } = useCurrentUser();
 
-  console.log(user?.user);
+  // console.log(user?.user);
 
   return (
     <div className="w-full p-2 md:p-0">
-      <div className="border mb-10 rounded-lg p-2 md:p-4 border-gray-300 dark:border-gray-700 ">
+      <div className="border mb-10 rounded-lg p-2 md:p-4 border-gray-200 dark:border-gray-800 ">
         {isGettingCurrentUser ? (
           <ProfileSkeleton />
         ) : (
