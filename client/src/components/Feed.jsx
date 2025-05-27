@@ -43,7 +43,7 @@ export default function Feed({ comments, blogCreator, blogId }) {
           <div className="flex flex-col w-full flex-1 gap-2">
             <Link
               to={`../users/${comment.createdBy._id}`}
-              className="absolute z-10 inline-flex items-center justify-center w-6 h-6 text-white rounded-sm -left-3"
+              className="absolute z-1 inline-flex items-center justify-center w-6 h-6 text-white rounded-sm -left-3"
             >
               {comment.createdBy.avatar ? (
                 <img
@@ -80,16 +80,6 @@ export default function Feed({ comments, blogCreator, blogId }) {
                           <ConfirmDeleteComment id={comment._id} />
                         </Modal.Window>
                       </Modal>
-                      // <span className="cursor-pointer ">
-                      //   {isDeleting ? (
-                      //     <FullSpinner size="small" />
-                      //   ) : (
-                      //     <Trash
-                      //       size={15}
-                      //       onClick={() => deleteCommentFn(comment._id)}
-                      //     />
-                      //   )}
-                      // </span>
                     )}
                   </button>
                 </div>
@@ -122,7 +112,7 @@ export default function Feed({ comments, blogCreator, blogId }) {
                   <div className="flex flex-col flex-1 ">
                     <Link
                       to={`../users/${comment.createdBy._id}`}
-                      className="absolute z-10 inline-flex items-center justify-center w-6 h-6 text-white rounded-lg -left-3 "
+                      className="absolute z-1 inline-flex items-center justify-center w-6 h-6 text-white rounded-lg -left-3 "
                     >
                       {reply.createdBy.avatar ? (
                         <img
@@ -139,6 +129,7 @@ export default function Feed({ comments, blogCreator, blogId }) {
                         />
                       )}
                     </Link>
+
                     <h4 className="flex flex-col items-start text-sm font-medium leading-6 text-slate-600 dark:text-gray-200 md:flex-row lg:items-center">
                       <div className="flex-1 flex items-center">
                         {reply.createdBy.firstName} {reply.createdBy.lastName}
@@ -163,7 +154,11 @@ export default function Feed({ comments, blogCreator, blogId }) {
                           </button>
                         </div>
                       </div>
+                      <span className="text-xs font-normal text-slate-400">
+                        {TimeFromNow(comment.createdAt)}
+                      </span>
                     </h4>
+
                     <span className="text-sm text-slate-500 md:max-w-1/2 max-w-[10rem] break-words  dark:text-gray-300">
                       {reply.text}
                     </span>

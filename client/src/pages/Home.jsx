@@ -40,7 +40,6 @@ const Home = () => {
     isFetchingNextPage,
   } = useInfiniteQuery({
     queryKey: ["blogs", filter],
-    // queryFn: () => getAllBlogs(filter),
     queryFn: getAllBlogs,
     initialPageParam: 0,
     getNextPageParam: (lastPage, pages) => {
@@ -94,13 +93,14 @@ const Home = () => {
               </button>
             </ListItem>
           </Link>
-
-          <ListItem>
-            <BellRing size={15} />
-            <button className="group-hover:cursor-pointer">
-              notifications
-            </button>
-          </ListItem>
+          <Link to={"../notifications"}>
+            <ListItem>
+              <BellRing size={15} />
+              <button className="group-hover:cursor-pointer">
+                notifications
+              </button>
+            </ListItem>
+          </Link>
           <ListItem>
             <LogOut size={15} />
             <button

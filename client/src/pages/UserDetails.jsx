@@ -38,7 +38,7 @@ const UserDetails = () => {
           <div className="w-full md:flex-row flex  flex-col md:gap-10">
             {user.avatar ? (
               <img
-                src={`http://localhost:5000/uploads/${user.avatar}`}
+                src={user.avatar}
                 alt=""
                 loading="lazy"
                 className="rounded-lg md:size-50 size-20"

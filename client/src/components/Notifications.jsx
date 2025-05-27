@@ -1,10 +1,8 @@
 import React from "react";
-import { useQuery } from "@tanstack/react-query";
-import { getUserNotification } from "../utils/api";
+
 import NotificationItem from "./NotificationItem";
 import NotificationSkeleton from "./ui/NotificationsSkeleton";
-import { Menus } from "./ui/Menu2";
-import { EllipsisVertical } from "lucide-react";
+
 import useNotifications from "../hooks/useNotifications";
 
 const Notifications = () => {

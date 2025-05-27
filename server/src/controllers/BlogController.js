@@ -51,7 +51,7 @@ const getAllBlogs = async (req, res) => {
     length: blogs.length,
     currentPage: page,
     total,
-    hasMore: page * limit < total, // whether there are more pages
+    hasMore: page * limit < total,
   });
 };
 

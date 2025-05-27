@@ -44,7 +44,7 @@ export const updateUser = async (req, res) => {
 
     // we are trying to remove it from public folder
     await fs.unlink(req.file.path);
-
+    // console.log(response);
     // we are trying to store the avatar image url and id using the new ones wich come from the cloudinary database and store in the newUser object wich we are going to send in the response
 
     newUser.avatar = response.secure_url;

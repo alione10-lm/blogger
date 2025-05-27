@@ -69,6 +69,7 @@ const BlogForm = ({ closeModal, blogId = "", defaultValues = {} }) => {
     blogId ? update({ blogId, formData }) : createBlogFn(formData);
   };
 
+  if (error) console.log(error);
   return (
     <div className="w-full  flex  justify-center" encType="multipart/form-data">
       <form className="" onSubmit={handleSubmit(submitHandler)}>

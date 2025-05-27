@@ -231,7 +231,7 @@ const EditProfileForm = ({ user, closeModal }) => {
         />
       </FormRow>
       <Button type="submit" onClick={update}>
-        {isUpdating ? <FullSpinner /> : " save changes"}
+        {isUpdating ? <FullSpinner size={"small"} /> : " save changes"}
       </Button>
       <div className="mt-2">
         <Button type="button" variant="ghost" onClick={() => closeModal()}>

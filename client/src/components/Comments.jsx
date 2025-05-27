@@ -14,7 +14,13 @@ import clsx from "clsx";
 import ReplyForm from "./ReplyForm";
 import { useOutletContext } from "react-router-dom";
 
-const Comments = ({ comments, blogId, commentId, blogCreator }) => {
+const Comments = ({
+  comments,
+  blogId,
+  commentId,
+  isOverview = false,
+  blogCreator,
+}) => {
   const { user } = useOutletContext();
 
   const queryClient = useQueryClient();
@@ -70,7 +76,13 @@ const Comments = ({ comments, blogId, commentId, blogCreator }) => {
 
   return (
     <div className="w-full flex flex-col">
-      <div className="max-h-[20rem] overflow-auto styled-scrollbar">
+      {/* <div className="max-h-[20rem] overflow-auto styled-scrollbar"> */}
+      <div
+        className={clsx(
+          " overflow-auto styled-scrollbar",
+          isOverview ? "max-h-[50rem]" : "max-h-[20rem]"
+        )}
+      >
         {!comments.length ? (
           <EmptyComments />
         ) : (

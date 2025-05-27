@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema(
     bio: String,
     lastName: String,
     position: String,
-    birthDate: { type: Date },
+    birthDate: Date,
     password: String,
     avatar: String,
     avatarPublicId: String,

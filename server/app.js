@@ -65,6 +65,8 @@ app.use("/api/blog/comment", authMiddleware, commentsRoutes);
 app.use("/api/users", authMiddleware, userRoutes);
 app.use("/api/notifications", authMiddleware, notificationRoutes);
 app.get("/api/search", authMiddleware, search);
+app.use(helmet());
+
 app.use(requestLogger);
 
 // app.get("/scroll", async (req, res) => {

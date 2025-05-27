@@ -229,6 +229,7 @@ const BlogDetails = ({ isCurrentUser = false }) => {
         title={title}
         description={description}
         id={id}
+        isOverview={true}
       />
     </div>
   );

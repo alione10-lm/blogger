@@ -26,6 +26,7 @@ import toast from "react-hot-toast";
 import FullSpinner from "./ui/FullSpinner";
 import BlogForm from "./BlogForm";
 import Menu from "./ui/Menu";
+import useViewportWidth from "../hooks/useViewportWidth";
 
 export default function BlogCard({
   isCurrentUser = false,
@@ -37,6 +38,7 @@ export default function BlogCard({
   comments,
   likes,
   media,
+  isOverview = false,
 }) {
   const [isOpenComments, setIsOpenComments] = useState(false);
   const [copyStatus, setCopyStatus] = useState("");
@@ -158,22 +160,6 @@ export default function BlogCard({
                 </Modal>
               </Menu.List>
             </Menu>
-            {/* <Modal>
-              <Modal.Open opens="delete">
-                <Trash size={20} cursor="pointer" className="" />
-              </Modal.Open>
-              <Modal.Window name="delete">
-                <BlogOperations blogId={id} />
-              </Modal.Window>
-            </Modal>
-            <Modal>
-              <Modal.Open opens="edit">
-                <Pen size={20} cursor="pointer" className="" />
-              </Modal.Open>
-              <Modal.Window name="edit">
-                <BlogForm blogId={id} defaultValues={{ title, description }} />
-              </Modal.Window>
-            </Modal> */}
           </div>
         )}
       </div>
@@ -261,11 +247,6 @@ export default function BlogCard({
                 {copyStatus === "" && (
                   <Copy className="bg-indigo-100 text-indigo-500 p-2 size-8 rounded-lg cursor-pointer" />
                 )}
-                {/* {copyStatus === "copied" ? (
-                    <Check className="bg-indigo-100 text-indigo-500 p-2 size-8 rounded-lg cursor-pointer" />
-                  ) : (
-                    <Copy className="bg-indigo-100 text-indigo-500 p-2 size-8 rounded-lg cursor-pointer" />
-                  )} */}
               </button>
             </div>
           </Modal.Window>
@@ -280,7 +261,12 @@ export default function BlogCard({
         </Link>
       </div>
       {isOpenComments ? (
-        <Comments blogId={id} comments={comments} blogCreator={createdBy._id} />
+        <Comments
+          blogId={id}
+          isOverview={isOverview}
+          comments={comments}
+          blogCreator={createdBy._id}
+        />
       ) : (
         ""
       )}

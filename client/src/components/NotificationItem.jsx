@@ -35,14 +35,14 @@ const NotificationItem = ({ id, type, content, link, isRead, createdAt }) => {
                 </Modal.Open>
               </Menu.Item>
 
-              <Menu.Item>
+              {/* <Menu.Item>
                 <Modal.Open opens="read">
                   <button className="w-full flex items-center  cursor-pointer gap-2 text-start">
                     <Eye size={14} />
                     mark as read
                   </button>
                 </Modal.Open>
-              </Menu.Item>
+              </Menu.Item> */}
 
               <Modal.Window name="delete">
                 <DeleteConfirmation id={id} />
