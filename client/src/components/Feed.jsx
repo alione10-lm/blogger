@@ -11,7 +11,6 @@ import Button from "./ui/Button";
 
 export default function Feed({ comments, blogCreator, blogId }) {
   const queryClient = useQueryClient();
-
   const { mutate: deleteCommentFn, isPending: isDeleting } = useMutation({
     mutationFn: deleteComment,
     onSuccess: () => {
