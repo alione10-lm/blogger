@@ -9,6 +9,7 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: "https://backend-blogflow.up.railway.app/api",
+        // target: "http://localhost:5000/api",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
