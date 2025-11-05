@@ -47,8 +47,12 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(morgan("dev"));
 app.use(limiter);
-app.use(cors());
-
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  })
+);
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import path from "path";
