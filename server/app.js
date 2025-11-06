@@ -64,7 +64,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 app.use(express.static(path.resolve(__dirname, "./public")));
 
 app.use("/api/auth", authRoutes);
-app.use("/api/blogs", authMiddleware, blogRoutes);
+app.use("/api/blogs", blogRoutes);
+// app.use("/api/blogs", authMiddleware, blogRoutes);
 app.use("/api/blog/comment", authMiddleware, commentsRoutes);
 app.use("/api/users", authMiddleware, userRoutes);
 app.use("/api/notifications", authMiddleware, notificationRoutes);
